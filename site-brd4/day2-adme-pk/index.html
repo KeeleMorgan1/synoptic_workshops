@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 2 — Cellular Activity and ADME | BRD4 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 2 — Cellular Activity and ADME</h1>
+  <p>Cellular potency, selectivity index, ADME and reactive metabolite screening in the BRD4 programme</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="index.html" class="current">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Cellular Activity &amp; ADME Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You have received a lecture on, and been given CDTP criteria for, the in vitro tests used to
+        investigate cellular activity and ADME characteristics of novel pharmaceutical compounds. You now have access
+        to data for the compounds that survived Day 1. Apply the criteria you've been given to filter out compounds not
+        meeting them, colour-coding each compound in the table below, then answer the prompts underneath.
+      </div>
+      <p class="data-note">Includes cellular potency in two AML lines (MV4-11, NCI-H929), c-MYC suppression at 1 &micro;M,
+      a cellular selectivity index (SI) against PBMC cytotoxicity, kinetic solubility, LogD7.4, PAMPA permeability, human
+      liver microsomal (HLM) stability, and reactive metabolite (GSH trapping) status.</p>
+      <div id="task1-table-container"></div>
+      <a class="download-link" id="task1-download" download="task1_cellular_adme_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">Why might the assays used here matter in the context of this drug target?</label>
+      <textarea class="answer-input" data-qid="d2t1-assay-rationale"></textarea>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d2t1-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d2t1-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d2t1-borderline-actions"></textarea>
+
+      <label class="question-label">What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d2t1-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/task1_cellular_adme_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("brd4-day2-adme-pk");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 1 ----
+const T1_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"MV4-11 IC50 (nM)", label:"MV4-11 IC50 (nM)"}, {key:"NCI-H929 IC50 (nM)", label:"NCI-H929 IC50 (nM)"},
+  {key:"c-MYC Suppr. @1uM (%)", label:"c-MYC Suppr. @1uM (%)"}, {key:"NanoBRET IC50 (nM)", label:"NanoBRET IC50 (nM)"},
+  {key:"PBMC CC50 (nM)", label:"PBMC CC50 (nM)"}, {key:"SI", label:"SI"},
+  {key:"Sol. (uM)", label:"Sol. (uM)"}, {key:"LogD7.4", label:"LogD7.4"},
+  {key:"PAMPA Papp (x10⁻⁶ cm/s)", label:"PAMPA Papp"}, {key:"HLM t½ (min)", label:"HLM t1/2 (min)"},
+  {key:"HLM CLint", label:"HLM CLint"}, {key:"Reactive Met. (GSH/other)", label:"Reactive Met."},
+];
+(function () {
+  const rows = window.TASK1_DATA;
+  ScreeningTable.render("task1-table-container", { qidPrefix:"d2t1", idKey:"ID", columns:T1_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task1-download"),
+    T1_COLUMNS.map(c=>c.label),
+    rows.map(row => T1_COLUMNS.map(c => row[c.key])));
+})();
+
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>
