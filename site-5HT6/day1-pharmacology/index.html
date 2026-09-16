@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 1 — In Vitro Pharmacology | 5-HT6 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 1 — In Vitro Pharmacology</h1>
+  <p>Primary &amp; secondary pharmacology at the 5-HT6 receptor</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="index.html" class="current">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Binding IC50 Curve</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You have been given data from a receptor binding assay. Plot an IC50 curve for the data (Excel, or
+        Python if you have the skills) and estimate the IC50. Complete the tasks below by filling in the yellow boxes according to the prompts.
+      </div>
+      <p class="data-note">Assay: 5-HT6 radioligand binding displacement ([&sup3;H]-LSD), 10-point half-log concentration-response.</p>
+      <table class="data-table" id="task1-table"></table>
+      <a class="download-link" id="task1-download" download="test_compound_X_binding_data.csv">Download raw data (.csv)</a>
+
+      <label class="question-label" for="d1t1-ic50">Submit your IC50 estimate (nM), and explain how you derived it:</label>
+      <textarea class="answer-input" id="d1t1-ic50" data-qid="d1t1-ic50" placeholder="e.g. IC50 = ___ nM, from a 4-parameter logistic fit / from reading the curve at 50% inhibition..."></textarea>
+
+      <label class="question-label">Paste your binding curve graph:</label>
+      <div id="d1t1-graph-container"></div>
+
+      <label class="question-label" for="d1t1-report">Explain the principles of a receptor binding assay, and how you interpret the results that you have generated above:</label>
+      <textarea class="answer-input" id="d1t1-report" data-qid="d1t1-report" style="min-height:160px" placeholder="Describe the assay, your graph, and your result."></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — Functional Assay</div>
+    <div class="task-body">
+      <p class="data-note">Assay: cAMP accumulation (HTRF), HEK293-5HT6 cells. Agonist mode = compound alone. Antagonist
+      mode = 3 pretreatment concentrations of compound, then challenged with 5-HT (0.1 nM&ndash;30 &micro;M).</p>
+
+      <!-- ---------- Task 2a: agonist mode ---------- -->
+      <h5 class="subtask-header">Task 2a — Agonist Mode</h5>
+      <div class="task-box">
+        <b>Task:</b> You have been given agonist-mode data for 4 compounds, including the positive control (5-HT). Plot
+        graphs for the data (all four compounds can go on one graph if you like). Write a narrative analysis of the
+        potency and efficacy of the unknown compounds, and paste an image of your graph below.
+      </div>
+      <table class="data-table" id="task2-agonist-table"></table>
+      <a class="download-link" id="task2-agonist-download" download="task2_agonist_mode.csv">Download agonist-mode data (.csv)</a>
+
+      <label class="question-label" for="d1t2a-analysis">Agonist mode — narrative analysis (potency &amp; efficacy of each compound):</label>
+      <textarea class="answer-input" id="d1t2a-analysis" data-qid="d1t2a-analysis" style="min-height:140px" placeholder="Compare the compounds' EC50s and Emax values relative to 5-HT. Which look like full agonists, partial agonists, or inactive?"></textarea>
+
+      <label class="question-label">Paste your agonist-mode graph:</label>
+      <div id="d1t2a-graph-container"></div>
+
+      <!-- ---------- Task 2b: antagonist mode ---------- -->
+      <h5 class="subtask-header">Task 2b — Antagonist Mode (Schild Paradigm)</h5>
+      <div class="task-box">
+        <b>Task:</b> You have been given antagonist-mode data — each compound pretreated at 3 concentrations before
+        challenge with 5-HT, plus a vehicle-pretreated control curve. Plot the shifted 5-HT dose-response curves for
+        each compound and, where appropriate, use Schild analysis to estimate potency (pA2/Kb). Complete the boxes below to show how you have analysed this data, and interpret what the analysis tells you.
+      </div>
+      <table class="data-table" id="task2-antagonist-table"></table>
+      <a class="download-link" id="task2-antagonist-download" download="task2_antagonist_mode.csv">Download antagonist-mode data (.csv)</a>
+
+      <label class="question-label">Paste your antagonist-mode graph:</label>
+      <div id="d1t2b-graph-container"></div>
+
+      <label class="question-label" for="d1t2b-report">Antagonist mode — Report the pA2 values and Hill coefficients that you have measured for the compounds.  Explain the principles of a Schild analysis experiment, and how you interpret the results that you have generated above::</label>
+      <textarea class="answer-input" id="d1t2b-report" data-qid="d1t2b-report" style="min-height:160px" placeholder="Which compound(s) behave as full antagonists vs partial agonists? What does that mean for their potency and efficacy at 5-HT6?"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — Primary &amp; Secondary Pharmacology Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You now have structures and data for all 100 compounds from a Lead Optimisation programme. Use your
+        CDTP to screen the compounds. Colour-code each compound red (reject), amber (borderline) or green (continue) in
+        the table below, then answer the prompts underneath.
+      </div>
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_compound_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">Why might the selectivity assays used here matter in the context of this drug target?</label>
+      <textarea class="answer-input" data-qid="d1t3-selectivity-rationale"></textarea>
+
+      <label class="question-label">Do any obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d1t3-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d1t3-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d1t3-amber-actions"></textarea>
+
+      <label class="question-label">What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d1t3-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<script src="../assets/js/image-paste.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/task1_binding_crc.js"></script>
+<script src="data/task2_functional_assay.js"></script>
+<script src="data/task3_compound_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("day1-pharmacology");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 1 ----
+(function () {
+  const d = window.TASK1_DATA;
+  const table = document.getElementById("task1-table");
+  let thead = "<tr><th>Compound</th>" + d.concentrations_uM.map(c => `<th>${c} &micro;M</th>`).join("") + "</tr>";
+  let trow = "<tr><td>" + d.label + "</td>" + d.percent_inhibition.map(v => `<td>${v}</td>`).join("") + "</tr>";
+  table.innerHTML = thead + trow;
+  makeDownload(document.getElementById("task1-download"),
+    ["Compound","Concentration (uM)","% Inhibition"],
+    d.concentrations_uM.map((c,i) => [d.label, c, d.percent_inhibition[i]]));
+
+  ImagePaste.render("d1t1-graph-container", "d1t1-graph");
+})();
+
+// ---- Task 2 ----
+(function () {
+  const d = window.TASK2_DATA;
+  const agTable = document.getElementById("task2-agonist-table");
+  agTable.innerHTML = "<tr><th>Compound</th><th>Role</th>" +
+    d.agonist_mode.concentrations_uM_labels.map(c => `<th>${c}</th>`).join("") + "</tr>" +
+    d.agonist_mode.compounds.map(c => "<tr><td>"+c.id+"</td><td>"+c.role+"</td>" +
+      c.response_pct.map(v => `<td>${v}</td>`).join("") + "</tr>").join("");
+  makeDownload(document.getElementById("task2-agonist-download"),
+    ["Compound","Role", ...d.agonist_mode.concentrations_uM_labels],
+    d.agonist_mode.compounds.map(c => [c.id, c.role, ...c.response_pct]));
+
+  const anTable = document.getElementById("task2-antagonist-table");
+  anTable.innerHTML = "<tr><th>Compound</th><th>Pretreatment (&micro;M)</th>" +
+    d.antagonist_mode.conc_5HT_uM_labels.map(c => `<th>${c}</th>`).join("") + "</tr>" +
+    d.antagonist_mode.runs.map(r => "<tr><td>"+(r.id||"")+"</td><td>"+r.pretreatment_uM+"</td>" +
+      r.response_pct.map(v => `<td>${v}</td>`).join("") + "</tr>").join("");
+  makeDownload(document.getElementById("task2-antagonist-download"),
+    ["Compound","Pretreatment (uM)", ...d.antagonist_mode.conc_5HT_uM_labels],
+    d.antagonist_mode.runs.map(r => [r.id||"", r.pretreatment_uM, ...r.response_pct]));
+
+  ImagePaste.render("d1t2a-graph-container", "d1t2a-graph");
+  ImagePaste.render("d1t2b-graph-container", "d1t2b-graph");
+})();
+
+// ---- Task 3 ----
+const T3_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"pKi (5-HT6)", label:"pKi 5-HT6"}, {key:"Functional Class", label:"Functional class"},
+  {key:"% inh @1μM", label:"%inh@1uM"}, {key:"% inh @10μM", label:"%inh@10uM"},
+  {key:"% inh 5-HT1A", label:"%inh 5HT1A"}, {key:"% inh 5-HT2A", label:"%inh 5HT2A"},
+  {key:"% inh 5-HT2B", label:"%inh 5HT2B"}, {key:"% inh 5-HT3", label:"%inh 5HT3"},
+  {key:"% inh D2", label:"%inh D2"}, {key:"% inh D3", label:"%inh D3"},
+  {key:"% inh hERG", label:"%inh hERG"}, {key:"% inh σ1", label:"%inh sigma1"},
+];
+(function () {
+  const rows = window.TASK3_DATA;
+  ScreeningTable.render("task3-table-container", { qidPrefix:"d1t3", idKey:"ID", columns:T3_COLUMNS, rows });
+  AnswerCapture.rebind(); // pick up the verdict dropdowns just added to the DOM
+  makeDownload(document.getElementById("task3-download"),
+    T3_COLUMNS.map(c=>c.label),
+    rows.map(row => T3_COLUMNS.map(c => row[c.key])));
+})();
+
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>

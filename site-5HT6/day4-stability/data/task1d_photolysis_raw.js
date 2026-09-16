@@ -1,0 +1,902 @@
+window.TASK1D_DATA = [
+  {
+    "Compound ID": "A01",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.2,
+    "400 Wh/m\u00b2 (% remaining)": 97,
+    "800 Wh/m\u00b2 (% remaining)": 93.7,
+    "1200 Wh/m\u00b2 (% remaining)": 94.2
+  },
+  {
+    "Compound ID": "A02",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.2,
+    "400 Wh/m\u00b2 (% remaining)": 98.5,
+    "800 Wh/m\u00b2 (% remaining)": 95.5,
+    "1200 Wh/m\u00b2 (% remaining)": 95.1
+  },
+  {
+    "Compound ID": "A03",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 100,
+    "400 Wh/m\u00b2 (% remaining)": 97.9,
+    "800 Wh/m\u00b2 (% remaining)": 97.5,
+    "1200 Wh/m\u00b2 (% remaining)": 97.2
+  },
+  {
+    "Compound ID": "A04",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.8,
+    "400 Wh/m\u00b2 (% remaining)": 96.4,
+    "800 Wh/m\u00b2 (% remaining)": 91.9,
+    "1200 Wh/m\u00b2 (% remaining)": 90.1
+  },
+  {
+    "Compound ID": "A05",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.4,
+    "400 Wh/m\u00b2 (% remaining)": 98.2,
+    "800 Wh/m\u00b2 (% remaining)": 93.9,
+    "1200 Wh/m\u00b2 (% remaining)": 90.9
+  },
+  {
+    "Compound ID": "A06",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 97.6,
+    "400 Wh/m\u00b2 (% remaining)": 96.4,
+    "800 Wh/m\u00b2 (% remaining)": 93.7,
+    "1200 Wh/m\u00b2 (% remaining)": 90.4
+  },
+  {
+    "Compound ID": "A07",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 98.5,
+    "400 Wh/m\u00b2 (% remaining)": 96.9,
+    "800 Wh/m\u00b2 (% remaining)": 95.6,
+    "1200 Wh/m\u00b2 (% remaining)": 91.9
+  },
+  {
+    "Compound ID": "A08",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.9,
+    "400 Wh/m\u00b2 (% remaining)": 99.2,
+    "800 Wh/m\u00b2 (% remaining)": 98.6,
+    "1200 Wh/m\u00b2 (% remaining)": 97.4
+  },
+  {
+    "Compound ID": "A09",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 99.5,
+    "400 Wh/m\u00b2 (% remaining)": 97,
+    "800 Wh/m\u00b2 (% remaining)": 94.9,
+    "1200 Wh/m\u00b2 (% remaining)": 92.6
+  },
+  {
+    "Compound ID": "A10",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.1,
+    "400 Wh/m\u00b2 (% remaining)": 98.7,
+    "800 Wh/m\u00b2 (% remaining)": 97,
+    "1200 Wh/m\u00b2 (% remaining)": 94.3
+  },
+  {
+    "Compound ID": "A11",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 88.1,
+    "400 Wh/m\u00b2 (% remaining)": 79.3,
+    "800 Wh/m\u00b2 (% remaining)": 61.7,
+    "1200 Wh/m\u00b2 (% remaining)": 48.2
+  },
+  {
+    "Compound ID": "A12",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98,
+    "400 Wh/m\u00b2 (% remaining)": 95.4,
+    "800 Wh/m\u00b2 (% remaining)": 91.9,
+    "1200 Wh/m\u00b2 (% remaining)": 87.5
+  },
+  {
+    "Compound ID": "A13",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 98.1,
+    "400 Wh/m\u00b2 (% remaining)": 96.6,
+    "800 Wh/m\u00b2 (% remaining)": 91.4,
+    "1200 Wh/m\u00b2 (% remaining)": 85.7
+  },
+  {
+    "Compound ID": "A14",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.5,
+    "400 Wh/m\u00b2 (% remaining)": 96,
+    "800 Wh/m\u00b2 (% remaining)": 93.8,
+    "1200 Wh/m\u00b2 (% remaining)": 90
+  },
+  {
+    "Compound ID": "A15",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 97.9,
+    "400 Wh/m\u00b2 (% remaining)": 96.3,
+    "800 Wh/m\u00b2 (% remaining)": 93.4,
+    "1200 Wh/m\u00b2 (% remaining)": 89.3
+  },
+  {
+    "Compound ID": "A16",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.7,
+    "400 Wh/m\u00b2 (% remaining)": 97.7,
+    "800 Wh/m\u00b2 (% remaining)": 93.7,
+    "1200 Wh/m\u00b2 (% remaining)": 91.4
+  },
+  {
+    "Compound ID": "A17",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 93.9,
+    "400 Wh/m\u00b2 (% remaining)": 87.7,
+    "800 Wh/m\u00b2 (% remaining)": 79.7,
+    "1200 Wh/m\u00b2 (% remaining)": 71.1
+  },
+  {
+    "Compound ID": "A18",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 98.5,
+    "400 Wh/m\u00b2 (% remaining)": 96.3,
+    "800 Wh/m\u00b2 (% remaining)": 92.7,
+    "1200 Wh/m\u00b2 (% remaining)": 89.8
+  },
+  {
+    "Compound ID": "A19",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.1,
+    "400 Wh/m\u00b2 (% remaining)": 99,
+    "800 Wh/m\u00b2 (% remaining)": 95.7,
+    "1200 Wh/m\u00b2 (% remaining)": 93.4
+  },
+  {
+    "Compound ID": "A20",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 100,
+    "400 Wh/m\u00b2 (% remaining)": 99.2,
+    "800 Wh/m\u00b2 (% remaining)": 97.2,
+    "1200 Wh/m\u00b2 (% remaining)": 97.7
+  },
+  {
+    "Compound ID": "A21",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.8,
+    "200 Wh/m\u00b2 (% remaining)": 98.9,
+    "400 Wh/m\u00b2 (% remaining)": 96.9,
+    "800 Wh/m\u00b2 (% remaining)": 95.6,
+    "1200 Wh/m\u00b2 (% remaining)": 92.7
+  },
+  {
+    "Compound ID": "A22",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 97.6,
+    "400 Wh/m\u00b2 (% remaining)": 96.4,
+    "800 Wh/m\u00b2 (% remaining)": 91.9,
+    "1200 Wh/m\u00b2 (% remaining)": 88.3
+  },
+  {
+    "Compound ID": "A23",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.2,
+    "400 Wh/m\u00b2 (% remaining)": 94.3,
+    "800 Wh/m\u00b2 (% remaining)": 88.7,
+    "1200 Wh/m\u00b2 (% remaining)": 83.3
+  },
+  {
+    "Compound ID": "A24",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.8,
+    "400 Wh/m\u00b2 (% remaining)": 98.6,
+    "800 Wh/m\u00b2 (% remaining)": 97.8,
+    "1200 Wh/m\u00b2 (% remaining)": 96.1
+  },
+  {
+    "Compound ID": "A25",
+    "Series": "A",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 95.6,
+    "400 Wh/m\u00b2 (% remaining)": 92.1,
+    "800 Wh/m\u00b2 (% remaining)": 84.5,
+    "1200 Wh/m\u00b2 (% remaining)": 77.5
+  },
+  {
+    "Compound ID": "B01",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.7,
+    "200 Wh/m\u00b2 (% remaining)": 92.8,
+    "400 Wh/m\u00b2 (% remaining)": 88.8,
+    "800 Wh/m\u00b2 (% remaining)": 80.9,
+    "1200 Wh/m\u00b2 (% remaining)": 70.6
+  },
+  {
+    "Compound ID": "B02",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.2,
+    "400 Wh/m\u00b2 (% remaining)": 97.8,
+    "800 Wh/m\u00b2 (% remaining)": 97.1,
+    "1200 Wh/m\u00b2 (% remaining)": 95.2
+  },
+  {
+    "Compound ID": "B03",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 93.5,
+    "400 Wh/m\u00b2 (% remaining)": 90.6,
+    "800 Wh/m\u00b2 (% remaining)": 80.5,
+    "1200 Wh/m\u00b2 (% remaining)": 73.5
+  },
+  {
+    "Compound ID": "B04",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 88.9,
+    "400 Wh/m\u00b2 (% remaining)": 80.8,
+    "800 Wh/m\u00b2 (% remaining)": 66.4,
+    "1200 Wh/m\u00b2 (% remaining)": 52.1
+  },
+  {
+    "Compound ID": "B05",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.3,
+    "400 Wh/m\u00b2 (% remaining)": 96.6,
+    "800 Wh/m\u00b2 (% remaining)": 94.9,
+    "1200 Wh/m\u00b2 (% remaining)": 90.7
+  },
+  {
+    "Compound ID": "B06",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.4,
+    "400 Wh/m\u00b2 (% remaining)": 97.8,
+    "800 Wh/m\u00b2 (% remaining)": 97.9,
+    "1200 Wh/m\u00b2 (% remaining)": 96
+  },
+  {
+    "Compound ID": "B07",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 94.3,
+    "400 Wh/m\u00b2 (% remaining)": 89.1,
+    "800 Wh/m\u00b2 (% remaining)": 79.3,
+    "1200 Wh/m\u00b2 (% remaining)": 72.5
+  },
+  {
+    "Compound ID": "B08",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 95.6,
+    "400 Wh/m\u00b2 (% remaining)": 92.4,
+    "800 Wh/m\u00b2 (% remaining)": 84,
+    "1200 Wh/m\u00b2 (% remaining)": 78.8
+  },
+  {
+    "Compound ID": "B09",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99,
+    "400 Wh/m\u00b2 (% remaining)": 96.7,
+    "800 Wh/m\u00b2 (% remaining)": 97.1,
+    "1200 Wh/m\u00b2 (% remaining)": 94
+  },
+  {
+    "Compound ID": "B10",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 100,
+    "400 Wh/m\u00b2 (% remaining)": 96.9,
+    "800 Wh/m\u00b2 (% remaining)": 95.1,
+    "1200 Wh/m\u00b2 (% remaining)": 93.8
+  },
+  {
+    "Compound ID": "B11",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 57.2,
+    "400 Wh/m\u00b2 (% remaining)": 33.6,
+    "800 Wh/m\u00b2 (% remaining)": 11.7,
+    "1200 Wh/m\u00b2 (% remaining)": 4.7
+  },
+  {
+    "Compound ID": "B12",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 98.3,
+    "400 Wh/m\u00b2 (% remaining)": 99.5,
+    "800 Wh/m\u00b2 (% remaining)": 97.3,
+    "1200 Wh/m\u00b2 (% remaining)": 94.4
+  },
+  {
+    "Compound ID": "B13",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.2,
+    "400 Wh/m\u00b2 (% remaining)": 97.1,
+    "800 Wh/m\u00b2 (% remaining)": 96.8,
+    "1200 Wh/m\u00b2 (% remaining)": 95.2
+  },
+  {
+    "Compound ID": "B14",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.8,
+    "200 Wh/m\u00b2 (% remaining)": 99.2,
+    "400 Wh/m\u00b2 (% remaining)": 98.5,
+    "800 Wh/m\u00b2 (% remaining)": 95.6,
+    "1200 Wh/m\u00b2 (% remaining)": 93.3
+  },
+  {
+    "Compound ID": "B15",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.5,
+    "400 Wh/m\u00b2 (% remaining)": 97,
+    "800 Wh/m\u00b2 (% remaining)": 96.6,
+    "1200 Wh/m\u00b2 (% remaining)": 94.1
+  },
+  {
+    "Compound ID": "B16",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 94.6,
+    "400 Wh/m\u00b2 (% remaining)": 91.1,
+    "800 Wh/m\u00b2 (% remaining)": 83.7,
+    "1200 Wh/m\u00b2 (% remaining)": 74.7
+  },
+  {
+    "Compound ID": "B17",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 95.5,
+    "400 Wh/m\u00b2 (% remaining)": 93,
+    "800 Wh/m\u00b2 (% remaining)": 85.9,
+    "1200 Wh/m\u00b2 (% remaining)": 81.2
+  },
+  {
+    "Compound ID": "B18",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 96.3,
+    "400 Wh/m\u00b2 (% remaining)": 95.9,
+    "800 Wh/m\u00b2 (% remaining)": 92.1,
+    "1200 Wh/m\u00b2 (% remaining)": 87.5
+  },
+  {
+    "Compound ID": "B19",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 97.8,
+    "400 Wh/m\u00b2 (% remaining)": 94.2,
+    "800 Wh/m\u00b2 (% remaining)": 91.3,
+    "1200 Wh/m\u00b2 (% remaining)": 85.7
+  },
+  {
+    "Compound ID": "B20",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 96.2,
+    "400 Wh/m\u00b2 (% remaining)": 91.9,
+    "800 Wh/m\u00b2 (% remaining)": 85.1,
+    "1200 Wh/m\u00b2 (% remaining)": 77.5
+  },
+  {
+    "Compound ID": "B21",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.5,
+    "400 Wh/m\u00b2 (% remaining)": 99,
+    "800 Wh/m\u00b2 (% remaining)": 99.1,
+    "1200 Wh/m\u00b2 (% remaining)": 98.2
+  },
+  {
+    "Compound ID": "B22",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 96.6,
+    "400 Wh/m\u00b2 (% remaining)": 93.5,
+    "800 Wh/m\u00b2 (% remaining)": 86.8,
+    "1200 Wh/m\u00b2 (% remaining)": 82.3
+  },
+  {
+    "Compound ID": "B23",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.1,
+    "400 Wh/m\u00b2 (% remaining)": 98.9,
+    "800 Wh/m\u00b2 (% remaining)": 96,
+    "1200 Wh/m\u00b2 (% remaining)": 95.1
+  },
+  {
+    "Compound ID": "B24",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 98.2,
+    "400 Wh/m\u00b2 (% remaining)": 96.4,
+    "800 Wh/m\u00b2 (% remaining)": 93.4,
+    "1200 Wh/m\u00b2 (% remaining)": 89.8
+  },
+  {
+    "Compound ID": "B25",
+    "Series": "B",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.8,
+    "200 Wh/m\u00b2 (% remaining)": 94.1,
+    "400 Wh/m\u00b2 (% remaining)": 90.1,
+    "800 Wh/m\u00b2 (% remaining)": 80.1,
+    "1200 Wh/m\u00b2 (% remaining)": 72.2
+  },
+  {
+    "Compound ID": "C01",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.6,
+    "400 Wh/m\u00b2 (% remaining)": 95.5,
+    "800 Wh/m\u00b2 (% remaining)": 93.9,
+    "1200 Wh/m\u00b2 (% remaining)": 90.7
+  },
+  {
+    "Compound ID": "C02",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 99.8,
+    "400 Wh/m\u00b2 (% remaining)": 98.9,
+    "800 Wh/m\u00b2 (% remaining)": 95.8,
+    "1200 Wh/m\u00b2 (% remaining)": 92.4
+  },
+  {
+    "Compound ID": "C03",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 97.9,
+    "400 Wh/m\u00b2 (% remaining)": 98.5,
+    "800 Wh/m\u00b2 (% remaining)": 97.8,
+    "1200 Wh/m\u00b2 (% remaining)": 95.2
+  },
+  {
+    "Compound ID": "C04",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 97.1,
+    "400 Wh/m\u00b2 (% remaining)": 95.2,
+    "800 Wh/m\u00b2 (% remaining)": 90.7,
+    "1200 Wh/m\u00b2 (% remaining)": 86.2
+  },
+  {
+    "Compound ID": "C05",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.5,
+    "400 Wh/m\u00b2 (% remaining)": 99.3,
+    "800 Wh/m\u00b2 (% remaining)": 96.4,
+    "1200 Wh/m\u00b2 (% remaining)": 95.6
+  },
+  {
+    "Compound ID": "C06",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 100,
+    "400 Wh/m\u00b2 (% remaining)": 98.5,
+    "800 Wh/m\u00b2 (% remaining)": 97.1,
+    "1200 Wh/m\u00b2 (% remaining)": 95.6
+  },
+  {
+    "Compound ID": "C07",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.8,
+    "400 Wh/m\u00b2 (% remaining)": 98.6,
+    "800 Wh/m\u00b2 (% remaining)": 96.3,
+    "1200 Wh/m\u00b2 (% remaining)": 96.2
+  },
+  {
+    "Compound ID": "C08",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.1,
+    "400 Wh/m\u00b2 (% remaining)": 95,
+    "800 Wh/m\u00b2 (% remaining)": 90.7,
+    "1200 Wh/m\u00b2 (% remaining)": 86.8
+  },
+  {
+    "Compound ID": "C09",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 98.5,
+    "400 Wh/m\u00b2 (% remaining)": 98.1,
+    "800 Wh/m\u00b2 (% remaining)": 94.7,
+    "1200 Wh/m\u00b2 (% remaining)": 91.1
+  },
+  {
+    "Compound ID": "C10",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.8,
+    "400 Wh/m\u00b2 (% remaining)": 99.2,
+    "800 Wh/m\u00b2 (% remaining)": 96.3,
+    "1200 Wh/m\u00b2 (% remaining)": 96
+  },
+  {
+    "Compound ID": "C11",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.8,
+    "400 Wh/m\u00b2 (% remaining)": 98.2,
+    "800 Wh/m\u00b2 (% remaining)": 97.3,
+    "1200 Wh/m\u00b2 (% remaining)": 96.4
+  },
+  {
+    "Compound ID": "C12",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.7,
+    "400 Wh/m\u00b2 (% remaining)": 97.4,
+    "800 Wh/m\u00b2 (% remaining)": 96.3,
+    "1200 Wh/m\u00b2 (% remaining)": 94.5
+  },
+  {
+    "Compound ID": "C13",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.2,
+    "400 Wh/m\u00b2 (% remaining)": 97.6,
+    "800 Wh/m\u00b2 (% remaining)": 94,
+    "1200 Wh/m\u00b2 (% remaining)": 90.2
+  },
+  {
+    "Compound ID": "C14",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 100,
+    "400 Wh/m\u00b2 (% remaining)": 97.7,
+    "800 Wh/m\u00b2 (% remaining)": 96.4,
+    "1200 Wh/m\u00b2 (% remaining)": 93.1
+  },
+  {
+    "Compound ID": "C15",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 97.4,
+    "400 Wh/m\u00b2 (% remaining)": 94.5,
+    "800 Wh/m\u00b2 (% remaining)": 86.7,
+    "1200 Wh/m\u00b2 (% remaining)": 82.1
+  },
+  {
+    "Compound ID": "C16",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.1,
+    "400 Wh/m\u00b2 (% remaining)": 97.5,
+    "800 Wh/m\u00b2 (% remaining)": 95,
+    "1200 Wh/m\u00b2 (% remaining)": 93.8
+  },
+  {
+    "Compound ID": "C17",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.8,
+    "200 Wh/m\u00b2 (% remaining)": 98.5,
+    "400 Wh/m\u00b2 (% remaining)": 99.9,
+    "800 Wh/m\u00b2 (% remaining)": 97.6,
+    "1200 Wh/m\u00b2 (% remaining)": 96.6
+  },
+  {
+    "Compound ID": "C18",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 96.6,
+    "400 Wh/m\u00b2 (% remaining)": 92.9,
+    "800 Wh/m\u00b2 (% remaining)": 85.5,
+    "1200 Wh/m\u00b2 (% remaining)": 80.1
+  },
+  {
+    "Compound ID": "C19",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.9,
+    "400 Wh/m\u00b2 (% remaining)": 100,
+    "800 Wh/m\u00b2 (% remaining)": 97.8,
+    "1200 Wh/m\u00b2 (% remaining)": 95.3
+  },
+  {
+    "Compound ID": "C20",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 100,
+    "400 Wh/m\u00b2 (% remaining)": 99.2,
+    "800 Wh/m\u00b2 (% remaining)": 98.8,
+    "1200 Wh/m\u00b2 (% remaining)": 95.6
+  },
+  {
+    "Compound ID": "C21",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.2,
+    "400 Wh/m\u00b2 (% remaining)": 98.7,
+    "800 Wh/m\u00b2 (% remaining)": 96.5,
+    "1200 Wh/m\u00b2 (% remaining)": 95.8
+  },
+  {
+    "Compound ID": "C22",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 98.9,
+    "400 Wh/m\u00b2 (% remaining)": 97.3,
+    "800 Wh/m\u00b2 (% remaining)": 95.5,
+    "1200 Wh/m\u00b2 (% remaining)": 93.2
+  },
+  {
+    "Compound ID": "C23",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.8,
+    "200 Wh/m\u00b2 (% remaining)": 97.4,
+    "400 Wh/m\u00b2 (% remaining)": 93.3,
+    "800 Wh/m\u00b2 (% remaining)": 89.3,
+    "1200 Wh/m\u00b2 (% remaining)": 82.3
+  },
+  {
+    "Compound ID": "C24",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.3,
+    "400 Wh/m\u00b2 (% remaining)": 99.4,
+    "800 Wh/m\u00b2 (% remaining)": 98.3,
+    "1200 Wh/m\u00b2 (% remaining)": 98.3
+  },
+  {
+    "Compound ID": "C25",
+    "Series": "C",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.8,
+    "400 Wh/m\u00b2 (% remaining)": 100,
+    "800 Wh/m\u00b2 (% remaining)": 97.4,
+    "1200 Wh/m\u00b2 (% remaining)": 98.5
+  },
+  {
+    "Compound ID": "D01",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 98.1,
+    "400 Wh/m\u00b2 (% remaining)": 96.6,
+    "800 Wh/m\u00b2 (% remaining)": 94.4,
+    "1200 Wh/m\u00b2 (% remaining)": 90.4
+  },
+  {
+    "Compound ID": "D02",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.8,
+    "200 Wh/m\u00b2 (% remaining)": 97.5,
+    "400 Wh/m\u00b2 (% remaining)": 96.2,
+    "800 Wh/m\u00b2 (% remaining)": 92,
+    "1200 Wh/m\u00b2 (% remaining)": 89.9
+  },
+  {
+    "Compound ID": "D03",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98,
+    "400 Wh/m\u00b2 (% remaining)": 96.3,
+    "800 Wh/m\u00b2 (% remaining)": 93.2,
+    "1200 Wh/m\u00b2 (% remaining)": 87.7
+  },
+  {
+    "Compound ID": "D04",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 95.2,
+    "400 Wh/m\u00b2 (% remaining)": 90.6,
+    "800 Wh/m\u00b2 (% remaining)": 81.8,
+    "1200 Wh/m\u00b2 (% remaining)": 74.8
+  },
+  {
+    "Compound ID": "D05",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.7,
+    "200 Wh/m\u00b2 (% remaining)": 97.2,
+    "400 Wh/m\u00b2 (% remaining)": 96.2,
+    "800 Wh/m\u00b2 (% remaining)": 90,
+    "1200 Wh/m\u00b2 (% remaining)": 86.1
+  },
+  {
+    "Compound ID": "D06",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.8,
+    "400 Wh/m\u00b2 (% remaining)": 93.8,
+    "800 Wh/m\u00b2 (% remaining)": 88.8,
+    "1200 Wh/m\u00b2 (% remaining)": 84
+  },
+  {
+    "Compound ID": "D07",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 100,
+    "400 Wh/m\u00b2 (% remaining)": 98.5,
+    "800 Wh/m\u00b2 (% remaining)": 98.6,
+    "1200 Wh/m\u00b2 (% remaining)": 96.4
+  },
+  {
+    "Compound ID": "D08",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.2,
+    "400 Wh/m\u00b2 (% remaining)": 99.4,
+    "800 Wh/m\u00b2 (% remaining)": 97.4,
+    "1200 Wh/m\u00b2 (% remaining)": 96.3
+  },
+  {
+    "Compound ID": "D09",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 96.3,
+    "400 Wh/m\u00b2 (% remaining)": 91.4,
+    "800 Wh/m\u00b2 (% remaining)": 85.1,
+    "1200 Wh/m\u00b2 (% remaining)": 75.9
+  },
+  {
+    "Compound ID": "D10",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 96.9,
+    "400 Wh/m\u00b2 (% remaining)": 96.4,
+    "800 Wh/m\u00b2 (% remaining)": 92.1,
+    "1200 Wh/m\u00b2 (% remaining)": 88.7
+  },
+  {
+    "Compound ID": "D11",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 97.2,
+    "400 Wh/m\u00b2 (% remaining)": 95.7,
+    "800 Wh/m\u00b2 (% remaining)": 91.9,
+    "1200 Wh/m\u00b2 (% remaining)": 85.8
+  },
+  {
+    "Compound ID": "D12",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.9,
+    "400 Wh/m\u00b2 (% remaining)": 96.7,
+    "800 Wh/m\u00b2 (% remaining)": 93.9,
+    "1200 Wh/m\u00b2 (% remaining)": 91.5
+  },
+  {
+    "Compound ID": "D13",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.5,
+    "400 Wh/m\u00b2 (% remaining)": 99,
+    "800 Wh/m\u00b2 (% remaining)": 99.1,
+    "1200 Wh/m\u00b2 (% remaining)": 98.2
+  },
+  {
+    "Compound ID": "D14",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.9,
+    "200 Wh/m\u00b2 (% remaining)": 98.8,
+    "400 Wh/m\u00b2 (% remaining)": 98.1,
+    "800 Wh/m\u00b2 (% remaining)": 94.9,
+    "1200 Wh/m\u00b2 (% remaining)": 92.7
+  },
+  {
+    "Compound ID": "D15",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.5,
+    "200 Wh/m\u00b2 (% remaining)": 96.9,
+    "400 Wh/m\u00b2 (% remaining)": 95.6,
+    "800 Wh/m\u00b2 (% remaining)": 92.3,
+    "1200 Wh/m\u00b2 (% remaining)": 89.2
+  },
+  {
+    "Compound ID": "D16",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.6,
+    "200 Wh/m\u00b2 (% remaining)": 99,
+    "400 Wh/m\u00b2 (% remaining)": 97.1,
+    "800 Wh/m\u00b2 (% remaining)": 95.4,
+    "1200 Wh/m\u00b2 (% remaining)": 93.8
+  },
+  {
+    "Compound ID": "D17",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.5,
+    "400 Wh/m\u00b2 (% remaining)": 98.8,
+    "800 Wh/m\u00b2 (% remaining)": 96.4,
+    "1200 Wh/m\u00b2 (% remaining)": 95
+  },
+  {
+    "Compound ID": "D18",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 99.4,
+    "400 Wh/m\u00b2 (% remaining)": 98.6,
+    "800 Wh/m\u00b2 (% remaining)": 97.7,
+    "1200 Wh/m\u00b2 (% remaining)": 94.5
+  },
+  {
+    "Compound ID": "D19",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.8,
+    "200 Wh/m\u00b2 (% remaining)": 100,
+    "400 Wh/m\u00b2 (% remaining)": 98,
+    "800 Wh/m\u00b2 (% remaining)": 97.6,
+    "1200 Wh/m\u00b2 (% remaining)": 96.1
+  },
+  {
+    "Compound ID": "D20",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.6,
+    "200 Wh/m\u00b2 (% remaining)": 100,
+    "400 Wh/m\u00b2 (% remaining)": 99.8,
+    "800 Wh/m\u00b2 (% remaining)": 96.5,
+    "1200 Wh/m\u00b2 (% remaining)": 94.3
+  },
+  {
+    "Compound ID": "D21",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.8,
+    "200 Wh/m\u00b2 (% remaining)": 98.9,
+    "400 Wh/m\u00b2 (% remaining)": 98.7,
+    "800 Wh/m\u00b2 (% remaining)": 98.8,
+    "1200 Wh/m\u00b2 (% remaining)": 97.3
+  },
+  {
+    "Compound ID": "D22",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 99.8,
+    "200 Wh/m\u00b2 (% remaining)": 96.1,
+    "400 Wh/m\u00b2 (% remaining)": 91.6,
+    "800 Wh/m\u00b2 (% remaining)": 85.1,
+    "1200 Wh/m\u00b2 (% remaining)": 78.2
+  },
+  {
+    "Compound ID": "D23",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 96.4,
+    "400 Wh/m\u00b2 (% remaining)": 94.9,
+    "800 Wh/m\u00b2 (% remaining)": 90.1,
+    "1200 Wh/m\u00b2 (% remaining)": 84.5
+  },
+  {
+    "Compound ID": "D24",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.1,
+    "400 Wh/m\u00b2 (% remaining)": 97.7,
+    "800 Wh/m\u00b2 (% remaining)": 95.7,
+    "1200 Wh/m\u00b2 (% remaining)": 94.4
+  },
+  {
+    "Compound ID": "D25",
+    "Series": "D",
+    "0 Wh/m\u00b2 (dark ctrl)": 100,
+    "200 Wh/m\u00b2 (% remaining)": 98.3,
+    "400 Wh/m\u00b2 (% remaining)": 96.2,
+    "800 Wh/m\u00b2 (% remaining)": 97.3,
+    "1200 Wh/m\u00b2 (% remaining)": 95.4
+  }
+];

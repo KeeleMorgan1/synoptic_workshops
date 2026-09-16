@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 3 — In Vivo Pharmacology &amp; Toxicology | 5-HT6 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 3 — In Vivo Pharmacology &amp; Toxicology</h1>
+  <p>Efficacy and safety models for the 5-HT6 programme</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="index.html" class="current">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — In Vivo Pharmacology Models</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Your compounds have now been tested in three in vivo pharmacology models in rats: Novel Object
+        Recognition (NOR) at 3 and 10 mg/kg p.o. in the MK-801 amnesic rat model, the Attentional Set-Shifting Task
+        (ASST, trials to criterion / minimum effective dose), and Spontaneous Locomotor Activity. Explain each of
+        these models, then define your CDTP criteria for these efficacy endpoints below.
+      </div>
+
+      <label class="question-label" for="d3t1-explain-models">Explain each of the three in vivo pharmacology models (NOR, ASST, Locomotor Activity):</label>
+      <textarea class="answer-input" id="d3t1-explain-models" data-qid="d3t1-explain-models" style="min-height:160px" placeholder="What is each model designed to measure, and how does it relate to 5-HT6 pharmacology?"></textarea>
+
+      <label class="question-label" for="d3t1-cdtp-criteria">Define your CDTP criteria for these efficacy endpoints:</label>
+      <textarea class="answer-input" id="d3t1-cdtp-criteria" data-qid="d3t1-cdtp-criteria" style="min-height:120px" placeholder="What result on each model would make you continue, flag as borderline, or reject a compound?"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — Efficacy Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You are provided with summary data from the in vivo pharmacology experiments for the remaining
+        compounds from your LO programme. Apply the CDTP criteria you defined in Task 1 to screen the compounds
+        below, then answer the prompts underneath.
+      </div>
+      <div id="task2-table-container"></div>
+      <a class="download-link" id="task2-download" download="task2_efficacy_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t2-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t2-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t2-borderline-actions"></textarea>
+
+      <label class="question-label">What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d3t2-further-experiments"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — Safety &amp; Toxicology Models</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Your compounds have now been tested in a further set of models: hERG electrophysiology (patch
+        clamp IC50), the AMES test, an in vitro micronucleus test, HepG2 hepatocellular viability, rat cardiovascular
+        telemetry (QTc change at 30 mg/kg), 7-day rat repeat-dose toxicology (NOAEL), and reactive metabolite
+        detection in hepatocyte incubations. Explain why each of these models is used, then define your CDTP criteria
+        for these safety endpoints below.
+      </div>
+
+      <label class="question-label" for="d3t3-explain-models">Explain why each of these safety/toxicology models is used (what toxicological effect is each one looking for?):</label>
+      <textarea class="answer-input" id="d3t3-explain-models" data-qid="d3t3-explain-models" style="min-height:180px" placeholder="hERG, AMES, micronucleus, HepG2, CV telemetry, 7-day NOAEL, reactive metabolite — what does each model tell you, and why does it matter for a CNS drug?"></textarea>
+
+      <label class="question-label" for="d3t3-cdtp-criteria">Define your CDTP criteria for these safety endpoints:</label>
+      <textarea class="answer-input" id="d3t3-cdtp-criteria" data-qid="d3t3-cdtp-criteria" style="min-height:120px" placeholder="What result on each model would make you continue, flag as borderline, or reject a compound?"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 4 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 4 — Safety Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You are provided with summary data from the in vivo and in vitro safety experiments for the
+        remaining compounds from your LO programme. Apply the CDTP criteria you defined in Task 3 to screen the
+        compounds below, then answer the prompts underneath.
+      </div>
+      <div id="task4-table-container"></div>
+      <a class="download-link" id="task4-download" download="task4_safety_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t4-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t4-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t4-borderline-actions"></textarea>
+
+      <label class="question-label">What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d3t4-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/task2_efficacy_screen.js"></script>
+<script src="data/task4_safety_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("day3-efficacy-safety");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 2 ----
+const T2_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"NOR @3 mg/kg (%)", label:"NOR @3mg/kg %"}, {key:"p (vs MK-801, 3 mg/kg)", label:"p (3mg/kg)"},
+  {key:"NOR @10 mg/kg (%)", label:"NOR @10mg/kg %"}, {key:"p (vs MK-801, 10 mg/kg)", label:"p (10mg/kg)"},
+  {key:"ASST Trials", label:"ASST trials"}, {key:"ASST p-value", label:"ASST p-value"},
+  {key:"MED (mg/kg p.o.)", label:"MED (mg/kg po)"}, {key:"Locomotor Δ (% vs veh)", label:"Locomotor delta %"},
+  {key:"Locomotor Assessment", label:"Locomotor assessment"},
+];
+(function () {
+  const rows = window.TASK2_DATA;
+  ScreeningTable.render("task2-table-container", { qidPrefix:"d3t2", idKey:"ID", columns:T2_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task2-download"),
+    T2_COLUMNS.map(c=>c.label),
+    rows.map(row => T2_COLUMNS.map(c => row[c.key])));
+})();
+
+// ---- Task 4 ----
+const T4_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"hERG patch clamp IC50 (μM)", label:"hERG IC50 (uM)"}, {key:"AMES Test", label:"AMES"},
+  {key:"Micronucleus Test", label:"Micronucleus"}, {key:"HepG2 IC50 (μM)", label:"HepG2 IC50 (uM)"},
+  {key:"Rat QTc Δ (ms) @30 mg/kg", label:"Rat QTc delta (ms)"}, {key:"Rat 7-day NOAEL (mg/kg/day)", label:"Rat NOAEL (mg/kg/day)"},
+  {key:"Reactive Met. (hepatocytes)", label:"Reactive Met."},
+];
+(function () {
+  const rows = window.TASK4_DATA;
+  ScreeningTable.render("task4-table-container", { qidPrefix:"d3t4", idKey:"ID", columns:T4_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task4-download"),
+    T4_COLUMNS.map(c=>c.label),
+    rows.map(row => T4_COLUMNS.map(c => row[c.key])));
+})();
+
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>
