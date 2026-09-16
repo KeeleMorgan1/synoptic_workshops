@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 5 — Metabolite Identification | 5-HT6 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 5 — Metabolite Identification</h1>
+  <p>NMR &amp; MS/MS structure elucidation for the five clinical candidates (D18&ndash;D22)</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="index.html" class="current">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Spectral Assignment</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Each of your five candidates has one Phase 1 (oxidative) metabolite; three of them go on to a
+        Phase 2 (glucuronide conjugate) metabolite. Open the spectra tool below and assign every &sup1;H NMR peak and
+        MS/MS fragment &mdash; for the <b>parent compounds first</b>, then use them as your reference to work out what
+        structural change occurred in each metabolite. Your answers in the tool save automatically, exactly like the
+        rest of this site.
+      </div>
+      <p class="data-note">Metabolites shown below have had their reaction type, enzyme and site of metabolism
+      withheld &mdash; working those out from the spectra is the point of the exercise. One heads-up: D19-M1 and
+      D22-M1 share the same [M+H]&#8314; mass (positional isomers) &mdash; you'll need both MS/MS and NMR to tell them
+      apart.</p>
+      <table class="data-table" id="metabolite-summary-table"></table>
+      <a class="download-link" id="metabolite-summary-download" download="metabolite_summary.csv">Download this table (.csv)</a>
+
+      <p style="margin:20px 0"><a class="download-link" href="spectra-tool.html" style="font-size:15px;padding:12px 22px">Open the Metabolite Spectra Tool &rarr;</a></p>
+
+      <label class="question-label">Your conclusions &mdash; reaction type, enzyme and site of metabolism for each metabolite:</label>
+      <div id="d5t1-conclusions-table-container"></div>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — Interpretation</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Now step back from the individual peak assignments and think about what the metabolite profile
+        as a whole tells you about each candidate.
+      </div>
+
+      <label class="question-label" for="d5t2-isomer-resolution">How did you distinguish D19-M1 from D22-M1, given they share the same [M+H]&#8314; mass?</label>
+      <textarea class="answer-input" id="d5t2-isomer-resolution" data-qid="d5t2-isomer-resolution" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d5t2-phase-pattern">What pattern connects the Phase 1 and Phase 2 metabolites in this dataset (e.g. characteristic mass shifts, which functional groups get conjugated)?</label>
+      <textarea class="answer-input" id="d5t2-phase-pattern" data-qid="d5t2-phase-pattern" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d5t2-concerns">Does this metabolite profile raise any concerns for your candidates going forward (e.g. reactive intermediates, a major circulating metabolite that itself needs characterising)?</label>
+      <textarea class="answer-input" id="d5t2-concerns" data-qid="d5t2-concerns" style="min-height:120px"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/input-table.js"></script>
+<script src="data/metabolite_summary.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("day5-metabolite-id");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+(function () {
+  const rows = window.METABOLITE_SUMMARY;
+  const columns = Object.keys(rows[0]);
+  const table = document.getElementById("metabolite-summary-table");
+  table.innerHTML = "<tr>" + columns.map(c => `<th>${c}</th>`).join("") + "</tr>" +
+    rows.map(r => "<tr>" + columns.map(c => `<td>${r[c]}</td>`).join("") + "</tr>").join("");
+  makeDownload(document.getElementById("metabolite-summary-download"), columns, rows.map(r => columns.map(c => r[c])));
+
+  InputTable.render("d5t1-conclusions-table-container", {
+    qidPrefix: "d5t1-concl", rowLabel: "Metabolite", rowKey: "Metabolite ID",
+    rows: rows.map(r => r["Metabolite ID"]),
+    columns: [
+      {key:"reaction", label:"Reaction type"}, {key:"enzyme", label:"Enzyme / conjugate"}, {key:"site", label:"Site of metabolism"},
+    ]
+  });
+  AnswerCapture.rebind();
+})();
+</script>
+</body>
+</html>
