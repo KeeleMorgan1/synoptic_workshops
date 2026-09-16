@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 3 — In Vivo PK, Efficacy &amp; Safety | PDE4 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 3 — In Vivo PK, Efficacy &amp; Safety</h1>
+  <p>Rat pharmacokinetics, anti-inflammatory efficacy and emesis-risk safety models in the PDE4 programme</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="index.html" class="current">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Rat In Vivo Pharmacokinetics</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You have been given iv and po pharmacokinetic data for 10 compounds from the Lead Optimisation
+        series (the five clinical candidates plus five series comparators). Plot Time vs [drug] graphs on both linear
+        and log[drug] axes, and use the data to calculate: C0 (concentration at t=0), Vd (volume of distribution), Ke
+        (elimination rate constant), T&frac12; (plasma half-life), Cl (systemic clearance), F% (oral bioavailability),
+        Cmax (oral maximum plasma concentration) and Tmax (time Cmax is achieved). Paste your graphs and submit your
+        calculations below.
+      </div>
+      <p class="data-note">Assay: plasma concentrations (ng/mL) by LC-MS/MS, iv dose 1 mg/kg (bolus, n=3), po dose
+      10 mg/kg (gavage, n=3). Values are group means. Only the raw concentration-time data is given here — no
+      pre-calculated PK parameters.</p>
+
+      <h5 class="subtask-header">IV concentration&ndash;time data (1 mg/kg)</h5>
+      <table class="data-table" id="task1-iv-table"></table>
+      <a class="download-link" id="task1-iv-download" download="task1_iv_pk.csv">Download IV data (.csv)</a>
+
+      <h5 class="subtask-header">Oral concentration&ndash;time data (10 mg/kg)</h5>
+      <table class="data-table" id="task1-po-table"></table>
+      <a class="download-link" id="task1-po-download" download="task1_po_pk.csv">Download oral data (.csv)</a>
+
+      <label class="question-label">Paste your Time vs [drug] graphs (linear and log axes):</label>
+      <div id="d3t1-graph-container"></div>
+
+      <label class="question-label">Calculated PK parameters for each compound:</label>
+      <div id="d3t1-pk-table-container"></div>
+
+      <label class="question-label" for="d3t1-working">Show your working (how you derived these values):</label>
+      <textarea class="answer-input" id="d3t1-working" data-qid="d3t1-working" style="min-height:120px" placeholder="Explain your method for each parameter — e.g. semi-log extrapolation for C0, terminal slope for Ke, etc."></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — In Vivo PK &amp; Anti-Inflammatory Efficacy Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You are provided with summary rat PK, predicted human PK and anti-inflammatory efficacy data
+        (LPS-induced TNF-&alpha; suppression and BAL eosinophil reduction, 30 mg/kg p.o.) for the compounds that
+        survived Day 2. Use your CDTP criteria to screen the compounds below, then answer the prompts underneath.
+      </div>
+      <p class="data-note">LPS-TNF Suppression measures acute anti-inflammatory effect; BAL (bronchoalveolar lavage)
+      Eosinophil Reduction is a chronic airway inflammation readout more specific to COPD/asthma; ED50 is the dose
+      giving half-maximal effect across both readouts.</p>
+      <div id="task2-table-container"></div>
+      <a class="download-link" id="task2-download" download="task2_pk_efficacy_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">Why might the PK and efficacy parameters used here matter in the context of this drug target?</label>
+      <textarea class="answer-input" data-qid="d3t2-assay-rationale"></textarea>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t2-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t2-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t2-borderline-actions"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — Safety &amp; Emesis Risk Models</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Your compounds have now been tested in a panel of models addressing this target's central
+        translational challenge &mdash; emetic liability &mdash; alongside standard in vitro safety models: hERG
+        patch-clamp, AMES, in vitro micronucleus, hepatocyte cytotoxicity (with a therapeutic index vs cellular
+        potency), and CYP3A4 inhibition. The Emesis Index (SK-N-SH neuroblastoma cAMP assay) is an in vitro surrogate
+        for PDE4D-mediated emesis. Explain why each of these models is used, then apply your CDTP criteria to screen
+        the compounds below.
+      </div>
+      <label class="question-label" for="d3t3-explain-models">Explain why each of these models is used (what liability is each one looking for?), and in particular what the Emesis Index is a surrogate for and why it matters for this target:</label>
+      <textarea class="answer-input" id="d3t3-explain-models" data-qid="d3t3-explain-models" style="min-height:160px" placeholder="hERG, AMES, micronucleus, hepatocyte CC50/therapeutic index, CYP3A4, Emesis Index — what does each model tell you? Why would PDE4 inhibition cause emesis, and what would make a compound lower-risk on this specific liability?"></textarea>
+
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_safety_emesis_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t3-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t3-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t3-borderline-actions"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 4 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 4 — In Vivo Tolerability Models &amp; Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Your remaining compounds have now been tested in the ferret emesis model &mdash; the in vivo
+        confirmation of the in vitro Emesis Index &mdash; alongside a 7-day rat repeat-dose tolerability study
+        (gastric emptying, NOAEL, body weight). Explain why each of these endpoints is monitored, then apply your
+        CDTP criteria to screen the compounds below.
+      </div>
+      <label class="question-label" for="d3t4-explain-models">Explain why the ferret is used as the in vivo emesis species, and why each of the other in vivo tolerability endpoints is monitored:</label>
+      <textarea class="answer-input" id="d3t4-explain-models" data-qid="d3t4-explain-models" style="min-height:140px" placeholder="Ferrets have an emetic reflex that rodents largely lack — why does that matter for translating an in vitro emesis surrogate to an in vivo/clinical prediction?"></textarea>
+
+      <div id="task4-table-container"></div>
+      <a class="download-link" id="task4-download" download="task4_invivo_tolerability_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t4-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t4-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t4-borderline-actions"></textarea>
+
+      <label class="question-label">What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d3t4-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<script src="../assets/js/image-paste.js"></script>
+<script src="../assets/js/input-table.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/task1_raw_pk.js"></script>
+<script src="data/task2_pk_efficacy_screen.js"></script>
+<script src="data/task3_safety_emesis_screen.js"></script>
+<script src="data/task4_invivo_tolerability_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("pde4-day3-efficacy-safety");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 1 ----
+(function () {
+  const d = window.TASK1_DATA;
+
+  function renderConcTable(tableId, timepoints, compounds) {
+    const tpKeys = timepoints.map(t => `t=${t}h`);
+    const table = document.getElementById(tableId);
+    table.innerHTML = "<tr><th>Compound</th><th>Series</th>" +
+      tpKeys.map(k => `<th>${k}</th>`).join("") + "</tr>" +
+      compounds.map(c => "<tr><td>"+c["Compound"]+"</td><td>"+c["Series"]+"</td>" +
+        tpKeys.map(k => `<td>${c[k]}</td>`).join("") + "</tr>").join("");
+    return tpKeys;
+  }
+  const ivKeys = renderConcTable("task1-iv-table", d.iv_timepoints_h, d.iv_compounds);
+  const poKeys = renderConcTable("task1-po-table", d.po_timepoints_h, d.po_compounds);
+
+  makeDownload(document.getElementById("task1-iv-download"),
+    ["Compound","Series", ...ivKeys],
+    d.iv_compounds.map(c => [c["Compound"], c["Series"], ...ivKeys.map(k=>c[k])]));
+  makeDownload(document.getElementById("task1-po-download"),
+    ["Compound","Series", ...poKeys],
+    d.po_compounds.map(c => [c["Compound"], c["Series"], ...poKeys.map(k=>c[k])]));
+
+  ImagePaste.render("d3t1-graph-container", "d3t1-graph");
+
+  const PK_COLUMNS = [
+    {key:"c0", label:"C0 (ng/mL)"}, {key:"vd", label:"Vd (L/kg)"},
+    {key:"ke", label:"Ke (/h)"}, {key:"thalf", label:"T½ (h)"},
+    {key:"cl", label:"Cl (mL/min/kg)"}, {key:"f", label:"F (%)"},
+    {key:"cmax", label:"Cmax (ng/mL)"}, {key:"tmax", label:"Tmax (h)"},
+  ];
+  const compoundIds = d.iv_compounds.map(c => c["Compound"]);
+  InputTable.render("d3t1-pk-table-container", { qidPrefix:"d3t1-pk", rowLabel:"Compound", rows:compoundIds, columns:PK_COLUMNS });
+  AnswerCapture.rebind();
+})();
+
+// ---- Task 2 ----
+const T2_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Rat CL", label:"Rat CL"}, {key:"Rat Vd (L/kg)", label:"Rat Vd"},
+  {key:"Rat t½ (h)", label:"Rat t1/2 (h)"}, {key:"Rat %F", label:"Rat %F"},
+  {key:"fu (%)", label:"fu %"}, {key:"Pred h-CL", label:"Pred h-CL"},
+  {key:"Pred h-t½ (h)", label:"Pred h-t1/2"}, {key:"LPS-TNF Suppr. % @3mg/kg", label:"LPS-TNF Suppr. %"},
+  {key:"BAL Eosin. Reduc. %", label:"BAL Eosin. Reduc. %"}, {key:"ED50 (mg/kg)", label:"ED50 (mg/kg)"},
+];
+(function () {
+  const rows = window.TASK2_DATA;
+  ScreeningTable.render("task2-table-container", { qidPrefix:"d3t2", idKey:"ID", columns:T2_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task2-download"),
+    T2_COLUMNS.map(c=>c.label),
+    rows.map(row => T2_COLUMNS.map(c => row[c.key])));
+})();
+
+// ---- Task 3 ----
+const T3_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"PDE4B/D Ratio", label:"PDE4B/D Ratio"}, {key:"Emesis Index (SK-N-SH)", label:"Emesis Index"},
+  {key:"hERG PC IC50 (uM)", label:"hERG IC50 (uM)"}, {key:"AMES", label:"AMES"},
+  {key:"Micronucleus", label:"Micronucleus"}, {key:"Hepatocyte CC50 (uM)", label:"Hepatocyte CC50"},
+  {key:"Therapeutic Index (SI)", label:"Therapeutic Index"}, {key:"CYP3A4 IC50 (uM)", label:"CYP3A4 IC50"},
+];
+(function () {
+  const rows = window.TASK3_DATA;
+  ScreeningTable.render("task3-table-container", { qidPrefix:"d3t3", idKey:"ID", columns:T3_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task3-download"),
+    T3_COLUMNS.map(c=>c.label),
+    rows.map(row => T3_COLUMNS.map(c => row[c.key])));
+})();
+
+// ---- Task 4 ----
+const T4_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Ferret Emesis (retches+vomits @5xED50)", label:"Ferret Emesis @5xED50"}, {key:"Emesis Onset (h)", label:"Emesis Onset (h)"},
+  {key:"Gastric Emptying Δ% (rat proxy)", label:"Gastric Emptying Δ%"}, {key:"Rat NOAEL (mg/kg/d)", label:"Rat NOAEL"},
+  {key:"Body Wt Δ%", label:"Body Wt Δ%"}, {key:"Safety Margin", label:"Safety Margin"},
+];
+(function () {
+  const rows = window.TASK4_DATA;
+  ScreeningTable.render("task4-table-container", { qidPrefix:"d3t4", idKey:"ID", columns:T4_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task4-download"),
+    T4_COLUMNS.map(c=>c.label),
+    rows.map(row => T4_COLUMNS.map(c => row[c.key])));
+})();
+
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>

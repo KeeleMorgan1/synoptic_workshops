@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 2 — ADME (Phase II Focus) | PDE4 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 2 — ADME (Phase II Focus)</h1>
+  <p>Solubility, permeability and Phase II metabolism (glucuronidation, sulphation) in the PDE4 programme</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="index.html" class="current">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — ADME Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You have received a lecture on, and been given CDTP criteria for, the in vitro tests used to
+        investigate ADME characteristics of novel pharmaceutical compounds. You now have access to data for the
+        compounds that survived Day 1. Apply the criteria you've been given to filter out compounds not meeting them,
+        colour-coding each compound in the table below, then answer the prompts underneath.
+      </div>
+      <p class="data-note">This programme is unusually Phase II-dominant: alongside kinetic solubility, LogD7.4,
+      Caco-2 permeability and human liver microsomal (HLM, Phase I) stability, you're also given UGT glucuronidation
+      half-life/clearance, SULT sulphation extent, whether a glucuronide was directly detected, a chlorine isotope
+      pattern flag (mass spectrometry diagnostic for the C-series), and GSH reactive metabolite trapping. A compound
+      can look perfectly stable on HLM t&frac12; and still be rapidly cleared via Phase II routes &mdash; don't rely
+      on HLM alone.</p>
+      <div id="task1-table-container"></div>
+      <a class="download-link" id="task1-download" download="task1_adme_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">Why might the assays used here matter in the context of this drug target?</label>
+      <textarea class="answer-input" data-qid="d2t1-assay-rationale"></textarea>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data, particularly by series?</label>
+      <textarea class="answer-input" data-qid="d2t1-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d2t1-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d2t1-borderline-actions"></textarea>
+
+      <label class="question-label">What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d2t1-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/task1_adme_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("pde4-day2-adme-pk");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 1 ----
+const T1_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Sol.(uM)", label:"Sol. (uM)"}, {key:"LogD7.4", label:"LogD7.4"},
+  {key:"Caco-2 Papp (nm/s)", label:"Caco-2 Papp"}, {key:"fu plasma (%)", label:"fu plasma %"},
+  {key:"HLM t½ (min)", label:"HLM t1/2 (min)"}, {key:"HLM CLint", label:"HLM CLint"},
+  {key:"UGT t½ (min)", label:"UGT t1/2 (min)"}, {key:"UGT CLint", label:"UGT CLint"},
+  {key:"SULT % @1uM", label:"SULT % @1uM"}, {key:"Glucuronide detected", label:"Glucuronide detected"},
+  {key:"Cl Isotope Pattern", label:"Cl Isotope Pattern"}, {key:"GSH Reactive Met.", label:"GSH Reactive Met."},
+];
+(function () {
+  const rows = window.TASK1_DATA;
+  ScreeningTable.render("task1-table-container", { qidPrefix:"d2t1", idKey:"ID", columns:T1_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task1-download"),
+    T1_COLUMNS.map(c=>c.label),
+    rows.map(row => T1_COLUMNS.map(c => row[c.key])));
+})();
+
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+/* report-fields.js — Day 5 report layout (PDE4). */
+window.REPORT_FIELDS = [
+  { section: "Task 1 — Spectral Assignment" },
+  {
+    type: "input-table", label: "Conclusions — reaction type, enzyme and site of metabolism", qidPrefix: "d5t1-concl",
+    rowLabel: "Metabolite",
+    rows: ["D15-M1", "D19-M1", "D20-M1", "D21-M1", "D22-M1", "D15-M2", "D21-M2", "D22-M2"],
+    columns: [
+      { key: "reaction", label: "Reaction type" }, { key: "enzyme", label: "Enzyme / conjugate" }, { key: "site", label: "Site of metabolism" }
+    ]
+  },
+
+  { section: "Task 2 — Interpretation" },
+  { qid: "d5t2-isomer-resolution", label: "How D19-M1 and D20-M1 were distinguished despite sharing the same [M+H]+ mass and formula", type: "text" },
+  { qid: "d5t2-phase-pattern", label: "Pattern connecting Phase 1 and Phase 2 metabolites in this dataset", type: "text" },
+  { qid: "d5t2-concerns", label: "Concerns raised by the metabolite profile for these candidates going forward", type: "text" }
+];
