@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 1 — Ion Channel Pharmacology | TRPV1 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 1 — Ion Channel Pharmacology</h1>
+  <p>Channel pharmacology and subtype selectivity at TRPV1</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="index.html" class="current">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Ca&sup2;&#8314; Flux IC50 Curve</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You have been given data from a TRPV1 Ca&sup2;&#8314; flux (FLIPR) assay. Plot an IC50 curve for the data (Excel, or
+        Python if you have the skills) and estimate the IC50. Complete the tasks below by filling in the yellow boxes according to the prompts.
+      </div>
+      <p class="data-note">Assay: TRPV1 Ca&sup2;&#8314; flux (FLIPR) assay, capsaicin-evoked (1 &micro;M capsaicin), 10-point 3-fold dilution concentration-response.</p>
+      <table class="data-table" id="task1-table"></table>
+      <a class="download-link" id="task1-download" download="A01_calcium_flux_ic50_data.csv">Download raw data (.csv)</a>
+
+      <label class="question-label" for="d1t1-ic50">Submit your IC50 estimate (nM), and explain how you derived it:</label>
+      <textarea class="answer-input" id="d1t1-ic50" data-qid="d1t1-ic50" placeholder="e.g. IC50 = ___ nM, from a 4-parameter logistic fit / from reading the curve at 50% inhibition..."></textarea>
+
+      <label class="question-label">Paste your IC50 curve graph:</label>
+      <div id="d1t1-graph-container"></div>
+
+      <label class="question-label" for="d1t1-report">Explain the principles of the TRPV1 Ca&sup2;&#8314; flux assay, and how you interpret the results that you have generated above:</label>
+      <textarea class="answer-input" id="d1t1-report" data-qid="d1t1-report" style="min-height:160px" placeholder="Describe the assay, your graph, and your result."></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — Orthogonal Assay Comparison</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> TRPV1 can be probed in several different ways: Ca&sup2;&#8314; flux (functional, measures downstream
+        Ca&sup2;&#8314; accumulation), patch-clamp electrophysiology (measures the channel current directly), and
+        acid-evoked activation (a distinct activation mode from capsaicin). You have been given summary data for 4
+        compounds across all of these readouts, plus a selectivity panel against three related ion channels and a
+        voltage-gated sodium channel. Write a short report comparing and interpreting these compounds.
+      </div>
+      <p class="data-note">Ca&sup2;&#8314; flux and patch-clamp IC50s are both single-point summary values (not
+      concentration-response curves) for these four compounds — the raw curve data you need for curve-fitting practice
+      is in Task 1 above; this task is about comparing assay modalities and selectivity, not re-fitting curves.</p>
+      <div id="task2-table-container"></div>
+      <a class="download-link" id="task2-download" download="task2_orthogonal_comparison.csv">Download this data (.csv)</a>
+
+      <label class="question-label" for="d1t2-analysis">Compare the Ca&sup2;&#8314; flux and patch-clamp IC50s for each compound. Why might they differ, and what does the "Mode of Inhibition" column tell you about how each compound engages the channel?</label>
+      <textarea class="answer-input" id="d1t2-analysis" data-qid="d1t2-analysis" style="min-height:140px" placeholder="Why would a functional Ca2+ assay and a direct current measurement give different absolute IC50s? What's the practical difference between a competitive and a non-competitive antagonist here?"></textarea>
+
+      <label class="question-label" for="d1t2-selectivity">Compare the acid-evoked IC50 with the capsaicin-evoked (Ca2+ flux) IC50 for each compound, and comment on the selectivity panel (TRPV4, TRPA1, TRPM8, Nav1.7). Which compound(s) would concern you, and why?</label>
+      <textarea class="answer-input" id="d1t2-selectivity" data-qid="d1t2-selectivity" style="min-height:140px" placeholder="A large rightward shift between capsaicin- and acid-evoked IC50 is informative about mechanism. High % inhibition on off-target channels at 10uM is a selectivity liability."></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — Ion Channel Pharmacology Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You now have structures and data for all 100 compounds from a Lead Optimisation programme. Use your
+        CDTP to screen the compounds. Colour-code each compound red (reject), amber (borderline) or green (continue) in
+        the table below, then answer the prompts underneath.
+      </div>
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_compound_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">Why might the selectivity assays used here (TRPV4, TRPA1, TRPM8, Nav1.7) matter in the context of this drug target?</label>
+      <textarea class="answer-input" data-qid="d1t3-selectivity-rationale"></textarea>
+
+      <label class="question-label">Do any obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d1t3-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d1t3-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d1t3-amber-actions"></textarea>
+
+      <label class="question-label">What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d1t3-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<script src="../assets/js/image-paste.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/task1_calcium_flux_crc.js"></script>
+<script src="data/task2_orthogonal_comparison.js"></script>
+<script src="data/task3_compound_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("trpv1-day1-pharmacology");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 1 ----
+(function () {
+  const d = window.TASK1_DATA;
+  const table = document.getElementById("task1-table");
+  let thead = "<tr><th>Compound</th>" + d.concentrations_uM.map(c => `<th>${c} &micro;M</th>`).join("") + "</tr>";
+  let trow = "<tr><td>" + d.label + "</td>" + d.percent_inhibition.map(v => `<td>${v}</td>`).join("") + "</tr>";
+  table.innerHTML = thead + trow;
+  makeDownload(document.getElementById("task1-download"),
+    ["Compound","Concentration (uM)","% Inhibition"],
+    d.concentrations_uM.map((c,i) => [d.label, c, d.percent_inhibition[i]]));
+
+  ImagePaste.render("d1t1-graph-container", "d1t1-graph");
+})();
+
+// ---- Task 2 ----
+const T2_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Ca2+ Flux IC50 (nM)", label:"Ca2+ Flux IC50 (nM)"}, {key:"Patch Clamp IC50 (nM)", label:"Patch Clamp IC50 (nM)"},
+  {key:"Mode of Inhibition", label:"Mode of Inhibition"}, {key:"Acid-evoked IC50 (nM)", label:"Acid-evoked IC50 (nM)"},
+  {key:"TRPV4 %inh @10uM", label:"TRPV4 %inh"}, {key:"TRPA1 %inh @10uM", label:"TRPA1 %inh"},
+  {key:"TRPM8 %inh @10uM", label:"TRPM8 %inh"}, {key:"Nav1.7 %inh @10uM", label:"Nav1.7 %inh"},
+];
+(function () {
+  const rows = window.TASK2_DATA;
+  const table = document.getElementById("task2-table-container");
+  const t = document.createElement("table");
+  t.className = "data-table";
+  t.innerHTML = "<tr>" + T2_COLUMNS.map(c => `<th>${c.label}</th>`).join("") + "</tr>" +
+    rows.map(r => "<tr>" + T2_COLUMNS.map(c => `<td>${r[c.key]}</td>`).join("") + "</tr>").join("");
+  table.appendChild(t);
+  makeDownload(document.getElementById("task2-download"),
+    T2_COLUMNS.map(c=>c.label),
+    rows.map(row => T2_COLUMNS.map(c => row[c.key])));
+})();
+
+// ---- Task 3 ----
+const T3_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Ca2+ Flux IC50 (nM)", label:"Ca2+ Flux IC50 (nM)"}, {key:"Patch Clamp IC50 (nM)", label:"Patch Clamp IC50 (nM)"},
+  {key:"Mode of Inhibition", label:"Mode of Inhibition"}, {key:"Acid-evoked IC50 (nM)", label:"Acid-evoked IC50 (nM)"},
+  {key:"TRPV4 %inh @10uM", label:"TRPV4 %inh"}, {key:"TRPA1 %inh @10uM", label:"TRPA1 %inh"},
+  {key:"TRPM8 %inh @10uM", label:"TRPM8 %inh"}, {key:"Nav1.7 %inh @10uM", label:"Nav1.7 %inh"},
+];
+(function () {
+  const rows = window.TASK3_DATA;
+  ScreeningTable.render("task3-table-container", { qidPrefix:"d1t3", idKey:"ID", columns:T3_COLUMNS, rows });
+  AnswerCapture.rebind(); // pick up the verdict dropdowns just added to the DOM
+  makeDownload(document.getElementById("task3-download"),
+    T3_COLUMNS.map(c=>c.label),
+    rows.map(row => T3_COLUMNS.map(c => row[c.key])));
+})();
+
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>
