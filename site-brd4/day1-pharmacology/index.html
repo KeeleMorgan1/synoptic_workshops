@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 1 — In Vitro Pharmacology | BRD4 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 1 — In Vitro Pharmacology</h1>
+  <p>Bromodomain binding, cellular potency &amp; selectivity at BRD4</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="index.html" class="current">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Bromodomain Binding IC50 Curve</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You have been given data from a BRD4(BD1) AlphaScreen displacement assay. Plot an IC50 curve for the data (Excel, or
+        Python if you have the skills) and estimate the IC50. Complete the tasks below by filling in the yellow boxes according to the prompts.
+      </div>
+      <p class="data-note">Assay: BRD4(BD1)/H4K5ac20 AlphaScreen displacement assay, 10-point 3-fold dilution concentration-response.</p>
+      <table class="data-table" id="task1-table"></table>
+      <a class="download-link" id="task1-download" download="A02_biochemical_ic50_data.csv">Download raw data (.csv)</a>
+
+      <label class="question-label" for="d1t1-ic50">Submit your IC50 estimate (nM), and explain how you derived it:</label>
+      <textarea class="answer-input" id="d1t1-ic50" data-qid="d1t1-ic50" placeholder="e.g. IC50 = ___ nM, from a 4-parameter logistic fit / from reading the curve at 50% inhibition..."></textarea>
+
+      <label class="question-label">Paste your IC50 curve graph:</label>
+      <div id="d1t1-graph-container"></div>
+
+      <label class="question-label" for="d1t1-report">Explain the principles of the BRD4(BD1) AlphaScreen assay, and how you interpret the results that you have generated above:</label>
+      <textarea class="answer-input" id="d1t1-report" data-qid="d1t1-report" style="min-height:160px" placeholder="Describe the assay, your graph, and your result."></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — Cellular Functional Assay</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You have been given data from a cellular c-MYC suppression assay for 4 compounds, including the positive control
+        (+)-JQ1. Plot graphs for the data (all four compounds can go on one graph if you like). Write a one-page report
+        outlining the assay used, and interpreting your results. Your interpretation should discuss the potency and
+        efficacy of the three unknown compounds.
+      </div>
+      <p class="data-note">Assay: Cellular c-MYC suppression assay (MV4-11 cells, in-cell Western, normalised to total protein), 8-point concentration-response.
+      MYC suppression is the functionally relevant, disease-linked readout — it integrates cell permeability and target engagement inside the cell, and is
+      typically right-shifted relative to the biochemical BD1 Kd.</p>
+      <table class="data-table" id="task2-table"></table>
+      <a class="download-link" id="task2-download" download="task2_cellular_assay.csv">Download cellular assay data (.csv)</a>
+
+      <label class="question-label" for="d1t2-analysis">Narrative analysis (potency &amp; efficacy of each compound, and the biochemical-to-cell shift):</label>
+      <textarea class="answer-input" id="d1t2-analysis" data-qid="d1t2-analysis" style="min-height:140px" placeholder="Compare the compounds' cellular IC50s and maximal suppression relative to (+)-JQ1. Why might a compound's biochemical Kd and cellular IC50 differ?"></textarea>
+
+      <label class="question-label">Paste your cellular assay graph:</label>
+      <div id="d1t2-graph-container"></div>
+
+      <label class="question-label" for="d1t2-report">Report your cellular IC50 estimates and compare them with the biochemical BD1 Kd values from the Workshop 1 screening data. Explain the principles of the cellular assay, and how you interpret the results that you have generated above:</label>
+      <textarea class="answer-input" id="d1t2-report" data-qid="d1t2-report" style="min-height:160px" placeholder="Which compound(s) show the largest biochemical-to-cell shift? What does that tell you about permeability or efflux?"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — Bromodomain Binding, Cellular Potency &amp; Selectivity Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You now have structures and data for all 100 compounds from a Lead Optimisation programme, including
+        biochemical binding, BET-family selectivity and cellular potency in two AML lines. Use your CDTP to screen the
+        compounds. Colour-code each compound red (reject), amber (borderline) or green (continue) in the table below,
+        then answer the prompts underneath.
+      </div>
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_compound_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">Why might the BET-family selectivity assays used here (BRD2, BRD3, BRDT, BRD9, and BD1/BD2 ratio) matter in the context of this drug target?</label>
+      <textarea class="answer-input" data-qid="d1t3-selectivity-rationale"></textarea>
+
+      <label class="question-label">Why might a compound with strong biochemical BD1 binding still show weak cellular potency (MV4-11/NCI-H929)?</label>
+      <textarea class="answer-input" data-qid="d1t3-cellular-rationale"></textarea>
+
+      <label class="question-label">Do any obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d1t3-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d1t3-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d1t3-amber-actions"></textarea>
+
+      <label class="question-label">What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d1t3-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<script src="../assets/js/image-paste.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/task1_biochemical_crc.js"></script>
+<script src="data/task2_cellular_assay.js"></script>
+<script src="data/task3_compound_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("brd4-day1-pharmacology");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 1 ----
+(function () {
+  const d = window.TASK1_DATA;
+  const table = document.getElementById("task1-table");
+  let thead = "<tr><th>Compound</th>" + d.concentrations_uM.map(c => `<th>${c} &micro;M</th>`).join("") + "</tr>";
+  let trow = "<tr><td>" + d.label + "</td>" + d.percent_inhibition.map(v => `<td>${v}</td>`).join("") + "</tr>";
+  table.innerHTML = thead + trow;
+  makeDownload(document.getElementById("task1-download"),
+    ["Compound","Concentration (uM)","% Inhibition"],
+    d.concentrations_uM.map((c,i) => [d.label, c, d.percent_inhibition[i]]));
+
+  ImagePaste.render("d1t1-graph-container", "d1t1-graph");
+})();
+
+// ---- Task 2 ----
+(function () {
+  const d = window.TASK2_DATA;
+  const table = document.getElementById("task2-table");
+  table.innerHTML = "<tr><th>Compound</th><th>Role</th>" +
+    d.concentrations_uM_labels.map(c => `<th>${c}</th>`).join("") + "</tr>" +
+    d.compounds.map(c => "<tr><td>"+c.id+"</td><td>"+c.role+"</td>" +
+      c.response_pct.map(v => `<td>${v}</td>`).join("") + "</tr>").join("");
+  makeDownload(document.getElementById("task2-download"),
+    ["Compound","Role", ...d.concentrations_uM_labels],
+    d.compounds.map(c => [c.id, c.role, ...c.response_pct]));
+
+  ImagePaste.render("d1t2-graph-container", "d1t2-graph");
+})();
+
+// ---- Task 3 ----
+const T3_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"BRD4-BD1 Kd (nM)", label:"BD1 Kd (nM)"}, {key:"BRD4-BD2 Kd (nM)", label:"BD2 Kd (nM)"},
+  {key:"BD1/BD2 Ratio", label:"BD1/BD2 Ratio"},
+  {key:"BRD2-BD1 Kd (nM)", label:"BRD2 Kd (nM)"}, {key:"BRD3-BD1 Kd (nM)", label:"BRD3 Kd (nM)"},
+  {key:"BRDT-BD1 Kd (nM)", label:"BRDT Kd (nM)"}, {key:"BRD9 Kd (nM)", label:"BRD9 Kd (nM)"},
+  {key:"MV4-11 IC50 (nM)", label:"MV4-11 IC50 (nM)"}, {key:"NCI-H929 IC50 (nM)", label:"NCI-H929 IC50 (nM)"},
+  {key:"AlphaScreen % Disp @1uM", label:"% Disp. @1uM"}, {key:"DeltaTm (C)", label:"ΔTm (°C)"},
+];
+(function () {
+  const rows = window.TASK3_DATA;
+  ScreeningTable.render("task3-table-container", { qidPrefix:"d1t3", idKey:"ID", columns:T3_COLUMNS, rows });
+  AnswerCapture.rebind(); // pick up the verdict dropdowns just added to the DOM
+  makeDownload(document.getElementById("task3-download"),
+    T3_COLUMNS.map(c=>c.label),
+    rows.map(row => T3_COLUMNS.map(c => row[c.key])));
+})();
+
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>

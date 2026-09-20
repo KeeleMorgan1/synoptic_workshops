@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 3 — In Vivo Efficacy &amp; Safety | BRD4 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 3 — In Vivo Efficacy &amp; Safety</h1>
+  <p>Xenograft efficacy and safety models in the BRD4 programme</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="index.html" class="current">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Xenograft Efficacy Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You are provided with MV4-11 xenograft tumour growth inhibition (TGI) data, alongside rat
+        oral bioavailability and half-life, for the compounds that survived Day 2. Use your CDTP criteria to screen
+        the compounds below, then answer the prompts underneath.
+      </div>
+      <p class="data-note">TGI measured at 30 mg/kg QD &times; 14 days in an MV4-11 xenograft model. "Response" is the
+      qualitative RECIST-style call for that dose group (PD = progressive disease, SD = stable disease). BD1 Kd and
+      MV4-11 IC50 are carried over for reference.</p>
+      <div id="task1-table-container"></div>
+      <a class="download-link" id="task1-download" download="task1_xenograft_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">Why might the PK and efficacy parameters used here matter in the context of this drug target?</label>
+      <textarea class="answer-input" data-qid="d3t1-assay-rationale"></textarea>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t1-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t1-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t1-borderline-actions"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — In Vitro Safety Models &amp; Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Your compounds have now been tested in a panel of in vitro safety models: hERG patch-clamp
+        electrophysiology, the AMES bacterial reverse mutation test, an in vitro micronucleus test, CYP3A4 inhibition,
+        and PXR nuclear receptor activation (a marker of DDI and off-target liability risk). Explain why each of these
+        models is used, then apply your CDTP criteria to screen the compounds below.
+      </div>
+      <label class="question-label" for="d3t2-explain-models">Explain why each of these in vitro safety models is used (what liability is each one looking for?):</label>
+      <textarea class="answer-input" id="d3t2-explain-models" data-qid="d3t2-explain-models" style="min-height:160px" placeholder="hERG, AMES, micronucleus, CYP3A4, PXR — what does each model tell you, and why does it matter for an oncology drug intended for chronic dosing?"></textarea>
+
+      <div id="task2-table-container"></div>
+      <a class="download-link" id="task2-download" download="task2_invitro_safety_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t2-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t2-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t2-borderline-actions"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — In Vivo Safety Models &amp; Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Your remaining compounds have now been tested in a rat repeat-dose toxicology study, including
+        bone marrow (white cell count) monitoring and a formal NOAEL/safety margin determination. Explain why each of
+        these endpoints is monitored, then apply your CDTP criteria to screen the compounds below.
+      </div>
+      <label class="question-label" for="d3t3-explain-models">Explain why each of these in vivo safety endpoints is monitored:</label>
+      <textarea class="answer-input" id="d3t3-explain-models" data-qid="d3t3-explain-models" style="min-height:140px" placeholder="NOAEL and safety margin, bone marrow WBC change — why are these particularly important for a BET inhibitor?"></textarea>
+
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_invivo_safety_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t3-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t3-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t3-borderline-actions"></textarea>
+
+      <label class="question-label">What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d3t3-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/task1_xenograft_screen.js"></script>
+<script src="data/task2_invitro_safety_screen.js"></script>
+<script src="data/task3_invivo_safety_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("brd4-day3-efficacy-safety");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 1 ----
+const T1_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"BRD4-BD1 Kd (nM)", label:"BD1 Kd (nM)"}, {key:"MV4-11 IC50 (nM)", label:"MV4-11 IC50 (nM)"},
+  {key:"Rat po %F", label:"Rat po %F"}, {key:"Rat t1/2 (h)", label:"Rat t1/2 (h)"},
+  {key:"TGI % @30mg/kg", label:"TGI % @30mg/kg"}, {key:"Xenograft Response", label:"Response"},
+];
+(function () {
+  const rows = window.TASK1_DATA;
+  ScreeningTable.render("task1-table-container", { qidPrefix:"d3t1", idKey:"ID", columns:T1_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task1-download"),
+    T1_COLUMNS.map(c=>c.label),
+    rows.map(row => T1_COLUMNS.map(c => row[c.key])));
+})();
+
+// ---- Task 2 ----
+const T2_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"hERG PC IC50 (uM)", label:"hERG IC50 (uM)"}, {key:"AMES", label:"AMES"},
+  {key:"Micronucleus", label:"Micronucleus"}, {key:"CYP3A4 IC50 (uM)", label:"CYP3A4 IC50"},
+  {key:"PXR", label:"PXR"},
+];
+(function () {
+  const rows = window.TASK2_DATA;
+  ScreeningTable.render("task2-table-container", { qidPrefix:"d3t2", idKey:"ID", columns:T2_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task2-download"),
+    T2_COLUMNS.map(c=>c.label),
+    rows.map(row => T2_COLUMNS.map(c => row[c.key])));
+})();
+
+// ---- Task 3 ----
+const T3_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Rat NOAEL (mg/kg/d)", label:"Rat NOAEL"}, {key:"Safety Margin @30mg/kg", label:"Safety Margin"},
+  {key:"BM WBC Delta%", label:"BM WBC Δ%"},
+];
+(function () {
+  const rows = window.TASK3_DATA;
+  ScreeningTable.render("task3-table-container", { qidPrefix:"d3t3", idKey:"ID", columns:T3_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task3-download"),
+    T3_COLUMNS.map(c=>c.label),
+    rows.map(row => T3_COLUMNS.map(c => row[c.key])));
+})();
+
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>
