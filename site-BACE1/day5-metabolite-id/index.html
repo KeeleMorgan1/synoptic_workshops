@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 5 — Metabolite Identification | BACE1 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 5 — Metabolite Identification</h1>
+  <p>LC-HRMS accurate mass, MS/MS fragmentation &amp; &sup1;H NMR for the five clinical candidates (D18&ndash;D22)</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="index.html" class="current">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Mass Shift Assignment &amp; Spectral Assignment</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Eight metabolites were detected across the five candidates (HLM + NADPH for Phase 1; HLM + UDPGA
+        for Phase 2). Open the spectra tool below and, for each metabolite, propose the biotransformation from the
+        mass shift (&Delta;m) alone first, then use the HRMS/MS/MS spectra and &sup1;H NMR peak tables to confirm the
+        reaction type, the enzyme responsible, and the site of metabolism. Your answers in the tool save automatically,
+        exactly like the rest of this site.
+      </div>
+      <p class="data-note">Metabolites shown below have had their reaction type, enzyme and site of metabolism
+      withheld &mdash; and in the spectra tool, the MS/MS fragment identities and &sup1;H NMR peak assignments for the
+      diagnostic peaks have also been withheld &mdash; working those out from the spectra is the point of the
+      exercise. Two metabolites (D19-M1, D22-M1) are isobaric: both give [M+H]&#8314; = 331.1565 Da and &Delta;m =
+      &minus;14.02 Da from their respective parents, despite arising from different reactions &mdash; you'll need
+      both MS/MS and NMR to tell them apart.</p>
+      <table class="data-table" id="metabolite-summary-table"></table>
+      <a class="download-link" id="metabolite-summary-download" download="metabolite_summary.csv">Download this table (.csv)</a>
+
+      <p style="margin:20px 0"><a class="download-link" href="spectra-tool.html" style="font-size:15px;padding:12px 22px">Open the Metabolite Spectra Tool &rarr;</a></p>
+
+      <label class="question-label">Task 6a. What is the maximum number of metabolites assignable by &Delta;m alone, without MS/MS or NMR?</label>
+      <textarea class="answer-input" data-qid="d5t1a-dm-only"></textarea>
+
+      <label class="question-label">Your conclusions &mdash; biotransformation, enzyme and site of metabolism for each metabolite:</label>
+      <div id="d5t1-conclusions-table-container"></div>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — The Isobaric Pair &amp; FMO3 N-Oxides</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> D19-M1 and D22-M1 are isobaric &mdash; identical [M+H]&#8314; mass and &Delta;m from their
+        respective parents, despite different underlying chemistry. D20-M1 and D21-M1 both show +16.00 Da.
+      </div>
+
+      <label class="question-label" for="d5t2b-isobaric">Task 6b. Use the MS/MS data to distinguish D19-M1 from D22-M1. Record the key diagnostic fragment ion for each and explain how it differentiates them.</label>
+      <textarea class="answer-input" id="d5t2b-isobaric" data-qid="d5t2b-isobaric" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d5t2c-nmr">Task 6c. Which &sup1;H NMR signal unambiguously confirms (i) O-demethylation in D19-M1 and (ii) N-demethylation in D22-M1?</label>
+      <textarea class="answer-input" id="d5t2c-nmr" data-qid="d5t2c-nmr" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d5t2d-fmo3">Task 6d. D20-M1 and D21-M1 both show +16.00 Da. Describe two experiments that would confirm FMO3 (not CYP3A4) is the metabolising enzyme.</label>
+      <textarea class="answer-input" id="d5t2d-fmo3" data-qid="d5t2d-fmo3" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d5t2e-nl">Task 6e. What diagnostic MS/MS neutral loss confirms a nitrogen oxide? Why is this specific to N-oxides and not O-hydroxylation products?</label>
+      <textarea class="answer-input" id="d5t2e-nl" data-qid="d5t2e-nl" style="min-height:120px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — Direct Phase 2 Glucuronidation &amp; DDI</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> D21-M2 shows +176.03 Da from the D21 <i>parent</i>, not from D21-M1. D19 and D22 are both CYP3A4
+        substrates.
+      </div>
+
+      <label class="question-label" for="d5t3f-direct">Task 6f. What structural feature of D21 enables direct Phase 2 glucuronidation without prior Phase 1 oxidation? Which UGT isoform catalyses this reaction?</label>
+      <textarea class="answer-input" id="d5t3f-direct" data-qid="d5t3f-direct" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d5t3g-ddi">Task 6g. If f<sub>m,CYP3A4</sub> = 0.65 for D22, calculate the predicted fold-change in AUC when co-administered with 200 mg ketoconazole (K<sub>i</sub> = 0.06 &micro;M).</label>
+      <textarea class="answer-input" id="d5t3g-ddi" data-qid="d5t3g-ddi" style="min-height:120px"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/input-table.js"></script>
+<script src="data/metabolite_summary.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("bace1-day5-metabolite-id");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+(function () {
+  const rows = window.METABOLITE_SUMMARY;
+  const columns = Object.keys(rows[0]);
+  const table = document.getElementById("metabolite-summary-table");
+  table.innerHTML = "<tr>" + columns.map(c => `<th>${c}</th>`).join("") + "</tr>" +
+    rows.map(r => "<tr>" + columns.map(c => `<td>${r[c]}</td>`).join("") + "</tr>").join("");
+  makeDownload(document.getElementById("metabolite-summary-download"), columns, rows.map(r => columns.map(c => r[c])));
+
+  InputTable.render("d5t1-conclusions-table-container", {
+    qidPrefix: "d5t1-concl", rowLabel: "Metabolite", rowKey: "Metabolite ID",
+    rows: rows.map(r => r["Metabolite ID"]),
+    columns: [
+      {key:"biotrans", label:"Biotransformation"}, {key:"enzyme", label:"Enzyme"}, {key:"site", label:"Site of metabolism"},
+    ]
+  });
+  AnswerCapture.rebind();
+})();
+</script>
+</body>
+</html>

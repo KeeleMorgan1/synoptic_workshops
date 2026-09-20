@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 6 — Clinical Candidate Selection | BACE1 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 6 — Clinical Candidate Selection</h1>
+  <p>Predicted human PK &amp; first-in-human (FIH) simulation for the candidates carried forward from Days 1&ndash;5</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="index.html" class="current">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Candidate Selection</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Based on your work across Days 1&ndash;5, two compounds &mdash; D19 and D22 &mdash; met enough of
+        the TPP criteria to reach full clinical candidate profiling: predicted human PK, first-in-human dose
+        simulation, and safety margins are given below. This is the final decision point. Select which candidate(s)
+        to progress to nomination, then justify your choice referencing your TPP/CDTP criteria.
+      </div>
+      <div id="task1-table-container"></div>
+      <a class="download-link" id="task1-download" download="clinical_candidates.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label" for="d6t1a-justification">Task 7a. Which candidate(s) are you progressing, and why? Reference your TPP/CDTP criteria explicitly and provide a clear differentiation statement.</label>
+      <textarea class="answer-input" id="d6t1a-justification" data-qid="d6t1a-justification" style="min-height:160px"></textarea>
+
+      <label class="question-label" for="d6t1b-risks">Task 7b. For your selected candidate, identify the top three remaining risks that would need addressing before a clinical trial authorisation (CTA) could be filed.</label>
+      <textarea class="answer-input" id="d6t1b-risks" data-qid="d6t1b-risks" style="min-height:140px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — First-in-Human Dose Prediction</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> For D22, use allometric scaling (CL exponent 0.75; Vd exponent 1.0) from rat PK to predict human
+        CL and Vd, then calculate predicted human t&frac12;. Using the 7-day rat NOAEL, calculate the maximum
+        recommended starting dose (MRSD) for FIH (HED = NOAEL/6.2; 10-fold safety factor per ICH M3(R2)). Then
+        construct a simple PK simulation at the predicted FIH dose and check whether the dosing regimen maintains
+        concentrations above the efficacy threshold (unbound Cmin &gt; cellular IC50).
+      </div>
+
+      <label class="question-label" for="d6t2c-allometric">Task 7c. Predicted human CL, Vd and t&frac12; for D22 &mdash; does this support once-daily dosing?</label>
+      <textarea class="answer-input" id="d6t2c-allometric" data-qid="d6t2c-allometric" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d6t2d-mrsd">Task 7d. MRSD calculation for D22 (HED, safety factor, resulting dose):</label>
+      <textarea class="answer-input" id="d6t2d-mrsd" data-qid="d6t2d-mrsd" style="min-height:120px"></textarea>
+
+      <label class="question-label">Task 7e. Paste your FIH plasma concentration-time simulation (24 h), with the target Cmin marked:</label>
+      <div id="d6t2e-graph-container"></div>
+      <textarea class="answer-input" id="d6t2e-comment" data-qid="d6t2e-comment" style="min-height:100px" placeholder="Does the dosing regimen maintain concentrations above the efficacy threshold throughout the interval?"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — Programme Reflection</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Look back across the full series D18&ndash;D22 before finishing.
+      </div>
+
+      <label class="question-label" for="d6t3f-modifications">Task 7f. Identify one structural modification to your lead candidate that might improve (i) CNS penetration, (ii) metabolic stability, or (iii) selectivity vs BACE2. Justify the rationale.</label>
+      <textarea class="answer-input" id="d6t3f-modifications" data-qid="d6t3f-modifications" style="min-height:160px"></textarea>
+
+      <label class="question-label" for="d6t3-reflection">Three BACE1 inhibitors (verubecestat, atabecestat, lanabecestat) reached Phase 3 and all failed. Knowing this, how does it change your confidence in nominating your selected candidate?</label>
+      <textarea class="answer-input" id="d6t3-reflection" data-qid="d6t3-reflection" style="min-height:140px"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/image-paste.js"></script>
+<script src="data/candidates.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("bace1-day6-candidate-selection");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+(function () {
+  const rows = window.CANDIDATES_DATA;
+  const columns = Object.keys(rows[0]);
+
+  const wrap = document.createElement("div");
+  wrap.className = "screening-table-wrap";
+  const table = document.createElement("table");
+  table.className = "data-table";
+  table.innerHTML = "<tr>" + columns.map(c => `<th>${c}</th>`).join("") + "<th>Progress?</th><th>Reason</th></tr>";
+
+  rows.forEach(function (row) {
+    const id = row.ID;
+    const tr = document.createElement("tr");
+    columns.forEach(function (c) {
+      const td = document.createElement("td");
+      td.textContent = row[c] === undefined || row[c] === null ? "" : row[c];
+      tr.appendChild(td);
+    });
+
+    const selTd = document.createElement("td");
+    const sel = document.createElement("select");
+    sel.className = "flag-select";
+    sel.setAttribute("data-qid", "d6t1-" + id + "-progress");
+    [["", "—"], ["progress", "Progress"], ["hold", "Do not progress"]].forEach(function (opt) {
+      const o = document.createElement("option");
+      o.value = opt[0];
+      o.textContent = opt[1];
+      sel.appendChild(o);
+    });
+    function applyRowColour() {
+      tr.classList.remove("flag-green", "flag-red");
+      if (sel.value === "progress") tr.classList.add("flag-green");
+      if (sel.value === "hold") tr.classList.add("flag-red");
+    }
+    sel.addEventListener("change", applyRowColour);
+    selTd.appendChild(sel);
+    tr.appendChild(selTd);
+
+    const reasonTd = document.createElement("td");
+    const reasonInput = document.createElement("input");
+    reasonInput.type = "text";
+    reasonInput.className = "answer-input reason-input";
+    reasonInput.setAttribute("data-qid", "d6t1-" + id + "-reason");
+    reasonInput.setAttribute("placeholder", "Why?");
+    reasonTd.appendChild(reasonInput);
+    tr.appendChild(reasonTd);
+
+    tr.querySelectorAll("td").forEach(function (td) { td.classList.add("flag-cell"); });
+    table.appendChild(tr);
+  });
+
+  wrap.appendChild(table);
+  document.getElementById("task1-table-container").appendChild(wrap);
+
+  makeDownload(document.getElementById("task1-download"), columns, rows.map(r => columns.map(c => r[c])));
+
+  ImagePaste.render("d6t2e-graph-container", "d6t2e-graph");
+
+  AnswerCapture.rebind();
+})();
+
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>

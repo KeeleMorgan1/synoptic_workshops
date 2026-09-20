@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 1 — In Vitro Potency &amp; Selectivity | BACE1 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 1 — In Vitro On- and Off-Target Affinity &amp; Potency</h1>
+  <p>BACE1 enzyme &amp; cellular potency, and selectivity against related aspartyl proteases and hERG</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="index.html" class="current">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Concentration-Response Analysis</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Five compounds (D18&ndash;D22) span five chemical series from a BACE1 inhibitor programme. Using the
+        enzyme inhibition concentration-response data below, calculate the pIC50 for each compound. Then plot the
+        curves for D18 and D22, fit a four-parameter Hill equation, and extract IC50, Hill slope and Emax.
+      </div>
+      <p class="data-note">BACE1 enzyme inhibition (FRET assay), % inhibition, mean of n=3, 10-point half-log dilution.
+      IC50 is given; pIC50 is for you to calculate. Cellular (neuronal Aβ40) IC50 is included for reference in Task 1c.</p>
+      <div id="task1-table-container"></div>
+      <a class="download-link" id="task1-download" download="task1_crc_data.csv">Download raw data (.csv)</a>
+
+      <label class="question-label" for="d1t1a-pic50">Task 1a. Calculate the pIC50 for each compound. Which compound has the highest enzyme potency?</label>
+      <textarea class="answer-input" id="d1t1a-pic50" data-qid="d1t1a-pic50" style="min-height:100px"></textarea>
+
+      <label class="question-label">Task 1b. Plot the concentration-response curves for D18 and D22. Fit a four-parameter Hill equation and extract IC50, Hill slope, and Emax. Comment on the quality of fit.</label>
+      <div id="d1t1b-graph-container"></div>
+      <textarea class="answer-input" id="d1t1b-fit" data-qid="d1t1b-fit" style="min-height:100px" placeholder="IC50, Hill slope, Emax for D18 and D22; comment on fit quality"></textarea>
+
+      <label class="question-label" for="d1t1c-shift">Task 1c. D19 has a cell/enzyme shift — list three mechanistic explanations for a compound showing higher potency in the enzyme assay than in cells.</label>
+      <textarea class="answer-input" id="d1t1c-shift" data-qid="d1t1c-shift" style="min-height:100px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — Selectivity Panel</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Complete this table using the selectivity panel data below: BACE1 enzyme potency, cellular potency,
+        and selectivity against BACE2, Cathepsin D, Cathepsin B and hERG (radioligand binding).
+      </div>
+      <div id="task2-table-container"></div>
+      <a class="download-link" id="task2-download" download="task2_selectivity_panel.csv">Download this data (.csv)</a>
+
+      <label class="question-label" for="d1t2d-catd">Task 1d. Cathepsin D is an aspartyl protease with ~30% sequence identity to BACE1. Why is CatD selectivity important in an Alzheimer's programme? Which compound shows the best CatD selectivity index?</label>
+      <textarea class="answer-input" id="d1t2d-catd" data-qid="d1t2d-catd" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d1t2e-herg">Task 1e. The hERG radioligand binding assay at 10 &micro;M shows &le;12% inhibition for all compounds. Is this sufficient to conclude there is no cardiac risk? What additional assays are needed (see Day 3)?</label>
+      <textarea class="answer-input" id="d1t2e-herg" data-qid="d1t2e-herg" style="min-height:120px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — 100-Compound Potency &amp; Selectivity Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Tasks 1 and 2 looked closely at five compounds. In reality those five are survivors of a
+        100-compound screen across five chemical series (A&ndash;E). The full screen is below: BACE1 enzyme potency,
+        selectivity against BACE2/Cathepsin D/Cathepsin B, and hERG/&sigma;1 binding for all 100 compounds. Apply
+        your own TPP/CDTP criteria (the same ones you're using in Tasks 1&ndash;2) to triage this set.
+      </div>
+      <p class="data-note">D18&ndash;D22's own enzyme IC50/pIC50 are marked "Calculated in Task 1" here &mdash; use
+      your Task 1a answer for those. Everything else in this table is given.</p>
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_screen.csv">Download the full screen (.csv)</a>
+
+      <label class="question-label" for="d1t3a-triage">How many of the 100 compounds meet your potency and selectivity criteria? Which series (A&ndash;E) perform best and worst, and why might that be?</label>
+      <textarea class="answer-input" id="d1t3a-triage" data-qid="d1t3a-triage" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d1t3b-sar">Do any structure&ndash;activity trends emerge across the series from this broader data set, beyond what you could see from D18&ndash;D22 alone?</label>
+      <textarea class="answer-input" id="d1t3b-sar" data-qid="d1t3b-sar" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d1t3c-next">For compounds that fail on a single criterion by a narrow margin, would you drop them or flag them for a second look? What follow-up data would help you decide?</label>
+      <textarea class="answer-input" id="d1t3c-next" data-qid="d1t3c-next" style="min-height:120px"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/image-paste.js"></script>
+<script src="data/task1_crc_data.js"></script>
+<script src="data/task2_selectivity_panel.js"></script>
+<script src="data/task3_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("bace1-day1-pharmacology");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+function renderTable(containerId, rows, columns) {
+  const container = document.getElementById(containerId);
+  const t = document.createElement("table");
+  t.className = "data-table";
+  t.innerHTML = "<tr>" + columns.map(c => `<th>${c.label}</th>`).join("") + "</tr>" +
+    rows.map(r => "<tr>" + columns.map(c => `<td>${r[c.key] === undefined || r[c.key] === null ? "" : r[c.key]}</td>`).join("") + "</tr>").join("");
+  container.innerHTML = "";
+  container.appendChild(t);
+}
+
+// ---- Task 1: CRC data ----
+const T1_COLUMNS = [
+  {key:"Compound ID", label:"ID"}, {key:"Series", label:"Series"}, {key:"IC50 (nM)", label:"IC50 (nM)"},
+  {key:"Cellular Aβ40 IC50 (nM)", label:"Cell Aβ40 IC50 (nM)"},
+  {key:"0.001 µM", label:"0.001µM"}, {key:"0.003 µM", label:"0.003µM"}, {key:"0.010 µM", label:"0.010µM"},
+  {key:"0.030 µM", label:"0.030µM"}, {key:"0.100 µM", label:"0.100µM"}, {key:"0.300 µM", label:"0.300µM"},
+  {key:"1.000 µM", label:"1.000µM"}, {key:"3.000 µM", label:"3.000µM"}, {key:"10.000 µM", label:"10.000µM"}, {key:"30.000 µM", label:"30.000µM"},
+];
+(function () {
+  const rows = window.TASK1_CRC_DATA;
+  renderTable("task1-table-container", rows, T1_COLUMNS);
+  makeDownload(document.getElementById("task1-download"), T1_COLUMNS.map(c=>c.label), rows.map(r => T1_COLUMNS.map(c => r[c.key])));
+  ImagePaste.render("d1t1b-graph-container", "d1t1b-graph");
+})();
+
+// ---- Task 2: Selectivity panel ----
+const T2_COLUMNS = [
+  {key:"Compound ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"BACE1 Enz. IC50 (nM)", label:"BACE1 IC50 (nM)"}, {key:"Cellular Aβ40 IC50 (nM)", label:"Cell Aβ40 IC50 (nM)"},
+  {key:"Cell/Enz Shift (fold)", label:"Cell/Enz Shift"},
+  {key:"BACE2 IC50 (nM)", label:"BACE2 IC50 (nM)"}, {key:"BACE2:BACE1 (fold)", label:"BACE2:BACE1"},
+  {key:"Cathepsin D IC50 (nM)", label:"CatD IC50 (nM)"}, {key:"CatD:BACE1 (fold)", label:"CatD:BACE1"},
+  {key:"Cathepsin B IC50 (µM)", label:"CatB IC50 (µM)"},
+  {key:"hERG bind. % inh @10 µM", label:"hERG bind. %inh@10µM"}, {key:"σ1 % inh @10 µM", label:"σ1 %inh@10µM"},
+];
+(function () {
+  const rows = window.TASK2_SELECTIVITY;
+  renderTable("task2-table-container", rows, T2_COLUMNS);
+  makeDownload(document.getElementById("task2-download"), T2_COLUMNS.map(c=>c.label), rows.map(r => T2_COLUMNS.map(c => r[c.key])));
+})();
+
+// ---- Task 3: 100-compound screen ----
+const T3_COLUMNS = [
+  {key:"Compound ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"BACE1 Enz. IC50 (nM)", label:"BACE1 IC50 (nM)"}, {key:"pIC50", label:"pIC50"},
+  {key:"BACE2 IC50 (nM)", label:"BACE2 IC50 (nM)"}, {key:"BACE2:BACE1 (fold)", label:"BACE2:BACE1"},
+  {key:"CatD IC50 (nM)", label:"CatD IC50 (nM)"}, {key:"CatD:BACE1 (fold)", label:"CatD:BACE1"},
+  {key:"CatB IC50 (uM)", label:"CatB IC50 (µM)"},
+  {key:"hERG % inh @10 uM", label:"hERG %inh@10µM"}, {key:"sigma-1 % inh @10 uM", label:"σ1 %inh@10µM"},
+];
+(function () {
+  const rows = window.TASK3_SCREEN;
+  renderTable("task3-table-container", rows, T3_COLUMNS);
+  makeDownload(document.getElementById("task3-download"), T3_COLUMNS.map(c=>c.label), rows.map(r => T3_COLUMNS.map(c => r[c.key])));
+})();
+
+AnswerCapture.rebind();
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>

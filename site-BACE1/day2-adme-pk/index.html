@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 2 — ADME &amp; In Vivo PK | BACE1 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 2 — ADME &amp; In Vivo Pharmacokinetics</h1>
+  <p>Permeability, metabolic stability, rat PK &amp; CNS penetration</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="index.html" class="current">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Permeability &amp; Metabolic Stability</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Classify each compound's permeability and P-gp liability, then use the well-stirred liver model
+        to predict hepatic clearance for D22 and compare it to the observed iv clearance (Task 2 below gives you the
+        raw iv/po data).
+      </div>
+      <p class="data-note">Task 2a: classify each compound as good permeability (Caco-2 Papp A&rarr;B &gt;10&times;10&#8315;&sup6;
+      cm/s), moderate (5&ndash;10), or poor (&lt;5). Which compounds are P-gp substrates (efflux ratio &gt;2)?<br>
+      Task 2c: well-stirred model for D22 &mdash; rat hepatic blood flow Q<sub>H</sub> = 55 mL/min/kg; scaled CLint =
+      HLM CLint &times; 52.5 mg microsomal protein/g liver &times; 40 g liver/kg &times; (1 L/1000 mL); assume fu,mic
+      &asymp; fu,plasma. Compare CLh to the observed iv CL from Task 2's raw data.<br>
+      Task 2d: D21 has the highest HLM CLint. Use allometric scaling (exponent 0.75) on D21's rat iv CL to predict
+      human CL. What fraction of hepatic extraction does this represent?</p>
+      <div id="task1-table-container"></div>
+      <a class="download-link" id="task1-download" download="task1_adme_profile.csv">Download this data (.csv)</a>
+
+      <label class="question-label" for="d2t1a-perm">Task 2a. Permeability/P-gp classification for each compound:</label>
+      <textarea class="answer-input" id="d2t1a-perm" data-qid="d2t1a-perm" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d2t1c-clh">Task 2c. D22 well-stirred model: predicted CLh vs observed iv CL — comment on the fit:</label>
+      <textarea class="answer-input" id="d2t1c-clh" data-qid="d2t1c-clh" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d2t1d-allometric">Task 2d. D21 allometric scaling: predicted human CL and fraction of hepatic extraction:</label>
+      <textarea class="answer-input" id="d2t1d-allometric" data-qid="d2t1d-allometric" style="min-height:100px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — Rat In Vivo Pharmacokinetics</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You have been given iv (3 mg/kg bolus) and po (30 mg/kg gavage) plasma concentration-time data for
+        all five compounds. Plot the iv profiles for D19 and D22 on a semi-log axis and calculate C0, AUC<sub>inf</sub>
+        and t&frac12; by log-linear trapezoidal NCA. From the oral data, calculate Cmax, Tmax and AUC&#8320;&#8331;&#8324;
+        for each compound, and use these to determine oral bioavailability (%F).
+      </div>
+      <p class="data-note">LC-MS/MS, mean plasma concentration (ng/mL), n=3. Section A: iv (3 mg/kg bolus). Section B:
+      po (30 mg/kg gavage).</p>
+      <table class="data-table" id="task2-iv-table"></table>
+      <a class="download-link" id="task2-iv-download" download="task2_iv_pk.csv">Download iv data (.csv)</a>
+      <table class="data-table" id="task2-po-table" style="margin-top:16px"></table>
+      <a class="download-link" id="task2-po-download" download="task2_po_pk.csv">Download po data (.csv)</a>
+
+      <label class="question-label">Task 2e. Paste your iv semi-log plots for D19 and D22:</label>
+      <div id="d2t2e-graph-container"></div>
+
+      <label class="question-label">Calculated PK parameters for each compound:</label>
+      <div id="d2t2-pk-table-container"></div>
+
+      <label class="question-label" for="d2t2-working">Show your working (method used for each parameter):</label>
+      <textarea class="answer-input" id="d2t2-working" data-qid="d2t2-working" style="min-height:120px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — CNS Penetration &amp; MPO</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> D20 and D21 show MDR1 efflux ratios of 3.2 and 4.8. Using the formula below, calculate their
+        predicted brain Kp,uu and comment on whether this is consistent with P-gp efflux. Then rank all five compounds
+        on CNS MPO score and identify which descriptors drive the poor CNS scores for D20 and D21.
+      </div>
+      <p class="data-note">Kp,uu,brain = (Kp &times; fu,brain) / fu,plasma &times; (1 / (1 + P-gp efflux ratio)).
+      Brain Kp (rat) is given below; fu,brain is not directly measured in this dataset &mdash; state and justify any
+      assumption you make about it. Kp,uu &lt;0.02 = poor CNS penetration; 0.02&ndash;0.1 = low; &gt;0.1 = adequate.</p>
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_cns_mpo.csv">Download this data (.csv)</a>
+
+      <label class="question-label" for="d2t3b-kpuu">Task 2b. Predicted Kp,uu for D20 and D21 &mdash; consistent with P-gp efflux?</label>
+      <textarea class="answer-input" id="d2t3b-kpuu" data-qid="d2t3b-kpuu" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d2t3g-mpo">Task 2g. CNS MPO ranking &mdash; which descriptors drive the poor scores for D20 and D21?</label>
+      <textarea class="answer-input" id="d2t3g-mpo" data-qid="d2t3g-mpo" style="min-height:100px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 4 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 4 — Compound-Wide ADME &amp; PK Triage</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> The five compounds above are the survivors of a broader Day 2 screen. Below is the in vitro ADME
+        and in vivo PK data for all 63 compounds that passed Day 1's potency/selectivity triage. Apply your own
+        ADME/PK criteria to decide which compounds you'd carry forward into in vivo pharmacology.
+      </div>
+      <p class="data-note">D18&ndash;D22's iv/po PK parameters are marked "Calculated in Task 2" and Brain Kp,uu is
+      marked "Calculated in Task 3" &mdash; use your own answers from those tasks for these five. Everything else is given.</p>
+      <div id="task4-table-container"></div>
+      <a class="download-link" id="task4-download" download="task4_triage_screen.csv">Download the full screen (.csv)</a>
+
+      <label class="question-label" for="d2t4a-criteria">What ADME/PK criteria did you apply, and how many of the 63 compounds meet them? Which single parameter eliminates the most compounds?</label>
+      <textarea class="answer-input" id="d2t4a-criteria" data-qid="d2t4a-criteria" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d2t4b-disconnect">Are there compounds with good in vitro ADME (permeability, HLM stability) that still show poor in vivo PK (low %F, low Kp)? What does this tell you about the limits of in vitro-to-in vivo extrapolation?</label>
+      <textarea class="answer-input" id="d2t4b-disconnect" data-qid="d2t4b-disconnect" style="min-height:120px"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/image-paste.js"></script>
+<script src="../assets/js/input-table.js"></script>
+<script src="data/task1_adme_profile.js"></script>
+<script src="data/task2_iv_pk.js"></script>
+<script src="data/task2_po_pk.js"></script>
+<script src="data/task3_cns_mpo.js"></script>
+<script src="data/task4_triage_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("bace1-day2-adme-pk");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+function renderTable(containerId, rows, columns) {
+  const container = document.getElementById(containerId);
+  const t = document.createElement("table");
+  t.className = "data-table";
+  t.innerHTML = "<tr>" + columns.map(c => `<th>${c.label}</th>`).join("") + "</tr>" +
+    rows.map(r => "<tr>" + columns.map(c => `<td>${r[c.key] === undefined || r[c.key] === null ? "" : r[c.key]}</td>`).join("") + "</tr>").join("");
+  container.innerHTML = "";
+  container.appendChild(t);
+}
+
+// ---- Task 1: ADME profile ----
+const T1_COLUMNS = [
+  {key:"Compound ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Caco-2 Papp A→B (×10⁻⁶ cm/s)", label:"Caco-2 Papp A→B"}, {key:"MDR1 Efflux Ratio", label:"MDR1 ER"},
+  {key:"P-gp Substrate?", label:"P-gp Substrate?"}, {key:"PPB (% bound)", label:"PPB %bound"},
+  {key:"%fu plasma", label:"%fu plasma"}, {key:"HLM CLint (µL/min/mg)", label:"HLM CLint"},
+  {key:"RLM CLint (µL/min/mg)", label:"RLM CLint"}, {key:"Brain Kp (rat)", label:"Brain Kp (rat)"},
+  {key:"CNS Penetration Class", label:"CNS Penetration Class"},
+];
+(function () {
+  const rows = window.TASK1_ADME;
+  renderTable("task1-table-container", rows, T1_COLUMNS);
+  makeDownload(document.getElementById("task1-download"), T1_COLUMNS.map(c=>c.label), rows.map(r => T1_COLUMNS.map(c => r[c.key])));
+})();
+
+// ---- Task 2: raw iv/po PK ----
+const IV_TIMEPOINTS = ["0.083 h","0.25 h","0.5 h","1 h","2 h","4 h","8 h","12 h","24 h"];
+const PO_TIMEPOINTS = ["0.25 h","0.5 h","1 h","2 h","4 h","6 h","8 h","12 h","24 h"];
+(function () {
+  const ivRows = window.TASK2_IV_PK;
+  const ivTable = document.getElementById("task2-iv-table");
+  ivTable.innerHTML = "<tr><th colspan='" + (2+IV_TIMEPOINTS.length) + "'>Section A — Intravenous PK (3 mg/kg bolus, ng/mL)</th></tr>" +
+    "<tr><th>ID</th><th>Series</th>" + IV_TIMEPOINTS.map(t=>`<th>${t}</th>`).join("") + "</tr>" +
+    ivRows.map(r => "<tr><td>"+r["Compound ID"]+"</td><td>"+r["Series"]+"</td>" + IV_TIMEPOINTS.map(t=>`<td>${r[t]}</td>`).join("") + "</tr>").join("");
+  makeDownload(document.getElementById("task2-iv-download"), ["ID","Series",...IV_TIMEPOINTS], ivRows.map(r => [r["Compound ID"], r["Series"], ...IV_TIMEPOINTS.map(t=>r[t])]));
+
+  const poRows = window.TASK2_PO_PK;
+  const poTable = document.getElementById("task2-po-table");
+  poTable.innerHTML = "<tr><th colspan='" + (2+PO_TIMEPOINTS.length) + "'>Section B — Oral PK (30 mg/kg po, ng/mL)</th></tr>" +
+    "<tr><th>ID</th><th>Series</th>" + PO_TIMEPOINTS.map(t=>`<th>${t}</th>`).join("") + "</tr>" +
+    poRows.map(r => "<tr><td>"+r["Compound ID"]+"</td><td>"+r["Series"]+"</td>" + PO_TIMEPOINTS.map(t=>`<td>${r[t]}</td>`).join("") + "</tr>").join("");
+  makeDownload(document.getElementById("task2-po-download"), ["ID","Series",...PO_TIMEPOINTS], poRows.map(r => [r["Compound ID"], r["Series"], ...PO_TIMEPOINTS.map(t=>r[t])]));
+
+  ImagePaste.render("d2t2e-graph-container", "d2t2e-graph");
+
+  const PK_COLUMNS = [
+    {key:"ivcl", label:"iv CL (mL/min/kg)"}, {key:"ivvd", label:"iv Vd (L/kg)"}, {key:"ivthalf", label:"iv T½ (h)"},
+    {key:"poF", label:"po F (%)"}, {key:"pocmax", label:"po Cmax (ng/mL)"}, {key:"potmax", label:"po Tmax (h)"},
+    {key:"poauc", label:"po AUC₀₋₂₄ (ng·h/mL)"},
+  ];
+  InputTable.render("d2t2-pk-table-container", { qidPrefix:"d2t2-pk", rowLabel:"Compound", rows:["D18","D19","D20","D21","D22"], columns:PK_COLUMNS });
+  AnswerCapture.rebind();
+})();
+
+// ---- Task 3: CNS MPO ----
+const T3_COLUMNS = [
+  {key:"Compound ID", label:"ID"}, {key:"Series", label:"Series"}, {key:"Scaffold", label:"Scaffold"},
+  {key:"MW (Da)", label:"MW (Da)"}, {key:"cLogP", label:"cLogP"}, {key:"tPSA (Å²)", label:"tPSA"},
+  {key:"CNS MPO", label:"CNS MPO (0–6)"},
+];
+(function () {
+  const rows = window.TASK3_CNS_MPO;
+  renderTable("task3-table-container", rows, T3_COLUMNS);
+  makeDownload(document.getElementById("task3-download"), T3_COLUMNS.map(c=>c.label), rows.map(r => T3_COLUMNS.map(c => r[c.key])));
+})();
+
+// ---- Task 4: 63-compound ADME/PK triage screen ----
+const T4_COLUMNS = [
+  {key:"Compound ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Caco-2 Papp (x10-6 cm/s)", label:"Caco-2 Papp"}, {key:"MDR1 ER", label:"MDR1 ER"},
+  {key:"P-gp Substrate?", label:"P-gp Substrate?"}, {key:"PPB (%)", label:"PPB %"},
+  {key:"fu (%)", label:"fu %"}, {key:"HLM CLint (uL/min/mg)", label:"HLM CLint"}, {key:"RLM CLint", label:"RLM CLint"},
+  {key:"iv CL (mL/min/kg)", label:"iv CL"}, {key:"iv Vd (L/kg)", label:"iv Vd"}, {key:"iv t1/2 (h)", label:"iv t½"},
+  {key:"po %F", label:"po %F"}, {key:"po Cmax (ng/mL)", label:"po Cmax"}, {key:"po Tmax (h)", label:"po Tmax"}, {key:"po AUC (ng.h/mL)", label:"po AUC"},
+  {key:"Brain Kp", label:"Brain Kp"}, {key:"Brain Kp,uu", label:"Brain Kp,uu"},
+];
+(function () {
+  const rows = window.TASK4_TRIAGE;
+  renderTable("task4-table-container", rows, T4_COLUMNS);
+  makeDownload(document.getElementById("task4-download"), T4_COLUMNS.map(c=>c.label), rows.map(r => T4_COLUMNS.map(c => r[c.key])));
+})();
+
+AnswerCapture.rebind();
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>

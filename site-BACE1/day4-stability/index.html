@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 4 — Stability &amp; Formulation | BACE1 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 4 — Stability &amp; Formulation</h1>
+  <p>Solid-state, aqueous, acid and photostability; vehicle screening for the five clinical candidates (D18&ndash;D22)</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="index.html" class="current">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Stability Characterisation</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> All five compounds (D18&ndash;D22) now need their physicochemical stability characterised
+        before formulation work begins. Complete all four sub-tasks below.
+      </div>
+
+      <!-- ---------- 1a: Anhydrous ---------- -->
+      <h5 class="subtask-header">Task 5a/5b/5c — Solid-State (Anhydrous) Stability</h5>
+      <div class="task-box">
+        HPLC-UV purity (% area remaining) at 40&deg;C / 60&deg;C / 80&deg;C over 1&ndash;12 weeks. Plot ln(% remaining)
+        vs time at each temperature for D21, confirm first-order kinetics and calculate k<sub>obs</sub> at each
+        temperature. Construct an Arrhenius plot (ln k<sub>obs</sub> vs 1/T in Kelvin), calculate the activation
+        energy E<sub>a</sub>, extrapolate to k at 25&deg;C, and calculate t90 at 25&deg;C. Does D21 meet the 2-year
+        shelf-life criterion? Compare D21's predicted t90 to D22 &mdash; what structural features might explain the difference?
+      </div>
+      <table class="data-table" id="task1a-table"></table>
+      <a class="download-link" id="task1a-download" download="anhydrous_stability.csv">Download this data (.csv)</a>
+
+      <label class="question-label">Paste your Arrhenius plot(s):</label>
+      <div id="d4t1a-graph-container"></div>
+
+      <label class="question-label">Calculated anhydrous stability parameters:</label>
+      <div id="d4t1a-table-container"></div>
+
+      <!-- ---------- 1b: Aqueous ---------- -->
+      <h5 class="subtask-header">Task 5d — Aqueous (pH-Rate) Stability</h5>
+      <div class="task-box">
+        k<sub>obs</sub> (h<sup>-1</sup>) across pH 1&ndash;9 at 37&deg;C (accelerated). Identify the pH of maximum
+        stability (minimum k<sub>obs</sub>) for D19. Explain the biphasic kinetics &mdash; which degradation
+        mechanism dominates at low pH, and which at high pH?
+      </div>
+      <table class="data-table" id="task1b-table"></table>
+      <a class="download-link" id="task1b-download" download="aqueous_stability.csv">Download this data (.csv)</a>
+
+      <label class="question-label">Paste your pH-rate profile plot:</label>
+      <div id="d4t1b-graph-container"></div>
+
+      <label class="question-label" for="d4t1b-analysis">pH of maximum stability for D19, and mechanism at low/high pH:</label>
+      <textarea class="answer-input" id="d4t1b-analysis" data-qid="d4t1b-analysis" style="min-height:100px"></textarea>
+
+      <!-- ---------- 1c: Acid ---------- -->
+      <h5 class="subtask-header">Task 5e — Acid (Gastric) Stability</h5>
+      <div class="task-box">
+        % parent remaining in simulated gastric fluid (SGF, pH 1.2, 37&deg;C) at 0&ndash;120 min. Classify D21's
+        acid stability as stable, moderately stable, or labile. Would this level of acid stability affect oral
+        bioavailability? How would you mitigate any formulation risk?
+      </div>
+      <table class="data-table" id="task1c-table"></table>
+      <a class="download-link" id="task1c-download" download="acid_stability.csv">Download this data (.csv)</a>
+
+      <label class="question-label" for="d4t1c-analysis">D21 acid stability classification and formulation implications:</label>
+      <textarea class="answer-input" id="d4t1c-analysis" data-qid="d4t1c-analysis" style="min-height:100px"></textarea>
+
+      <!-- ---------- 1d: Photolysis ---------- -->
+      <h5 class="subtask-header">Task 5f — Photostability (ICH Q1B)</h5>
+      <div class="task-box">
+        % parent remaining at UV doses 0&ndash;1200 Wh/m&sup2;. Calculate the photodegradation rate constant
+        k<sub>photo</sub> for D20 and classify per ICH Q1B (&ge;95% = Photostable; 80&ndash;95% = Photosensitive;
+        &lt;80% = Photolabile, at 1200 Wh/m&sup2;). Recommend appropriate packaging.
+      </div>
+      <table class="data-table" id="task1d-table"></table>
+      <a class="download-link" id="task1d-download" download="photolysis.csv">Download this data (.csv)</a>
+
+      <label class="question-label" for="d4t1d-analysis">D20 photodegradation rate, ICH Q1B classification, and packaging recommendation:</label>
+      <textarea class="answer-input" id="d4t1d-analysis" data-qid="d4t1d-analysis" style="min-height:100px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — Formulation for In Vivo Studies</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task 5g:</b> D20 has poor aqueous solubility (kinetic solubility given below). You need a 10 mg/mL
+        formulation for oral dosing at 30 mg/kg po. Calculate the required solubilising agent concentration assuming
+        a 30% HP-&beta;-CD solution with 4% solubility enhancement per 10% HP-&beta;-CD. Is this achievable in a
+        tolerable vehicle?
+      </div>
+      <table class="data-table" id="task2-table"></table>
+      <a class="download-link" id="task2-download" download="solubility.csv">Download this data (.csv)</a>
+
+      <label class="question-label" for="d4t2-hpbcd">Task 5g. Required HP-&beta;-CD concentration for D20, and feasibility assessment:</label>
+      <textarea class="answer-input" id="d4t2-hpbcd" data-qid="d4t2-hpbcd" style="min-height:120px"></textarea>
+
+      <label class="question-label" for="d4t2-packaging">What packaging or handling precautions would you specify across the five candidates, based on your Task 1 results?</label>
+      <textarea class="answer-input" id="d4t2-packaging" data-qid="d4t2-packaging" style="min-height:120px"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/image-paste.js"></script>
+<script src="../assets/js/input-table.js"></script>
+<script src="data/task1a_anhydrous.js"></script>
+<script src="data/task1b_aqueous.js"></script>
+<script src="data/task1c_acid.js"></script>
+<script src="data/task1d_photolysis.js"></script>
+<script src="data/task2_solubility.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("bace1-day4-stability");
+
+const CANDIDATES = ["D18", "D19", "D20", "D21", "D22"];
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+function renderRawTable(tableEl, rows, columns) {
+  tableEl.innerHTML = "<tr>" + columns.map(c => `<th>${c}</th>`).join("") + "</tr>" +
+    rows.map(r => "<tr>" + columns.map(c => `<td>${r[c] === undefined || r[c] === null ? "" : r[c]}</td>`).join("") + "</tr>").join("");
+}
+
+// ---- 1a: Anhydrous ----
+(function () {
+  const rows = window.TASK1A_ANHYDROUS;
+  const columns = Object.keys(rows[0]);
+  renderRawTable(document.getElementById("task1a-table"), rows, columns);
+  makeDownload(document.getElementById("task1a-download"), columns, rows.map(r => columns.map(c => r[c])));
+  ImagePaste.render("d4t1a-graph-container", "d4t1a-graph");
+  InputTable.render("d4t1a-table-container", {
+    qidPrefix: "d4t1a", rowLabel: "Compound", rows: CANDIDATES,
+    columns: [
+      {key:"k40", label:"k_40°C (/wk)"}, {key:"k60", label:"k_60°C (/wk)"}, {key:"k80", label:"k_80°C (/wk)"},
+      {key:"ea", label:"Ea (kJ/mol)"}, {key:"k25", label:"k_25°C (/wk)"}, {key:"t90", label:"t90 @25°C (wk)"},
+      {key:"meets2yr", label:"Meets 2-yr criterion?"},
+    ]
+  });
+})();
+
+// ---- 1b: Aqueous ----
+(function () {
+  const rows = window.TASK1B_AQUEOUS;
+  const columns = Object.keys(rows[0]);
+  renderRawTable(document.getElementById("task1b-table"), rows, columns);
+  makeDownload(document.getElementById("task1b-download"), columns, rows.map(r => columns.map(c => r[c])));
+})();
+
+// ---- 1c: Acid ----
+(function () {
+  const rows = window.TASK1C_ACID;
+  const columns = Object.keys(rows[0]);
+  renderRawTable(document.getElementById("task1c-table"), rows, columns);
+  makeDownload(document.getElementById("task1c-download"), columns, rows.map(r => columns.map(c => r[c])));
+})();
+
+// ---- 1d: Photolysis ----
+(function () {
+  const rows = window.TASK1D_PHOTOLYSIS;
+  const columns = Object.keys(rows[0]);
+  renderRawTable(document.getElementById("task1d-table"), rows, columns);
+  makeDownload(document.getElementById("task1d-download"), columns, rows.map(r => columns.map(c => r[c])));
+})();
+
+// ---- Task 2: Solubility ----
+(function () {
+  const rows = window.TASK2_SOLUBILITY;
+  const columns = Object.keys(rows[0]);
+  renderRawTable(document.getElementById("task2-table"), rows, columns);
+  makeDownload(document.getElementById("task2-download"), columns, rows.map(r => columns.map(c => r[c])));
+})();
+
+AnswerCapture.rebind();
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>

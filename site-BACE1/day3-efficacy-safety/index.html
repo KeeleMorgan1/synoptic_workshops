@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 3 — In Vivo Pharmacology &amp; Toxicology | BACE1 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 3 — In Vivo Pharmacology &amp; Toxicology</h1>
+  <p>CSF &amp; brain Aβ40 lowering, cognitive rescue, and cardiac/hepatic/genotoxic/retinal safety</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="index.html" class="current">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — CSF &amp; Brain Aβ40 Lowering (22-Compound Shortlisting Screen)</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Below is in vivo pharmacology data for all 22 compounds that passed Day 2's ADME/PK triage.
+        Calculate the minimum effective dose (MED) for &ge;20% CSF Aβ40 reduction for each compound and rank them
+        by in vivo potency, then apply your own CDTP criteria to decide which compounds to shortlist. For D18&ndash;D22
+        specifically: compare rank order to enzyme IC50 (Day 1) and brain Kp,uu (Day 2) — which parameter best
+        predicts in vivo CNS efficacy? For D22, calculate the predicted free brain concentration at 10 mg/kg and
+        compare it to the enzyme IC50.
+      </div>
+      <p class="data-note">Acute po dosing, CSF collected by cisterna magna puncture 4 h post-dose (n=6/dose).
+      Brain Aβ40 from chronic dosing (10 mg/kg po QD &times; 28 days) in APP/PS1 transgenic mice. NOR discrimination
+      index (DI) at 10 mg/kg is included here for reference in Task 2 (vehicle DI = 0.50 in all groups).</p>
+      <div id="task1-table-container"></div>
+      <a class="download-link" id="task1-download" download="task1_pharmacology.csv">Download this data (.csv)</a>
+
+      <label class="question-label" for="d3t1a-med">Task 3a. MED (&ge;20% CSF reduction) for each compound, and rank order. How many/which compounds would you shortlist?</label>
+      <textarea class="answer-input" id="d3t1a-med" data-qid="d3t1a-med" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d3t1b-predictor">Task 3b. For D18&ndash;D22: which best predicts in vivo CNS efficacy — enzyme IC50 or Kp,uu? Support with calculations.</label>
+      <textarea class="answer-input" id="d3t1b-predictor" data-qid="d3t1b-predictor" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d3t1c-d20">Task 3c. D20 shows only 12% CSF Aβ40 reduction at 10 mg/kg despite an enzyme IC50 of 95 nM. Explain the disconnect using Day 2 ADME/PK data.</label>
+      <textarea class="answer-input" id="d3t1c-d20" data-qid="d3t1c-d20" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d3t1d-cbu">Task 3d. D22's predicted free brain concentration (Cb,u) at 10 mg/kg vs enzyme IC50 — is the exposure-response relationship consistent?</label>
+      <textarea class="answer-input" id="d3t1d-cbu" data-qid="d3t1d-cbu" style="min-height:100px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — Cognitive End-Point (NOR)</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Using D22's discrimination index (DI) from the table above, calculate the percentage improvement
+        in DI vs vehicle, and comment on its translational significance. Discuss why in vivo pharmacology studies
+        should be run under matched dosing conditions to the PK studies.
+      </div>
+      <p class="data-note">DI = (time with novel object &minus; time with familiar object) / (time novel + time familiar). Vehicle DI = 0.50 in all groups; % improvement vs vehicle = (DI&#8322;&#8320; &minus; 0.50) / 0.50 &times; 100.</p>
+
+      <label class="question-label" for="d3t2e-nor">Task 3e. % improvement in DI vs vehicle for D22 &mdash; translational significance:</label>
+      <textarea class="answer-input" id="d3t2e-nor" data-qid="d3t2e-nor" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d3t2f-matched">Task 3f. Why must in vivo pharmacology studies match the PK studies' dosing regimen (vehicle, route, species, gender)? What could confound the comparison otherwise?</label>
+      <textarea class="answer-input" id="d3t2f-matched" data-qid="d3t2f-matched" style="min-height:100px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — Cardiac Safety (hERG)</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Explain why hERG radioligand binding (Day 1) and hERG patch-clamp (below) give different
+        information. Calculate the hERG safety margin for each of the 5 shortlisted compounds (hERG IC50 / Cmax,free),
+        using the free Cmax given below. Which compounds meet the &ge;30&times; criterion?
+      </div>
+      <p class="data-note">po Cmax,free is already corrected for plasma protein binding at the safety-study dose.
+      IonWorks Barracuda automated patch clamp (CHO-K1/hERG); in vivo QTc by Bazett correction, conscious
+      telemetered rat.</p>
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_hERG.csv">Download this data (.csv)</a>
+
+      <label class="question-label" for="d3t3a-binding">Task 4a. Why do hERG binding and patch-clamp give different information? Which is more relevant for safety decisions?</label>
+      <textarea class="answer-input" id="d3t3a-binding" data-qid="d3t3a-binding" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d3t3b-margin">Task 4b. hERG safety margin for each compound &mdash; which meet &ge;30&times;?</label>
+      <textarea class="answer-input" id="d3t3b-margin" data-qid="d3t3b-margin" style="min-height:100px"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 4 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 4 — Hepatic, Genotoxic &amp; Retinal Safety</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Assess hepatic safety for each compound, rank compounds by HepG2 cytotoxicity, and estimate
+        retinal risk from BACE2 selectivity and free brain exposure. Negative Ames/micronucleus results are given —
+        discuss what this does and doesn't tell you.
+      </div>
+      <p class="data-note">BACE2 substrates include PMEL (melanocyte differentiation) — high BACE2 inhibition at
+      clinical exposures raises risk of retinal depigmentation. BACE2:BACE1 selectivity &ge;50&times; is a key
+      safety criterion. Rat 7-day NOAEL &ge;50 mg/kg and ALT fold-change &lt;2&times; are standard tolerability bars.</p>
+      <div id="task4-table-container"></div>
+      <a class="download-link" id="task4-download" download="task4_toxicology.csv">Download this data (.csv)</a>
+
+      <label class="question-label" for="d3t4c-alt">Task 4c. Two of the five shortlisted compounds show ALT fold-change &ge;1.8&times; and NOAEL below 50 mg/kg. Which ones, and are they a safety concern?</label>
+      <textarea class="answer-input" id="d3t4c-alt" data-qid="d3t4c-alt" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d3t4d-hepg2">Task 4d. Rank compounds by HepG2 IC50. Is there a correlation with HLM CLint (metabolic activation hypothesis, from Day 2)? What further assays would you run?</label>
+      <textarea class="answer-input" id="d3t4d-hepg2" data-qid="d3t4d-hepg2" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d3t4e-retinal">Task 4e. Estimate retinal risk (BACE2 selectivity vs free brain Cmax) — using &gt;10&times; therapeutic Cmax,free,brain as the risk threshold. Which compound has the lowest retinal risk?</label>
+      <textarea class="answer-input" id="d3t4e-retinal" data-qid="d3t4e-retinal" style="min-height:100px"></textarea>
+
+      <label class="question-label" for="d3t4f-ames">Task 4f. Negative Ames/micronucleus for all compounds — does this rule out genotoxicity concern entirely? What structural features could flag reactive metabolite formation?</label>
+      <textarea class="answer-input" id="d3t4f-ames" data-qid="d3t4f-ames" style="min-height:100px"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="data/task1_pharmacology.js"></script>
+<script src="data/task2_toxicology.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("bace1-day3-efficacy-safety");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+function renderTable(containerId, rows, columns) {
+  const container = document.getElementById(containerId);
+  const t = document.createElement("table");
+  t.className = "data-table";
+  t.innerHTML = "<tr>" + columns.map(c => `<th>${c.label}</th>`).join("") + "</tr>" +
+    rows.map(r => "<tr>" + columns.map(c => `<td>${r[c.key] === undefined || r[c.key] === null ? "" : r[c.key]}</td>`).join("") + "</tr>").join("");
+  container.innerHTML = "";
+  container.appendChild(t);
+}
+
+// ---- Task 1: CSF/Brain Aβ40 + NOR (22-compound screen) ----
+const T1_COLUMNS = [
+  {key:"Compound ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"CSF Abeta40 % red @3 mg/kg", label:"CSF Aβ40 %red @3"}, {key:"CSF Abeta40 % red @10 mg/kg", label:"CSF Aβ40 %red @10"},
+  {key:"CSF Abeta40 % red @30 mg/kg", label:"CSF Aβ40 %red @30"},
+  {key:"Plasma Abeta40 % red @10 mg/kg", label:"Plasma Aβ40 %red @10"}, {key:"Brain Abeta40 % red @10 mg/kg", label:"Brain Aβ40 %red @10"},
+  {key:"NOR DI @10 mg/kg", label:"NOR DI @10mg/kg"},
+];
+(function () {
+  const rows = window.TASK1_PHARMACOLOGY;
+  renderTable("task1-table-container", rows, T1_COLUMNS);
+  makeDownload(document.getElementById("task1-download"), T1_COLUMNS.map(c=>c.label), rows.map(r => T1_COLUMNS.map(c => r[c.key])));
+})();
+
+// ---- Task 3: hERG (subset of toxicology data) ----
+const T3_COLUMNS = [
+  {key:"Compound ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"hERG PC IC50 (uM)", label:"hERG patch-clamp IC50 (µM)"}, {key:"po Cmax,free (uM)", label:"po Cmax,free (µM)"},
+  {key:"In Vivo QTc Delta (ms)", label:"In vivo QTcΔ (ms)"},
+];
+(function () {
+  const rows = window.TASK2_TOXICOLOGY;
+  renderTable("task3-table-container", rows, T3_COLUMNS);
+  makeDownload(document.getElementById("task3-download"), T3_COLUMNS.map(c=>c.label), rows.map(r => T3_COLUMNS.map(c => r[c.key])));
+})();
+
+// ---- Task 4: Hepatic/Geno/Retinal ----
+const T4_COLUMNS = [
+  {key:"Compound ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"HepG2 Cytotox IC50 (uM)", label:"HepG2 IC50 (µM)"}, {key:"ALT Fold Change (28d rat)", label:"ALT Fold Δ (28d)"},
+  {key:"Ames Test", label:"Ames"}, {key:"Micronucleus", label:"Micronucleus"},
+  {key:"Rat 7-day NOAEL (mg/kg)", label:"Rat 7d NOAEL (mg/kg)"}, {key:"BACE2:BACE1 (fold)", label:"BACE2:BACE1 Sel."},
+];
+(function () {
+  const rows = window.TASK2_TOXICOLOGY;
+  renderTable("task4-table-container", rows, T4_COLUMNS);
+  makeDownload(document.getElementById("task4-download"), T4_COLUMNS.map(c=>c.label), rows.map(r => T4_COLUMNS.map(c => r[c.key])));
+})();
+
+AnswerCapture.rebind();
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+window.TASK2_SELECTIVITY = [
+  {
+    "Compound ID": "D18",
+    "Series": "HEA",
+    "BACE1 Enz. IC50 (nM)": 180,
+    "Cellular Aβ40 IC50 (nM)": 820,
+    "Cell/Enz Shift (fold)": 4.6,
+    "BACE2 IC50 (nM)": 15300,
+    "BACE2:BACE1 (fold)": 85,
+    "Cathepsin D IC50 (nM)": 7560,
+    "CatD:BACE1 (fold)": 42,
+    "Cathepsin B IC50 (µM)": 28.5,
+    "hERG bind. % inh @10 µM": 12,
+    "σ1 % inh @10 µM": 8
+  },
+  {
+    "Compound ID": "D19",
+    "Series": "IMH",
+    "BACE1 Enz. IC50 (nM)": 42,
+    "Cellular Aβ40 IC50 (nM)": 195,
+    "Cell/Enz Shift (fold)": 4.6,
+    "BACE2 IC50 (nM)": 8820,
+    "BACE2:BACE1 (fold)": 210,
+    "Cathepsin D IC50 (nM)": 3990,
+    "CatD:BACE1 (fold)": 95,
+    "Cathepsin B IC50 (µM)": 55.2,
+    "hERG bind. % inh @10 µM": 8,
+    "σ1 % inh @10 µM": 5
+  },
+  {
+    "Compound ID": "D20",
+    "Series": "MRP",
+    "BACE1 Enz. IC50 (nM)": 95,
+    "Cellular Aβ40 IC50 (nM)": 480,
+    "Cell/Enz Shift (fold)": 5.1,
+    "BACE2 IC50 (nM)": 11875,
+    "BACE2:BACE1 (fold)": 125,
+    "Cathepsin D IC50 (nM)": 3610,
+    "CatD:BACE1 (fold)": 38,
+    "Cathepsin B IC50 (µM)": 42.1,
+    "hERG bind. % inh @10 µM": 6,
+    "σ1 % inh @10 µM": 4
+  },
+  {
+    "Compound ID": "D21",
+    "Series": "CPA",
+    "BACE1 Enz. IC50 (nM)": 310,
+    "Cellular Aβ40 IC50 (nM)": 1800,
+    "Cell/Enz Shift (fold)": 5.8,
+    "BACE2 IC50 (nM)": 21080,
+    "BACE2:BACE1 (fold)": 68,
+    "Cathepsin D IC50 (nM)": 6820,
+    "CatD:BACE1 (fold)": 22,
+    "Cathepsin B IC50 (µM)": 18.8,
+    "hERG bind. % inh @10 µM": 5,
+    "σ1 % inh @10 µM": 3
+  },
+  {
+    "Compound ID": "D22",
+    "Series": "NMP",
+    "BACE1 Enz. IC50 (nM)": 38,
+    "Cellular Aβ40 IC50 (nM)": 175,
+    "Cell/Enz Shift (fold)": 4.6,
+    "BACE2 IC50 (nM)": 7410,
+    "BACE2:BACE1 (fold)": 195,
+    "Cathepsin D IC50 (nM)": 3344,
+    "CatD:BACE1 (fold)": 88,
+    "Cathepsin B IC50 (µM)": 58.6,
+    "hERG bind. % inh @10 µM": 9,
+    "σ1 % inh @10 µM": 6
+  }
+];

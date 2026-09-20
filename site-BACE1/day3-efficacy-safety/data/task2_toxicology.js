@@ -1,0 +1,67 @@
+window.TASK2_TOXICOLOGY = [
+  {
+    "Compound ID": "D18",
+    "Series": "HEA",
+    "hERG PC IC50 (uM)": 8.2,
+    "po Cmax,free (uM)": 0.0466,
+    "In Vivo QTc Delta (ms)": 4,
+    "HepG2 Cytotox IC50 (uM)": 85,
+    "ALT Fold Change (28d rat)": 1.2,
+    "Ames Test": "Negative",
+    "Micronucleus": "Negative",
+    "Rat 7-day NOAEL (mg/kg)": 150,
+    "BACE2:BACE1 (fold)": 85
+  },
+  {
+    "Compound ID": "D19",
+    "Series": "IMH",
+    "hERG PC IC50 (uM)": 15.3,
+    "po Cmax,free (uM)": 0.216,
+    "In Vivo QTc Delta (ms)": 2,
+    "HepG2 Cytotox IC50 (uM)": 120,
+    "ALT Fold Change (28d rat)": 1,
+    "Ames Test": "Negative",
+    "Micronucleus": "Negative",
+    "Rat 7-day NOAEL (mg/kg)": 300,
+    "BACE2:BACE1 (fold)": 210
+  },
+  {
+    "Compound ID": "D20",
+    "Series": "MRP",
+    "hERG PC IC50 (uM)": 4.8,
+    "po Cmax,free (uM)": 0.0156,
+    "In Vivo QTc Delta (ms)": 9,
+    "HepG2 Cytotox IC50 (uM)": 42,
+    "ALT Fold Change (28d rat)": 2.5,
+    "Ames Test": "Negative",
+    "Micronucleus": "Negative",
+    "Rat 7-day NOAEL (mg/kg)": 35,
+    "BACE2:BACE1 (fold)": 125
+  },
+  {
+    "Compound ID": "D21",
+    "Series": "CPA",
+    "hERG PC IC50 (uM)": 6.2,
+    "po Cmax,free (uM)": 0.0058,
+    "In Vivo QTc Delta (ms)": 6,
+    "HepG2 Cytotox IC50 (uM)": 38,
+    "ALT Fold Change (28d rat)": 1.8,
+    "Ames Test": "Negative",
+    "Micronucleus": "Negative",
+    "Rat 7-day NOAEL (mg/kg)": 28,
+    "BACE2:BACE1 (fold)": 68
+  },
+  {
+    "Compound ID": "D22",
+    "Series": "NMP",
+    "hERG PC IC50 (uM)": 12.8,
+    "po Cmax,free (uM)": 0.4268,
+    "In Vivo QTc Delta (ms)": 3,
+    "HepG2 Cytotox IC50 (uM)": 145,
+    "ALT Fold Change (28d rat)": 0.9,
+    "Ames Test": "Negative",
+    "Micronucleus": "Negative",
+    "Rat 7-day NOAEL (mg/kg)": 350,
+    "BACE2:BACE1 (fold)": 195
+  },
+];

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BACE1 Metabolite Identification — Student Worksheet</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Calibri,Arial,sans-serif;background:#f4f6f9;color:#222;font-size:14px}
+header{background:#1F4E79;color:#fff;padding:18px 28px}
+header h1{font-size:20px;margin-bottom:4px}
+header p{font-size:13px;opacity:.85}
+.legend{background:#fff3cd;border-left:4px solid #c00;padding:8px 14px;margin:10px 20px;font-size:12px;border-radius:3px}
+.leg-diag{color:#C00000;font-size:16px}
+.tab-row{display:flex;flex-wrap:wrap;gap:4px;padding:14px 20px 0;background:#e8edf2}
+.tab-btn{padding:7px 14px;border:none;background:#c5d3e0;cursor:pointer;border-radius:4px 4px 0 0;font-size:13px;font-weight:600;color:#1F4E79}
+.tab-btn.active{background:#1F4E79;color:#fff}
+.met-pane{display:none;padding:0 20px 30px}
+.met-pane.active{display:block}
+.met-header{color:#fff;padding:12px 18px;border-radius:4px;margin:16px 0 12px;display:flex;align-items:center;gap:18px}
+.met-id{font-size:22px;font-weight:700}
+.met-sub{font-size:13px;opacity:.9}
+.met-body{background:#fff;border-radius:6px;padding:18px;box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.info-grid div{background:#f0f4f8;border-radius:4px;padding:10px}
+.info-grid label{display:block;font-size:11px;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
+.info-grid .val{font-weight:600;color:#1F4E79}
+.spec-row{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0}
+.spec-block{flex:1;min-width:300px}
+h3{color:#1F4E79;margin:16px 0 8px;font-size:14px;border-bottom:1px solid #dde2e8;padding-bottom:4px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:14px}
+th{background:#1F4E79;color:#fff;padding:8px;text-align:left}
+td{padding:7px 8px;border-bottom:1px solid #e8ecf0;vertical-align:top}
+tr:nth-child(even) td{background:#f4f7fb}
+.answer{color:#1F4E79;font-weight:600}
+.diag{color:#C00000;font-weight:700}
+.teaching{background:#e8f0fe;border-left:4px solid #1F4E79;padding:12px 16px;border-radius:4px;margin-top:14px;font-size:13px;line-height:1.55}
+.question-box{background:#fffbe6;border-left:4px solid #c07000;padding:12px 16px;border-radius:4px;margin:12px 0;font-size:13px}
+.question-box p{margin-bottom:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>BACE1 Metabolite Identification — Student Worksheet</h1>
+  <p>Complete the tables below. Diagnostic ions, enzyme assignments, NMR peak assignments, and teaching notes have been removed.</p>
+</header>
+
+<div class="tab-row">
+<button class="tab-btn active" onclick="showMet(0)">D18-M1</button>
+<button class="tab-btn " onclick="showMet(1)">D18-M2</button>
+<button class="tab-btn " onclick="showMet(2)">D19-M1</button>
+<button class="tab-btn " onclick="showMet(3)">D19-M2</button>
+<button class="tab-btn " onclick="showMet(4)">D20-M1</button>
+<button class="tab-btn " onclick="showMet(5)">D21-M1</button>
+<button class="tab-btn " onclick="showMet(6)">D21-M2</button>
+<button class="tab-btn " onclick="showMet(7)">D22-M1</button>
+
+</div>
+
+<div id="met-0" class="met-pane active">
+  <div class="met-header" style="background:#1F4E79">
+    <span class="met-id">D18-M1</span>
+    <span class="met-sub">Parent: D18 (HEA series) | Δm = +15.99 Da | Formula: C17H17F2N3O2</span>
+  </div>
+  <div class="met-body">
+    <div class="info-grid">
+      <div><label>Biotransformation</label><span class="val"></span></div>
+      <div><label>Enzyme</label><span class="val"></span></div>
+      <div><label>Site of Metabolism</label><span class="val"></span></div>
+      <div><label>Parent [M+H]⁺</label><span class="val">318.1362</span></div>
+      <div><label>Metabolite [M+H]⁺</label><span class="val">334.1362</span></div>
+      <div><label>Mass Shift</label><span class="val">+15.99 Da</span></div>
+    </div>
+    
+<div class="question-box">
+  <p><strong>Q1.</strong> What is the biotransformation? Assign the molecular formula and exact mass to D18-M1.</p>
+  <p><strong>Q2.</strong> Identify the diagnostic ion(s) in the MS/MS spectrum below. Justify your assignment.</p>
+  <p><strong>Q3.</strong> Which enzyme catalyses this reaction? How would you test this experimentally?</p>
+  
+</div>
+    <div class="spec-row">
+      <div class="spec-block"><h3>HRMS Spectrum</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">HRMS — D18-M1  [M+H]⁺ = 334.1362</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <text x="10" y="90" text-anchor="middle" font-size="10" transform="rotate(-90 10 90)">Intensity</text>
+  <rect x="66" y="143" width="52" height="7" fill="#1F4E79"/><text x="92" y="140" text-anchor="middle" font-size="9">318.1</text><rect x="171" y="10" width="52" height="140" fill="#C00000"/><text x="197" y="7" text-anchor="middle" font-size="9">334.1</text><rect x="276" y="125" width="52" height="25" fill="#1F4E79"/><text x="302" y="122" text-anchor="middle" font-size="9">335.1</text><rect x="381" y="148" width="52" height="2" fill="#1F4E79"/><text x="407" y="145" text-anchor="middle" font-size="9">336.1</text>
+</svg></div>
+      <div class="spec-block"><h3>MS/MS Fragmentation</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">MS/MS (CID 30 eV) — D18-M1  Red = Diagnostic Ion</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <rect x="66" y="125" width="52" height="25" fill="#1F4E79"/><text x="92" y="122" text-anchor="middle" font-size="9">176.0</text><rect x="171" y="92" width="52" height="58" fill="#1F4E79"/><text x="197" y="89" text-anchor="middle" font-size="9">270.1</text><rect x="276" y="10" width="52" height="140" fill="#C00000"/><text x="302" y="7" text-anchor="middle" font-size="9">316.1</text><rect x="381" y="115" width="52" height="35" fill="#1F4E79"/><text x="407" y="112" text-anchor="middle" font-size="9">334.1</text>
+</svg></div>
+    </div>
+    <h3>MS/MS Fragment Assignment</h3>
+    <table>
+      <tr><th>m/z</th><th>Rel. Int.</th><th>Fragment Identity</th><th>Diagnostic?</th></tr>
+      <tr><td>334.1</td><td>25%</td><td>[M+H]⁺ precursor (in-source)</td><td>?</td></tr><tr><td>316.1</td><td>100%</td><td></td><td></td></tr><tr><td>270.1</td><td>42%</td><td>Pyrrolidine-pyrimidine ring fragment</td><td>?</td></tr><tr><td>176.0</td><td>18%</td><td>Fluorobenzyl-CH₂-pym fragment</td><td>?</td></tr>
+    </table>
+    <h3>¹H NMR Key Peaks (500 MHz, DMSO-d₆)</h3>
+    <table>
+      <tr><th>δ (ppm)</th><th>Mult.</th><th>J (Hz)</th><th>nH</th><th>Assignment</th><th>Notes</th></tr>
+      <tr><td>7.28</td><td>d</td><td>8.4</td><td>1</td><td>ArH ortho to F (ring A)</td><td></td></tr><tr><td>7.1</td><td>m</td><td>—</td><td>2</td><td>ArH pyrrolidine ring region</td><td></td></tr><tr><td>6.88</td><td>d</td><td>8.4</td><td>1</td><td>ArH meta to F (ring A)</td><td></td></tr><tr><td>6.75</td><td>s</td><td>—</td><td>1</td><td></td><td></td></tr><tr><td>4.38</td><td>d</td><td>6.2</td><td>2</td><td>N-CH₂ (benzylic)</td><td></td></tr><tr><td>2.85</td><td>m</td><td>—</td><td>2</td><td>NCH₂ pyrrolidine</td><td></td></tr>
+    </table>
+    
+  </div>
+</div>
+<div id="met-1" class="met-pane ">
+  <div class="met-header" style="background:#2E75B6">
+    <span class="met-id">D18-M2</span>
+    <span class="met-sub">Parent: D18-M1 | Δm = +176.03 Da | Formula: C23H25F2N3O8</span>
+  </div>
+  <div class="met-body">
+    <div class="info-grid">
+      <div><label>Biotransformation</label><span class="val"></span></div>
+      <div><label>Enzyme</label><span class="val"></span></div>
+      <div><label>Site of Metabolism</label><span class="val"></span></div>
+      <div><label>Parent [M+H]⁺</label><span class="val">334.1362</span></div>
+      <div><label>Metabolite [M+H]⁺</label><span class="val">510.1681</span></div>
+      <div><label>Mass Shift</label><span class="val">+176.03 Da</span></div>
+    </div>
+    
+<div class="question-box">
+  <p><strong>Q1.</strong> What is the biotransformation? Assign the molecular formula and exact mass to D18-M2.</p>
+  <p><strong>Q2.</strong> Identify the diagnostic ion(s) in the MS/MS spectrum below. Justify your assignment.</p>
+  <p><strong>Q3.</strong> Which enzyme catalyses this reaction? How would you test this experimentally?</p>
+  
+</div>
+    <div class="spec-row">
+      <div class="spec-block"><h3>HRMS Spectrum</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">HRMS — D18-M2  [M+H]⁺ = 510.1681</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <text x="10" y="90" text-anchor="middle" font-size="10" transform="rotate(-90 10 90)">Intensity</text>
+  <rect x="66" y="143" width="52" height="7" fill="#1F4E79"/><text x="92" y="140" text-anchor="middle" font-size="9">334.1</text><rect x="171" y="10" width="52" height="140" fill="#C00000"/><text x="197" y="7" text-anchor="middle" font-size="9">510.2</text><rect x="276" y="118" width="52" height="32" fill="#1F4E79"/><text x="302" y="115" text-anchor="middle" font-size="9">511.2</text><rect x="381" y="146" width="52" height="4" fill="#1F4E79"/><text x="407" y="143" text-anchor="middle" font-size="9">512.2</text>
+</svg></div>
+      <div class="spec-block"><h3>MS/MS Fragmentation</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">MS/MS (CID 30 eV) — D18-M2  Red = Diagnostic Ion</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <rect x="66" y="108" width="52" height="42" fill="#1F4E79"/><text x="92" y="105" text-anchor="middle" font-size="9">113.0</text><rect x="171" y="73" width="52" height="77" fill="#1F4E79"/><text x="197" y="70" text-anchor="middle" font-size="9">316.1</text><rect x="276" y="10" width="52" height="140" fill="#C00000"/><text x="302" y="7" text-anchor="middle" font-size="9">334.1</text><rect x="381" y="136" width="52" height="14" fill="#1F4E79"/><text x="407" y="133" text-anchor="middle" font-size="9">510.2</text>
+</svg></div>
+    </div>
+    <h3>MS/MS Fragment Assignment</h3>
+    <table>
+      <tr><th>m/z</th><th>Rel. Int.</th><th>Fragment Identity</th><th>Diagnostic?</th></tr>
+      <tr><td>510.2</td><td>10%</td><td>[M+H]⁺ precursor</td><td>?</td></tr><tr><td>334.1</td><td>100%</td><td></td><td></td></tr><tr><td>316.1</td><td>55%</td><td>[M+H−GlcUA−H₂O]⁺</td><td>?</td></tr><tr><td>113.0</td><td>30%</td><td>GlcUA oxocarbenium ion</td><td>?</td></tr>
+    </table>
+    <h3>¹H NMR Key Peaks (500 MHz, DMSO-d₆)</h3>
+    <table>
+      <tr><th>δ (ppm)</th><th>Mult.</th><th>J (Hz)</th><th>nH</th><th>Assignment</th><th>Notes</th></tr>
+      <tr><td>7.28</td><td>d</td><td>8.4</td><td>1</td><td>ArH (ring A)</td><td></td></tr><tr><td>5.42</td><td>d</td><td>7.6</td><td>1</td><td></td><td></td></tr><tr><td>4.38</td><td>d</td><td>6.2</td><td>2</td><td>N-CH₂</td><td></td></tr><tr><td>3.52</td><td>m</td><td>—</td><td>3</td><td></td><td></td></tr><tr><td>3.22</td><td>m</td><td>—</td><td>2</td><td></td><td></td></tr>
+    </table>
+    
+  </div>
+</div>
+<div id="met-2" class="met-pane ">
+  <div class="met-header" style="background:#833C00">
+    <span class="met-id">D19-M1</span>
+    <span class="met-sub">Parent: D19 (IMH series) | Δm = −14.02 Da | Formula: C17H19FN4O2</span>
+  </div>
+  <div class="met-body">
+    <div class="info-grid">
+      <div><label>Biotransformation</label><span class="val"></span></div>
+      <div><label>Enzyme</label><span class="val"></span></div>
+      <div><label>Site of Metabolism</label><span class="val"></span></div>
+      <div><label>Parent [M+H]⁺</label><span class="val">345.1721</span></div>
+      <div><label>Metabolite [M+H]⁺</label><span class="val">331.1565</span></div>
+      <div><label>Mass Shift</label><span class="val">−14.02 Da</span></div>
+    </div>
+    
+<div class="question-box">
+  <p><strong>Q1.</strong> What is the biotransformation? Assign the molecular formula and exact mass to D19-M1.</p>
+  <p><strong>Q2.</strong> Identify the diagnostic ion(s) in the MS/MS spectrum below. Justify your assignment.</p>
+  <p><strong>Q3.</strong> Which enzyme catalyses this reaction? How would you test this experimentally?</p>
+  <p><strong>Q4 (CHALLENGE).</strong> This metabolite is isobaric with another in this series. Which one? How do you distinguish them?</p>
+</div>
+    <div class="spec-row">
+      <div class="spec-block"><h3>HRMS Spectrum</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">HRMS — D19-M1  [M+H]⁺ = 331.1565</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <text x="10" y="90" text-anchor="middle" font-size="10" transform="rotate(-90 10 90)">Intensity</text>
+  <rect x="66" y="10" width="52" height="140" fill="#C00000"/><text x="92" y="7" text-anchor="middle" font-size="9">331.2</text><rect x="171" y="124" width="52" height="26" fill="#1F4E79"/><text x="197" y="121" text-anchor="middle" font-size="9">332.2</text><rect x="276" y="148" width="52" height="2" fill="#1F4E79"/><text x="302" y="145" text-anchor="middle" font-size="9">333.2</text><rect x="381" y="146" width="52" height="4" fill="#1F4E79"/><text x="407" y="143" text-anchor="middle" font-size="9">345.2</text>
+</svg></div>
+      <div class="spec-block"><h3>MS/MS Fragmentation</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">MS/MS (CID 30 eV) — D19-M1  Red = Diagnostic Ion</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <rect x="66" y="120" width="52" height="30" fill="#1F4E79"/><text x="92" y="117" text-anchor="middle" font-size="9">175.0</text><rect x="171" y="97" width="52" height="53" fill="#1F4E79"/><text x="197" y="94" text-anchor="middle" font-size="9">244.0</text><rect x="276" y="10" width="52" height="140" fill="#C00000"/><text x="302" y="7" text-anchor="middle" font-size="9">286.1</text><rect x="381" y="122" width="52" height="28" fill="#1F4E79"/><text x="407" y="119" text-anchor="middle" font-size="9">331.2</text>
+</svg></div>
+    </div>
+    <h3>MS/MS Fragment Assignment</h3>
+    <table>
+      <tr><th>m/z</th><th>Rel. Int.</th><th>Fragment Identity</th><th>Diagnostic?</th></tr>
+      <tr><td>331.2</td><td>20%</td><td>[M+H]⁺ precursor</td><td>?</td></tr><tr><td>286.1</td><td>100%</td><td></td><td></td></tr><tr><td>244.0</td><td>38%</td><td>Pyrimidine aminopiperidine fragment</td><td>?</td></tr><tr><td>175.0</td><td>22%</td><td>Fluorophenol-CH₂-NH₂ fragment</td><td>?</td></tr>
+    </table>
+    <h3>¹H NMR Key Peaks (500 MHz, DMSO-d₆)</h3>
+    <table>
+      <tr><th>δ (ppm)</th><th>Mult.</th><th>J (Hz)</th><th>nH</th><th>Assignment</th><th>Notes</th></tr>
+      <tr><td>8.25</td><td>d</td><td>4.8</td><td>1</td><td>Pym H-4/6</td><td></td></tr><tr><td>7.25</td><td>dd</td><td>8.4</td><td>1</td><td>ArH ortho to F</td><td></td></tr><tr><td>6.92</td><td>dd</td><td>8.8</td><td>1</td><td>ArH meta to F</td><td></td></tr><tr><td>6.58</td><td>s</td><td>—</td><td>1</td><td></td><td></td></tr><tr><td>4.42</td><td>s</td><td>—</td><td>2</td><td>N-CH₂ (benzylic)</td><td></td></tr><tr><td>2.88</td><td>m</td><td>—</td><td>4</td><td>Pip CH₂ (ax+eq)</td><td></td></tr>
+    </table>
+    
+  </div>
+</div>
+<div id="met-3" class="met-pane ">
+  <div class="met-header" style="background:#A9350A">
+    <span class="met-id">D19-M2</span>
+    <span class="met-sub">Parent: D19-M1 | Δm = +176.03 Da from M1 | Formula: C23H27FN4O8</span>
+  </div>
+  <div class="met-body">
+    <div class="info-grid">
+      <div><label>Biotransformation</label><span class="val"></span></div>
+      <div><label>Enzyme</label><span class="val"></span></div>
+      <div><label>Site of Metabolism</label><span class="val"></span></div>
+      <div><label>Parent [M+H]⁺</label><span class="val">331.1565</span></div>
+      <div><label>Metabolite [M+H]⁺</label><span class="val">507.1885</span></div>
+      <div><label>Mass Shift</label><span class="val">+176.03 Da from M1</span></div>
+    </div>
+    
+<div class="question-box">
+  <p><strong>Q1.</strong> What is the biotransformation? Assign the molecular formula and exact mass to D19-M2.</p>
+  <p><strong>Q2.</strong> Identify the diagnostic ion(s) in the MS/MS spectrum below. Justify your assignment.</p>
+  <p><strong>Q3.</strong> Which enzyme catalyses this reaction? How would you test this experimentally?</p>
+  
+</div>
+    <div class="spec-row">
+      <div class="spec-block"><h3>HRMS Spectrum</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">HRMS — D19-M2  [M+H]⁺ = 507.1885</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <text x="10" y="90" text-anchor="middle" font-size="10" transform="rotate(-90 10 90)">Intensity</text>
+  <rect x="66" y="139" width="52" height="11" fill="#1F4E79"/><text x="92" y="136" text-anchor="middle" font-size="9">331.2</text><rect x="171" y="10" width="52" height="140" fill="#C00000"/><text x="197" y="7" text-anchor="middle" font-size="9">507.2</text><rect x="276" y="117" width="52" height="33" fill="#1F4E79"/><text x="302" y="114" text-anchor="middle" font-size="9">508.2</text><rect x="381" y="146" width="52" height="4" fill="#1F4E79"/><text x="407" y="143" text-anchor="middle" font-size="9">509.2</text>
+</svg></div>
+      <div class="spec-block"><h3>MS/MS Fragmentation</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">MS/MS (CID 30 eV) — D19-M2  Red = Diagnostic Ion</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <rect x="66" y="111" width="52" height="39" fill="#1F4E79"/><text x="92" y="108" text-anchor="middle" font-size="9">113.0</text><rect x="171" y="87" width="52" height="63" fill="#1F4E79"/><text x="197" y="84" text-anchor="middle" font-size="9">286.1</text><rect x="276" y="10" width="52" height="140" fill="#C00000"/><text x="302" y="7" text-anchor="middle" font-size="9">331.2</text><rect x="381" y="139" width="52" height="11" fill="#1F4E79"/><text x="407" y="136" text-anchor="middle" font-size="9">507.2</text>
+</svg></div>
+    </div>
+    <h3>MS/MS Fragment Assignment</h3>
+    <table>
+      <tr><th>m/z</th><th>Rel. Int.</th><th>Fragment Identity</th><th>Diagnostic?</th></tr>
+      <tr><td>507.2</td><td>8%</td><td>[M+H]⁺ precursor</td><td>?</td></tr><tr><td>331.2</td><td>100%</td><td></td><td></td></tr><tr><td>286.1</td><td>45%</td><td>pip-N-pym + OEt (as in D19-M1 MS/MS)</td><td>?</td></tr><tr><td>113.0</td><td>28%</td><td>GlcUA oxocarbenium</td><td>?</td></tr>
+    </table>
+    <h3>¹H NMR Key Peaks (500 MHz, DMSO-d₆)</h3>
+    <table>
+      <tr><th>δ (ppm)</th><th>Mult.</th><th>J (Hz)</th><th>nH</th><th>Assignment</th><th>Notes</th></tr>
+      <tr><td>8.25</td><td>d</td><td>4.8</td><td>1</td><td>Pym H-4/6</td><td></td></tr><tr><td>7.28</td><td>dd</td><td>8.4</td><td>1</td><td>ArH ortho to F</td><td></td></tr><tr><td>5.38</td><td>d</td><td>7.5</td><td>1</td><td></td><td></td></tr><tr><td>4.42</td><td>s</td><td>—</td><td>2</td><td>N-CH₂</td><td></td></tr><tr><td>3.5</td><td>m</td><td>—</td><td>5</td><td></td><td></td></tr>
+    </table>
+    
+  </div>
+</div>
+<div id="met-4" class="met-pane ">
+  <div class="met-header" style="background:#375623">
+    <span class="met-id">D20-M1</span>
+    <span class="met-sub">Parent: D20 (MRP series) | Δm = +16.00 Da | Formula: C16H17F2N3O2</span>
+  </div>
+  <div class="met-body">
+    <div class="info-grid">
+      <div><label>Biotransformation</label><span class="val"></span></div>
+      <div><label>Enzyme</label><span class="val"></span></div>
+      <div><label>Site of Metabolism</label><span class="val"></span></div>
+      <div><label>Parent [M+H]⁺</label><span class="val">306.1412</span></div>
+      <div><label>Metabolite [M+H]⁺</label><span class="val">322.1362</span></div>
+      <div><label>Mass Shift</label><span class="val">+16.00 Da</span></div>
+    </div>
+    
+<div class="question-box">
+  <p><strong>Q1.</strong> What is the biotransformation? Assign the molecular formula and exact mass to D20-M1.</p>
+  <p><strong>Q2.</strong> Identify the diagnostic ion(s) in the MS/MS spectrum below. Justify your assignment.</p>
+  <p><strong>Q3.</strong> Which enzyme catalyses this reaction? How would you test this experimentally?</p>
+  
+</div>
+    <div class="spec-row">
+      <div class="spec-block"><h3>HRMS Spectrum</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">HRMS — D20-M1  [M+H]⁺ = 322.1362</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <text x="10" y="90" text-anchor="middle" font-size="10" transform="rotate(-90 10 90)">Intensity</text>
+  <rect x="66" y="143" width="52" height="7" fill="#1F4E79"/><text x="92" y="140" text-anchor="middle" font-size="9">306.1</text><rect x="171" y="10" width="52" height="140" fill="#C00000"/><text x="197" y="7" text-anchor="middle" font-size="9">322.1</text><rect x="276" y="127" width="52" height="23" fill="#1F4E79"/><text x="302" y="124" text-anchor="middle" font-size="9">323.1</text><rect x="381" y="148" width="52" height="2" fill="#1F4E79"/><text x="407" y="145" text-anchor="middle" font-size="9">324.1</text>
+</svg></div>
+      <div class="spec-block"><h3>MS/MS Fragmentation</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">MS/MS (CID 30 eV) — D20-M1  Red = Diagnostic Ion</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <rect x="66" y="115" width="52" height="35" fill="#1F4E79"/><text x="92" y="112" text-anchor="middle" font-size="9">230.0</text><rect x="171" y="92" width="52" height="58" fill="#1F4E79"/><text x="197" y="89" text-anchor="middle" font-size="9">278.1</text><rect x="276" y="10" width="52" height="140" fill="#C00000"/><text x="302" y="7" text-anchor="middle" font-size="9">306.1</text><rect x="381" y="129" width="52" height="21" fill="#1F4E79"/><text x="407" y="126" text-anchor="middle" font-size="9">322.1</text>
+</svg></div>
+    </div>
+    <h3>MS/MS Fragment Assignment</h3>
+    <table>
+      <tr><th>m/z</th><th>Rel. Int.</th><th>Fragment Identity</th><th>Diagnostic?</th></tr>
+      <tr><td>322.1</td><td>15%</td><td>[M+H]⁺ precursor</td><td>?</td></tr><tr><td>306.1</td><td>100%</td><td></td><td></td></tr><tr><td>278.1</td><td>42%</td><td>Loss of morpholine ring fragment</td><td>?</td></tr><tr><td>230.0</td><td>25%</td><td>Difluorobenzyl-piperidine fragment</td><td>?</td></tr>
+    </table>
+    <h3>¹H NMR Key Peaks (500 MHz, DMSO-d₆)</h3>
+    <table>
+      <tr><th>δ (ppm)</th><th>Mult.</th><th>J (Hz)</th><th>nH</th><th>Assignment</th><th>Notes</th></tr>
+      <tr><td>7.48</td><td>dd</td><td>9.0</td><td>2</td><td>ArH fluorobenzyl ring A</td><td></td></tr><tr><td>7.38</td><td>dd</td><td>9.0</td><td>2</td><td>ArH ring B</td><td></td></tr><tr><td>5.22</td><td>m</td><td>—</td><td>1</td><td></td><td></td></tr><tr><td>4.65</td><td>m</td><td>—</td><td>2</td><td>OCH₂ morpholine</td><td></td></tr><tr><td>4.38</td><td>d</td><td>6.4</td><td>2</td><td>N-CH₂ benzylic</td><td></td></tr><tr><td>3.58</td><td>m</td><td>—</td><td>2</td><td></td><td></td></tr>
+    </table>
+    
+  </div>
+</div>
+<div id="met-5" class="met-pane ">
+  <div class="met-header" style="background:#7E2F8E">
+    <span class="met-id">D21-M1</span>
+    <span class="met-sub">Parent: D21 (CPA series) | Δm = +16.00 Da | Formula: C16H18ClFN4O2</span>
+  </div>
+  <div class="met-body">
+    <div class="info-grid">
+      <div><label>Biotransformation</label><span class="val"></span></div>
+      <div><label>Enzyme</label><span class="val"></span></div>
+      <div><label>Site of Metabolism</label><span class="val"></span></div>
+      <div><label>Parent [M+H]⁺</label><span class="val">337.1226</span></div>
+      <div><label>Metabolite [M+H]⁺</label><span class="val">353.1175</span></div>
+      <div><label>Mass Shift</label><span class="val">+16.00 Da</span></div>
+    </div>
+    
+<div class="question-box">
+  <p><strong>Q1.</strong> What is the biotransformation? Assign the molecular formula and exact mass to D21-M1.</p>
+  <p><strong>Q2.</strong> Identify the diagnostic ion(s) in the MS/MS spectrum below. Justify your assignment.</p>
+  <p><strong>Q3.</strong> Which enzyme catalyses this reaction? How would you test this experimentally?</p>
+  
+</div>
+    <div class="spec-row">
+      <div class="spec-block"><h3>HRMS Spectrum</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">HRMS — D21-M1  [M+H]⁺ = 353.1175</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <text x="10" y="90" text-anchor="middle" font-size="10" transform="rotate(-90 10 90)">Intensity</text>
+  <rect x="66" y="143" width="52" height="7" fill="#1F4E79"/><text x="92" y="140" text-anchor="middle" font-size="9">337.1</text><rect x="171" y="10" width="52" height="140" fill="#C00000"/><text x="197" y="7" text-anchor="middle" font-size="9">353.1</text><rect x="276" y="125" width="52" height="25" fill="#1F4E79"/><text x="302" y="122" text-anchor="middle" font-size="9">354.1</text><rect x="381" y="142" width="52" height="8" fill="#1F4E79"/><text x="407" y="139" text-anchor="middle" font-size="9">355.1</text>
+</svg></div>
+      <div class="spec-block"><h3>MS/MS Fragmentation</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">MS/MS (CID 30 eV) — D21-M1  Red = Diagnostic Ion</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <rect x="66" y="120" width="52" height="30" fill="#1F4E79"/><text x="92" y="117" text-anchor="middle" font-size="9">251.0</text><rect x="171" y="97" width="52" height="53" fill="#1F4E79"/><text x="197" y="94" text-anchor="middle" font-size="9">319.1</text><rect x="276" y="10" width="52" height="140" fill="#C00000"/><text x="302" y="7" text-anchor="middle" font-size="9">337.1</text><rect x="381" y="134" width="52" height="16" fill="#1F4E79"/><text x="407" y="131" text-anchor="middle" font-size="9">353.1</text>
+</svg></div>
+    </div>
+    <h3>MS/MS Fragment Assignment</h3>
+    <table>
+      <tr><th>m/z</th><th>Rel. Int.</th><th>Fragment Identity</th><th>Diagnostic?</th></tr>
+      <tr><td>353.1</td><td>12%</td><td>[M+H]⁺ precursor</td><td>?</td></tr><tr><td>337.1</td><td>100%</td><td></td><td></td></tr><tr><td>319.1</td><td>38%</td><td>[M+H−O−H₂O]⁺</td><td>?</td></tr><tr><td>251.0</td><td>22%</td><td>Chloro-pym aminobenzyl fragment</td><td>?</td></tr>
+    </table>
+    <h3>¹H NMR Key Peaks (500 MHz, DMSO-d₆)</h3>
+    <table>
+      <tr><th>δ (ppm)</th><th>Mult.</th><th>J (Hz)</th><th>nH</th><th>Assignment</th><th>Notes</th></tr>
+      <tr><td>7.52</td><td>dd</td><td>9.1</td><td>2</td><td>ArH ring A</td><td></td></tr><tr><td>7.34</td><td>dd</td><td>8.8</td><td>2</td><td>ArH ring B</td><td></td></tr><tr><td>5.18</td><td>m</td><td>—</td><td>1</td><td></td><td></td></tr><tr><td>4.42</td><td>t</td><td>5.8</td><td>1</td><td>CH₂OH</td><td></td></tr><tr><td>3.94</td><td>m</td><td>—</td><td>2</td><td></td><td></td></tr>
+    </table>
+    
+  </div>
+</div>
+<div id="met-6" class="met-pane ">
+  <div class="met-header" style="background:#9E2FBE">
+    <span class="met-id">D21-M2</span>
+    <span class="met-sub">Parent: D21 (CPA series) | Δm = +176.03 Da (DIRECT from parent) | Formula: C22H26ClFN4O7</span>
+  </div>
+  <div class="met-body">
+    <div class="info-grid">
+      <div><label>Biotransformation</label><span class="val"></span></div>
+      <div><label>Enzyme</label><span class="val"></span></div>
+      <div><label>Site of Metabolism</label><span class="val"></span></div>
+      <div><label>Parent [M+H]⁺</label><span class="val">337.1226</span></div>
+      <div><label>Metabolite [M+H]⁺</label><span class="val">513.1546</span></div>
+      <div><label>Mass Shift</label><span class="val">+176.03 Da (DIRECT from parent)</span></div>
+    </div>
+    
+<div class="question-box">
+  <p><strong>Q1.</strong> What is the biotransformation? Assign the molecular formula and exact mass to D21-M2.</p>
+  <p><strong>Q2.</strong> Identify the diagnostic ion(s) in the MS/MS spectrum below. Justify your assignment.</p>
+  <p><strong>Q3.</strong> Which enzyme catalyses this reaction? How would you test this experimentally?</p>
+  
+</div>
+    <div class="spec-row">
+      <div class="spec-block"><h3>HRMS Spectrum</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">HRMS — D21-M2  [M+H]⁺ = 513.1546</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <text x="10" y="90" text-anchor="middle" font-size="10" transform="rotate(-90 10 90)">Intensity</text>
+  <rect x="66" y="139" width="52" height="11" fill="#1F4E79"/><text x="92" y="136" text-anchor="middle" font-size="9">337.1</text><rect x="171" y="10" width="52" height="140" fill="#C00000"/><text x="197" y="7" text-anchor="middle" font-size="9">513.2</text><rect x="276" y="120" width="52" height="30" fill="#1F4E79"/><text x="302" y="117" text-anchor="middle" font-size="9">514.2</text><rect x="381" y="139" width="52" height="11" fill="#1F4E79"/><text x="407" y="136" text-anchor="middle" font-size="9">515.2</text>
+</svg></div>
+      <div class="spec-block"><h3>MS/MS Fragmentation</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">MS/MS (CID 30 eV) — D21-M2  Red = Diagnostic Ion</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <rect x="66" y="106" width="52" height="44" fill="#1F4E79"/><text x="92" y="103" text-anchor="middle" font-size="9">113.0</text><rect x="171" y="80" width="52" height="70" fill="#1F4E79"/><text x="197" y="77" text-anchor="middle" font-size="9">319.1</text><rect x="276" y="10" width="52" height="140" fill="#C00000"/><text x="302" y="7" text-anchor="middle" font-size="9">337.1</text><rect x="381" y="136" width="52" height="14" fill="#1F4E79"/><text x="407" y="133" text-anchor="middle" font-size="9">513.2</text>
+</svg></div>
+    </div>
+    <h3>MS/MS Fragment Assignment</h3>
+    <table>
+      <tr><th>m/z</th><th>Rel. Int.</th><th>Fragment Identity</th><th>Diagnostic?</th></tr>
+      <tr><td>513.2</td><td>10%</td><td>[M+H]⁺ precursor</td><td>?</td></tr><tr><td>337.1</td><td>100%</td><td></td><td></td></tr><tr><td>319.1</td><td>50%</td><td>[M+H−GlcUA−H₂O]⁺</td><td>?</td></tr><tr><td>113.0</td><td>32%</td><td>GlcUA oxocarbenium ion</td><td>?</td></tr>
+    </table>
+    <h3>¹H NMR Key Peaks (500 MHz, DMSO-d₆)</h3>
+    <table>
+      <tr><th>δ (ppm)</th><th>Mult.</th><th>J (Hz)</th><th>nH</th><th>Assignment</th><th>Notes</th></tr>
+      <tr><td>7.52</td><td>dd</td><td>9.0</td><td>2</td><td>ArH ring A</td><td></td></tr><tr><td>7.34</td><td>dd</td><td>8.8</td><td>2</td><td>ArH ring B</td><td></td></tr><tr><td>5.38</td><td>d</td><td>7.6</td><td>1</td><td></td><td></td></tr><tr><td>4.52</td><td>s</td><td>—</td><td>2</td><td></td><td></td></tr><tr><td>3.52</td><td>m</td><td>—</td><td>5</td><td></td><td></td></tr>
+    </table>
+    
+  </div>
+</div>
+<div id="met-7" class="met-pane ">
+  <div class="met-header" style="background:#C45000">
+    <span class="met-id">D22-M1</span>
+    <span class="met-sub">Parent: D22 (NMP series) | Δm = −14.02 Da | Formula: C17H19FN4O2</span>
+  </div>
+  <div class="met-body">
+    <div class="info-grid">
+      <div><label>Biotransformation</label><span class="val"></span></div>
+      <div><label>Enzyme</label><span class="val"></span></div>
+      <div><label>Site of Metabolism</label><span class="val"></span></div>
+      <div><label>Parent [M+H]⁺</label><span class="val">345.1721</span></div>
+      <div><label>Metabolite [M+H]⁺</label><span class="val">331.1565</span></div>
+      <div><label>Mass Shift</label><span class="val">−14.02 Da</span></div>
+    </div>
+    
+<div class="question-box">
+  <p><strong>Q1.</strong> What is the biotransformation? Assign the molecular formula and exact mass to D22-M1.</p>
+  <p><strong>Q2.</strong> Identify the diagnostic ion(s) in the MS/MS spectrum below. Justify your assignment.</p>
+  <p><strong>Q3.</strong> Which enzyme catalyses this reaction? How would you test this experimentally?</p>
+  <p><strong>Q4 (CHALLENGE).</strong> This metabolite is isobaric with another in this series. Which one? How do you distinguish them?</p>
+</div>
+    <div class="spec-row">
+      <div class="spec-block"><h3>HRMS Spectrum</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">HRMS — D22-M1  [M+H]⁺ = 331.1565</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <text x="10" y="90" text-anchor="middle" font-size="10" transform="rotate(-90 10 90)">Intensity</text>
+  <rect x="66" y="10" width="52" height="140" fill="#C00000"/><text x="92" y="7" text-anchor="middle" font-size="9">331.2</text><rect x="171" y="124" width="52" height="26" fill="#1F4E79"/><text x="197" y="121" text-anchor="middle" font-size="9">332.2</text><rect x="276" y="148" width="52" height="2" fill="#1F4E79"/><text x="302" y="145" text-anchor="middle" font-size="9">333.2</text><rect x="381" y="145" width="52" height="5" fill="#1F4E79"/><text x="407" y="142" text-anchor="middle" font-size="9">345.2</text>
+</svg></div>
+      <div class="spec-block"><h3>MS/MS Fragmentation</h3><svg viewBox="0 0 480 180" width="480" height="180" style="border:1px solid #ddd;border-radius:4px">
+  <text x="240" y="14" text-anchor="middle" font-size="11" font-weight="bold" fill="#1F4E79">MS/MS (CID 30 eV) — D22-M1  Red = Diagnostic Ion</text>
+  <line x1="40" y1="150" x2="470" y2="150" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="20" x2="40" y2="150" stroke="#333" stroke-width="1"/>
+  <text x="235" y="172" text-anchor="middle" font-size="10">m/z</text>
+  <rect x="66" y="122" width="52" height="28" fill="#1F4E79"/><text x="92" y="119" text-anchor="middle" font-size="9">163.0</text><rect x="171" y="101" width="52" height="49" fill="#1F4E79"/><text x="197" y="98" text-anchor="middle" font-size="9">244.0</text><rect x="276" y="10" width="52" height="140" fill="#C00000"/><text x="302" y="7" text-anchor="middle" font-size="9">272.1</text><rect x="381" y="129" width="52" height="21" fill="#1F4E79"/><text x="407" y="126" text-anchor="middle" font-size="9">331.2</text>
+</svg></div>
+    </div>
+    <h3>MS/MS Fragment Assignment</h3>
+    <table>
+      <tr><th>m/z</th><th>Rel. Int.</th><th>Fragment Identity</th><th>Diagnostic?</th></tr>
+      <tr><td>331.2</td><td>15%</td><td>[M+H]⁺ precursor</td><td>?</td></tr><tr><td>272.1</td><td>100%</td><td></td><td></td></tr><tr><td>244.0</td><td>35%</td><td>Pyrimidine aminopiperidine fragment</td><td>?</td></tr><tr><td>163.0</td><td>20%</td><td>Fluorobenzyl-NH fragment</td><td>?</td></tr>
+    </table>
+    <h3>¹H NMR Key Peaks (500 MHz, DMSO-d₆)</h3>
+    <table>
+      <tr><th>δ (ppm)</th><th>Mult.</th><th>J (Hz)</th><th>nH</th><th>Assignment</th><th>Notes</th></tr>
+      <tr><td>8.24</td><td>d</td><td>4.8</td><td>1</td><td>Pym H-4/6</td><td></td></tr><tr><td>7.28</td><td>dd</td><td>8.2</td><td>1</td><td>ArH ortho to F</td><td></td></tr><tr><td>6.68</td><td>d</td><td>8.5</td><td>1</td><td>OH phenol (from Ar-OH of D22 parent)</td><td></td></tr><tr><td>4.44</td><td>m</td><td>—</td><td>2</td><td>N-CH₂ (benzylic)</td><td></td></tr><tr><td>4.1</td><td>m</td><td>—</td><td>1</td><td>Pip CH (3-pos)</td><td></td></tr><tr><td>2.95</td><td>s</td><td>—</td><td>1</td><td></td><td></td></tr>
+    </table>
+    
+  </div>
+</div>
+<script>
+function showMet(idx){
+  document.querySelectorAll('.met-pane').forEach((p,i)=>{p.classList.toggle('active',i===idx)});
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>{b.classList.toggle('active',i===idx)});
+}
+</script>
+</body>
+</html>
