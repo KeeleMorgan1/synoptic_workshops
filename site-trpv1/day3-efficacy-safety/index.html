@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 3 — Pain Models &amp; Safety | TRPV1 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 3 — Analgesic Efficacy &amp; Safety</h1>
+  <p>Analgesic efficacy and in vitro/in vivo safety models in the TRPV1 programme</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="index.html" class="current">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Analgesic Efficacy Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You are provided with analgesic efficacy data (CFA inflammatory pain model, 30 mg/kg p.o.) for
+        the compounds that survived Day 2. Use your CDTP criteria to screen the compounds below, then answer the
+        prompts underneath.
+      </div>
+      <p class="data-note">Hargreaves PWL Ratio (paw withdrawal latency vs vehicle, thermal hyperalgesia) and Von Frey
+      threshold (g, mechanical hyperalgesia) measured in the CFA model; "Duration" is how long the analgesic effect
+      lasted post-dose. Rat and predicted human PK for these compounds is in Day 2's Pharmacokinetic Screen.</p>
+      <div id="task1-table-container"></div>
+      <a class="download-link" id="task1-download" download="task1_pain_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">Why might the efficacy parameters used here matter in the context of this drug target?</label>
+      <textarea class="answer-input" data-qid="d3t1-assay-rationale"></textarea>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t1-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t1-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t1-borderline-actions"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — In Vitro Safety Models &amp; Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Your compounds have now been tested in a panel of in vitro safety models: hERG patch-clamp
+        electrophysiology, the AMES bacterial reverse mutation test, an in vitro micronucleus test, hepatocyte
+        cytotoxicity (with a selectivity index vs the cellular potency), CYP3A4 inhibition, and reactive metabolite
+        detection in hepatocyte incubations. Explain why each of these models is used, then apply your CDTP criteria
+        to screen the compounds below.
+      </div>
+      <label class="question-label" for="d3t2-explain-models">Explain why each of these in vitro safety models is used (what liability is each one looking for?):</label>
+      <textarea class="answer-input" id="d3t2-explain-models" data-qid="d3t2-explain-models" style="min-height:160px" placeholder="hERG, AMES, micronucleus, hepatocyte CC50/SI, CYP3A4, hepatocyte reactive metabolite — what does each model tell you, and why does it matter for a chronic pain drug intended for long-term dosing?"></textarea>
+
+      <div id="task2-table-container"></div>
+      <a class="download-link" id="task2-download" download="task2_invitro_safety_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t2-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t2-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t2-borderline-actions"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — In Vivo Safety Models &amp; Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Your remaining compounds have now been tested in a 7-day rat repeat-dose toxicology study,
+        including core body temperature (the class-defining TRPV1 on-target hyperthermia liability), NOAEL, ALT and
+        BNP monitoring, and body weight. Explain why each of these endpoints is monitored, then apply your CDTP
+        criteria to screen the compounds below.
+      </div>
+      <label class="question-label" for="d3t3-explain-models">Explain why each of these in vivo safety endpoints is monitored, and in particular why core body temperature is tracked for this specific target class:</label>
+      <textarea class="answer-input" id="d3t3-explain-models" data-qid="d3t3-explain-models" style="min-height:140px" placeholder="TRPV1 has a physiological role in thermoregulation — why would blocking it raise core temperature, and why is that an on-target rather than off-target effect?"></textarea>
+
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_invivo_safety_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label">What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t3-sar"></textarea>
+
+      <label class="question-label">In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t3-cdtp-changes"></textarea>
+
+      <label class="question-label">For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t3-borderline-actions"></textarea>
+
+      <label class="question-label">What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d3t3-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<script src="../assets/js/image-paste.js"></script>
+<script src="../assets/js/input-table.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/task1_pain_screen.js"></script>
+<script src="data/task2_invitro_safety_screen.js"></script>
+<script src="data/task3_invivo_safety_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>
+StudentId.ensure();
+StudentId.renderBanner();
+AnswerCapture.init("trpv1-day3-efficacy-safety");
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 1: analgesic efficacy screen ----
+const T1_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Hargreaves PWL Ratio", label:"Hargreaves PWL Ratio"},
+  {key:"Von Frey (g)", label:"Von Frey (g)"}, {key:"Duration (h)", label:"Duration (h)"},
+];
+(function () {
+  const rows = window.TASK1_DATA;
+  ScreeningTable.render("task1-table-container", { qidPrefix:"d3t1", idKey:"ID", columns:T1_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task1-download"),
+    T1_COLUMNS.map(c=>c.label),
+    rows.map(row => T1_COLUMNS.map(c => row[c.key])));
+})();
+
+// ---- Task 2: in vitro safety ----
+const T2_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"hERG PC IC50 (uM)", label:"hERG IC50 (uM)"}, {key:"AMES", label:"AMES"},
+  {key:"Micronucleus", label:"Micronucleus"}, {key:"Hepatocyte CC50 (uM)", label:"Hepatocyte CC50"},
+  {key:"Hepatocyte SI", label:"Hepatocyte SI"}, {key:"CYP3A4 IC50 (uM)", label:"CYP3A4 IC50"},
+  {key:"RM Hepatocytes", label:"RM Hepatocytes"},
+];
+(function () {
+  const rows = window.TASK2_DATA;
+  ScreeningTable.render("task2-table-container", { qidPrefix:"d3t2", idKey:"ID", columns:T2_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task2-download"),
+    T2_COLUMNS.map(c=>c.label),
+    rows.map(row => T2_COLUMNS.map(c => row[c.key])));
+})();
+
+// ---- Task 3: in vivo safety ----
+const T3_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"ΔCore Temp (°C) @30mg/kg", label:"ΔCore Temp (°C)"}, {key:"Rat NOAEL (mg/kg/d)", label:"Rat NOAEL"},
+  {key:"Safety Margin (x)", label:"Safety Margin"}, {key:"ALT (IU/L) @30mg/kg", label:"ALT (IU/L)"},
+  {key:"BNP (pg/mL)", label:"BNP (pg/mL)"}, {key:"Body Wt Δ%", label:"Body Wt Δ%"},
+];
+(function () {
+  const rows = window.TASK3_DATA;
+  ScreeningTable.render("task3-table-container", { qidPrefix:"d3t3", idKey:"ID", columns:T3_COLUMNS, rows });
+  AnswerCapture.rebind();
+  makeDownload(document.getElementById("task3-download"),
+    T3_COLUMNS.map(c=>c.label),
+    rows.map(row => T3_COLUMNS.map(c => row[c.key])));
+})();
+
+StructurePopup.init(window.STRUCTURES);
+StructurePopup.clickify(document);
+</script>
+</body>
+</html>
