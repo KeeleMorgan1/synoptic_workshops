@@ -11,13 +11,13 @@ window.REPORT_FIELDS = [
   },
 
   { section: "Peak Assignments — Parent Compounds" },
-  { type: "spectra-panels", label: "", dataGlobal: "SPECTRA_REFERENCE", panels: ["D18", "D19", "D20", "D21", "D22"] },
+  { type: "spectra-panels", label: "", marksId: "d5-spectra-parent", dataGlobal: "SPECTRA_REFERENCE", panels: ["D18", "D19", "D20", "D21", "D22"] },
 
   { section: "Peak Assignments — Phase 1 Metabolites" },
-  { type: "spectra-panels", label: "", dataGlobal: "SPECTRA_REFERENCE", panels: ["D18-M1", "D19-M1", "D20-M1", "D21-M1", "D22-M1"] },
+  { type: "spectra-panels", label: "", marksId: "d5-spectra-m1", dataGlobal: "SPECTRA_REFERENCE", panels: ["D18-M1", "D19-M1", "D20-M1", "D21-M1", "D22-M1"] },
 
   { section: "Peak Assignments — Phase 2 Metabolites" },
-  { type: "spectra-panels", label: "", dataGlobal: "SPECTRA_REFERENCE", panels: ["D18-M2", "D19-M2", "D21-M2"] },
+  { type: "spectra-panels", label: "", marksId: "d5-spectra-m2", dataGlobal: "SPECTRA_REFERENCE", panels: ["D18-M2", "D19-M2", "D21-M2"] },
 
   { section: "Task 2 — Interpretation" },
   { qid: "d5t2-isomer-resolution", label: "How D19-M1 and D22-M1 were distinguished despite sharing the same [M+H]+ mass", type: "text" },

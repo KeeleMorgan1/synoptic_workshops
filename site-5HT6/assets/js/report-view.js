@@ -44,6 +44,21 @@
 (function () {
   const VERDICT_LABELS = { reject: "Reject", borderline: "Borderline", continue: "Continue", "": "— not answered —" };
 
+  // Marks (optional): window.MARKS comes from ../assets/data/marks.js. A
+  // field's mark is looked up by its marksId, qid, prefix or qidPrefix.
+  function marksFor(field) {
+    const M = window.MARKS || {};
+    const id = field.marksId || field.qid || field.prefix || field.qidPrefix;
+    return id && Object.prototype.hasOwnProperty.call(M, id) ? M[id] : null;
+  }
+  function fmtMarks(n) { return n + (n === 1 ? " mark" : " marks"); }
+  function markBadge(n) {
+    const s = document.createElement("span");
+    s.className = "mark-badge";
+    s.textContent = "[" + fmtMarks(n) + "]";
+    return s;
+  }
+
   function el(tag, cls, text) {
     const e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -173,6 +188,12 @@
 
   function renderSpectraPanels(container, store, field) {
     const ref = window[field.dataGlobal] || {};
+    const m = marksFor(field);
+    if (m !== null) {
+      const note = el("div", "report-label", "Peak assignments for " + field.panels.join(", ") + " ");
+      note.appendChild(markBadge(m));
+      container.appendChild(note);
+    }
     field.panels.forEach(function (pid) {
       const panelData = ref[pid];
       if (!panelData) return;
@@ -230,17 +251,40 @@
     header.appendChild(el("div", "report-meta", "Report generated: " + new Date().toLocaleString()));
     root.appendChild(header);
 
+    // Marks: day total in the header, and a running total per section
+    const dayTotal = cfg.fields.reduce(function (s, f) { const m = marksFor(f); return s + (m || 0); }, 0);
+    if (dayTotal) header.appendChild(el("div", "report-meta", "Marks available: " + dayTotal));
+    let sectionEl = null, sectionTotal = 0;
+    function closeSection() {
+      if (sectionEl && sectionTotal) {
+        const t = el("span", "mark-total", fmtMarks(sectionTotal));
+        sectionEl.appendChild(t);
+      }
+    }
+
     cfg.fields.forEach(function (field) {
       if (field.section) {
-        root.appendChild(el("h3", "report-section", field.section));
+        closeSection();
+        sectionEl = el("h3", "report-section", field.section);
+        sectionTotal = 0;
+        root.appendChild(sectionEl);
         return;
       }
-      if (field.type === "image") return renderImageField(root, store, field);
-      if (field.type === "verdict-table") return renderVerdictTable(root, store, field);
-      if (field.type === "input-table") return renderInputTable(root, store, field);
-      if (field.type === "spectra-panels") return renderSpectraPanels(root, store, field);
-      renderTextField(root, store, field);
+      const m = marksFor(field);
+      if (m !== null) sectionTotal += m;
+      const before = root.lastElementChild;
+      if (field.type === "image") renderImageField(root, store, field);
+      else if (field.type === "verdict-table") renderVerdictTable(root, store, field);
+      else if (field.type === "input-table") renderInputTable(root, store, field);
+      else if (field.type === "spectra-panels") renderSpectraPanels(root, store, field); // labels its own mark
+      else renderTextField(root, store, field);
+      if (m !== null && field.type !== "spectra-panels") {
+        const added = before ? before.nextElementSibling : root.firstElementChild;
+        const label = added && added.querySelector(".report-label");
+        if (label) label.appendChild(markBadge(m));
+      }
     });
+    closeSection();
   }
 
   function init(cfg) {

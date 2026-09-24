@@ -424,3 +424,18 @@ h5.subtask-header {
 .structure-popup-img-wrap img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
 .structure-popup-actions { margin-top: 12px; text-align: center; }
 .structure-popup-hint { font-size: 12px; color: var(--muted); margin: 10px 0 0; text-align: center; }
+
+/* ---- Mark allocation labels (assets/js/marks.js, report-view.js) ---- */
+.mark-badge {
+  display: inline-block; margin-left: 8px; padding: 1px 8px;
+  border-radius: 10px; background: #e8eefb; color: var(--navy, #1f3864);
+  font-size: 12px; font-weight: bold; white-space: nowrap; vertical-align: middle;
+}
+.mark-line { margin: 12px 0 4px; }
+.mark-total { float: right; font-size: 14px; }
+.mark-day-total {
+  margin: 0 0 18px; padding: 10px 16px; border-radius: 8px;
+  background: #e8eefb; color: var(--navy, #1f3864); font-weight: bold;
+}
+.section-header .mark-badge { background: rgba(255,255,255,.25); color: #fff; }
+@media print { .mark-badge { background: none; border: 1px solid #999; color: #000; } }
