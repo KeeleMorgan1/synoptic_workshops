@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 2 — ADME &amp; In Vivo PK | BACE1 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 2 — ADME &amp; In Vivo Pharmacokinetics</h1>
+  <p>Permeability, metabolic stability, rat PK &amp; CNS penetration</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="index.html" class="current">Day 2</a>
+  <a href="../day3-efficacy-safety/index.html">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — In Vitro ADME Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You have received a lecture on, and been given CDTP criteria for, some of the in vitro tests used
+        to investigate ADME characteristics of novel pharmaceutical compounds. You now have access to data for the
+        compounds you didn't reject on Day 1. Apply the criteria you've been given to filter out compounds not meeting
+        them, colour-coding each compound in the table below, then answer the prompts underneath.
+      </div>
+      <p class="data-note">Includes Caco-2 permeability (A&rarr;B), MDR1 efflux ratio and P-gp substrate status,
+      plasma protein binding and free fraction, and human and rat liver microsomal intrinsic clearance (HLM, RLM).</p>
+      <label class="question-label"><span class="box-tag">2.1.a</span> &mdash; Record your decision for each compound in the table below.</label>
+      <div id="task1-table-container"></div>
+      <a class="download-link" id="task1-download" download="task1_adme_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label"><span class="box-tag">2.1.b</span> Why might the ADME assays used here matter in the context of this drug target?</label>
+      <textarea class="answer-input" data-qid="d2t1-assay-rationale"></textarea>
+
+      <label class="question-label"><span class="box-tag">2.1.c</span> What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d2t1-sar"></textarea>
+
+      <label class="question-label"><span class="box-tag">2.1.d</span> In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d2t1-cdtp-changes"></textarea>
+
+      <label class="question-label"><span class="box-tag">2.1.e</span> For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d2t1-borderline-actions"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — Rat In Vivo Pharmacokinetics</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You have been given iv and po pharmacokinetic data for 5 compounds from the Lead Optimisation
+        series. Plot Time vs [drug] graphs on both linear and log[drug] axes, and use the data to calculate: C0
+        (concentration at t=0), Vd (volume of distribution), Ke (elimination rate constant), T&frac12; (plasma
+        half-life), Cl (systemic clearance), F% (oral bioavailability), Cmax (oral maximum plasma concentration) and
+        Tmax (time Cmax is achieved). Paste your graphs and submit your calculations below.
+      </div>
+      <p class="data-note">Assay: plasma concentrations (ng/mL) by LC-MS/MS, iv dose 3 mg/kg (bolus, n=3), po dose
+      30 mg/kg (gavage, n=3). Values are group means.</p>
+      <h5 class="subtask-header">IV concentration&ndash;time data (3 mg/kg)</h5>
+      <table class="data-table" id="task2-iv-table"></table>
+      <a class="download-link" id="task2-iv-download" download="task2_iv_pk.csv">Download IV data (.csv)</a>
+      <h5 class="subtask-header">Oral concentration&ndash;time data (30 mg/kg)</h5>
+      <table class="data-table" id="task2-po-table"></table>
+      <a class="download-link" id="task2-po-download" download="task2_po_pk.csv">Download oral data (.csv)</a>
+
+      <label class="question-label"><span class="box-tag">2.2.a</span> Paste your Time vs [drug] graphs (linear and log axes):</label>
+      <div id="d2t2-graph-container"></div>
+
+      <label class="question-label"><span class="box-tag">2.2.b</span> Calculated PK parameters for each compound:</label>
+      <div id="d2t2-pk-table-container"></div>
+
+      <label class="question-label" for="d2t2-working"><span class="box-tag">2.2.c</span> Show your working (how you derived these values):</label>
+      <textarea class="answer-input" id="d2t2-working" data-qid="d2t2-working" style="min-height:120px" placeholder="Explain your method for each parameter — e.g. semi-log extrapolation for C0, terminal slope for Ke, etc."></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — Pharmacokinetic Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> You now have rat in vivo pharmacokinetic data for all the compounds from the ADME screen in
+        Task 1. Use your CDTP criteria to screen the compounds below, then answer the prompts underneath. Judge each
+        compound on the PK criteria alone, whatever your Task 1 decision.
+      </div>
+      <p class="data-note">In practice you would not run in vivo PK on compounds that failed in vitro screening (cost,
+      and the 3Rs); the full dataset is given here so you can test how well your in vitro criteria predicted in vivo
+      performance. Includes rat iv clearance, volume of distribution, half-life, oral bioavailability, plasma
+      free fraction and brain penetration (Kp and Kp,uu). For the compounds in Task 2, the rat PK values are marked &ldquo;Calculated in
+      Task 2&rdquo; &mdash; use your own Task 2 answers for these.</p>
+      <label class="question-label"><span class="box-tag">2.3.a</span> &mdash; Record your decision for each compound in the table below.</label>
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_pk_summary_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label"><span class="box-tag">2.3.b</span> Why might the screening parameters used here matter in the context of this drug target?</label>
+      <textarea class="answer-input" data-qid="d2t3-assay-rationale"></textarea>
+
+      <label class="question-label"><span class="box-tag">2.3.c</span> Do any obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d2t3-sar"></textarea>
+
+      <label class="question-label"><span class="box-tag">2.3.d</span> In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d2t3-cdtp-changes"></textarea>
+
+      <label class="question-label"><span class="box-tag">2.3.e</span> For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d2t3-borderline-actions"></textarea>
+
+      <label class="question-label"><span class="box-tag">2.3.f</span> What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d2t3-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/data/marks.js"></script>
+<script src="../assets/js/marks.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<script src="../assets/js/image-paste.js"></script>
+<script src="../assets/js/input-table.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/released.js"></script>
+<script src="../assets/js/phase.js"></script>
+<script src="data/task1_adme_screen.js"></script>
+<script src="data/task2_iv_pk.js"></script>
+<script src="data/task2_po_pk.js"></script>
+<script src="data/task3_pk_summary_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>/* phase-guarded */
+try { StudentId.ensure(); } catch (e) { Phase.skip(e); }
+try { StudentId.renderBanner(); } catch (e) { Phase.skip(e); }
+try { AnswerCapture.init("bace1-day2-adme-pk"); } catch (e) { Phase.skip(e); }
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 1 ----
+var T1_COLUMNS; try { (T1_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Caco-2 Papp (x10-6 cm/s)", label:"Caco-2 Papp A\u2192B (x10\u207b\u2076 cm/s)"}, {key:"MDR1 ER", label:"MDR1 ER"},
+  {key:"P-gp Substrate?", label:"P-gp Substrate?"}, {key:"PPB (%)", label:"PPB %"},
+  {key:"fu (%)", label:"fu plasma %"}, {key:"HLM CLint (uL/min/mg)", label:"HLM CLint"},
+  {key:"RLM CLint (uL/min/mg)", label:"RLM CLint"},
+]); } catch (e) { Phase.skip(e); }
+(function () {
+  var rows; try { (rows = window.TASK1_DATA); } catch (e) { Phase.skip(e); }
+  try { ScreeningTable.render("task1-table-container", { qidPrefix:"d2t1", idKey:"ID", columns:T1_COLUMNS, rows }); } catch (e) { Phase.skip(e); }
+  try { AnswerCapture.rebind(); } catch (e) { Phase.skip(e); }
+  try { makeDownload(document.getElementById("task1-download"),
+    T1_COLUMNS.map(c=>c.label),
+    rows.map(row => T1_COLUMNS.map(c => row[c.key]))); } catch (e) { Phase.skip(e); }
+})();
+
+// ---- Task 2 ----
+var IV_TIMEPOINTS; try { (IV_TIMEPOINTS = ["0.083 h","0.25 h","0.5 h","1 h","2 h","4 h","8 h","12 h","24 h"]); } catch (e) { Phase.skip(e); }
+var PO_TIMEPOINTS; try { (PO_TIMEPOINTS = ["0.25 h","0.5 h","1 h","2 h","4 h","6 h","8 h","12 h","24 h"]); } catch (e) { Phase.skip(e); }
+(function () {
+  function renderConc(tableId, linkId, rows, tps) {
+    document.getElementById(tableId).innerHTML =
+      "<tr><th>Compound</th><th>Series</th>" + tps.map(t => `<th>t=${t}</th>`).join("") + "</tr>" +
+      rows.map(r => "<tr><td>"+r["Compound ID"]+"</td><td>"+r["Series"]+"</td>" + tps.map(t => `<td>${r[t]}</td>`).join("") + "</tr>").join("");
+    makeDownload(document.getElementById(linkId), ["Compound","Series",...tps.map(t => "t=" + t)],
+      rows.map(r => [r["Compound ID"], r["Series"], ...tps.map(t => r[t])]));
+  }
+  try { renderConc("task2-iv-table", "task2-iv-download", window.TASK2_IV_PK, IV_TIMEPOINTS); } catch (e) { Phase.skip(e); }
+  try { renderConc("task2-po-table", "task2-po-download", window.TASK2_PO_PK, PO_TIMEPOINTS); } catch (e) { Phase.skip(e); }
+
+  try { ImagePaste.render("d2t2-graph-container", "d2t2-graph"); } catch (e) { Phase.skip(e); }
+
+  var PK_COLUMNS; try { (PK_COLUMNS = [
+    {key:"c0", label:"C0 (ng/mL)"}, {key:"vd", label:"Vd (L/kg)"},
+    {key:"ke", label:"Ke (/h)"}, {key:"thalf", label:"T\u00bd (h)"},
+    {key:"cl", label:"Cl (mL/min/kg)"}, {key:"f", label:"F (%)"},
+    {key:"cmax", label:"Cmax (ng/mL)"}, {key:"tmax", label:"Tmax (h)"},
+  ]); } catch (e) { Phase.skip(e); }
+  try { InputTable.render("d2t2-pk-table-container", { qidPrefix:"d2t2-pk", rowLabel:"Compound",
+    rows: window.TASK2_IV_PK.map(r => r["Compound ID"]), columns:PK_COLUMNS }); } catch (e) { Phase.skip(e); }
+  try { AnswerCapture.rebind(); } catch (e) { Phase.skip(e); }
+})();
+
+// ---- Task 3 ----
+var T3_COLUMNS; try { (T3_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Rat CL (mL/min/kg)", label:"Rat CL"}, {key:"Rat Vd (L/kg)", label:"Rat Vd"},
+  {key:"Rat t1/2 (h)", label:"Rat t1/2 (h)"}, {key:"Rat %F", label:"Rat %F"},
+  {key:"fu plasma (%)", label:"fu plasma %"}, {key:"Brain Kp", label:"Brain Kp (rat)"},
+  {key:"Brain Kp,uu", label:"Brain Kp,uu"},
+]); } catch (e) { Phase.skip(e); }
+(function () {
+  var rows; try { (rows = window.TASK3_DATA); } catch (e) { Phase.skip(e); }
+  try { ScreeningTable.render("task3-table-container", { qidPrefix:"d2t3", idKey:"ID", columns:T3_COLUMNS, rows }); } catch (e) { Phase.skip(e); }
+  try { AnswerCapture.rebind(); } catch (e) { Phase.skip(e); }
+  try { makeDownload(document.getElementById("task3-download"),
+    T3_COLUMNS.map(c=>c.label),
+    rows.map(row => T3_COLUMNS.map(c => row[c.key]))); } catch (e) { Phase.skip(e); }
+})();
+
+try { StructurePopup.init(window.STRUCTURES); } catch (e) { Phase.skip(e); }
+try { StructurePopup.clickify(document); } catch (e) { Phase.skip(e); }
+</script>
+</body>
+</html>
