@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 3 — In Vivo Pharmacology &amp; Toxicology | 5-HT6 Drug Discovery Simulation</title>
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Day 3 — In Vivo Pharmacology &amp; Toxicology</h1>
+  <p>Efficacy and safety models for the 5-HT6 programme</p>
+</header>
+<div id="id-banner"></div>
+<nav class="day-nav">
+  <a href="../index.html">Overview</a>
+  <a href="../day1-pharmacology/index.html">Day 1</a>
+  <a href="../day2-adme-pk/index.html">Day 2</a>
+  <a href="index.html" class="current">Day 3</a>
+  <a href="../day4-stability/index.html">Day 4</a>
+  <a href="../day5-metabolite-id/index.html">Day 5</a>
+  <a href="../day6-candidate-selection/index.html">Day 6</a>
+</nav>
+
+<main>
+
+  <!-- ===================== TASK 1 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 1 — Efficacy Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Your compounds have been tested in three in vivo pharmacology models in rats: Novel Object
+        Recognition (NOR) at 3 and 10 mg/kg p.o. in the MK-801 amnesic model, the Attentional Set-Shifting Task
+        (ASST), and Spontaneous Locomotor Activity. Apply your CDTP criteria to screen the compounds below, then
+        answer the prompts underneath.
+      </div>
+      <label class="question-label"><span class="box-tag">3.1.a</span> &mdash; Record your decision for each compound in the table below.</label>
+      <div id="task1-table-container"></div>
+      <a class="download-link" id="task1-download" download="task1_efficacy_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label" for="d3t1-explain-models"><span class="box-tag">3.1.b</span> Explain each of the three in vivo pharmacology models (NOR, ASST, Locomotor Activity) &mdash; what does each measure, and why is it relevant to 5-HT6 efficacy?</label>
+      <textarea class="answer-input" id="d3t1-explain-models" data-qid="d3t1-explain-models" style="min-height:150px"></textarea>
+
+      <label class="question-label"><span class="box-tag">3.1.c</span> What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t1-sar"></textarea>
+
+      <label class="question-label"><span class="box-tag">3.1.d</span> In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t1-cdtp-changes"></textarea>
+
+      <label class="question-label"><span class="box-tag">3.1.e</span> For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t1-borderline-actions"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 2 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 2 — In Vitro Safety Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> The compounds have been profiled in a panel of in vitro safety assays: hERG electrophysiology
+        (patch-clamp IC50), the AMES test, an in vitro micronucleus test, HepG2 hepatocellular viability, and reactive
+        metabolite detection in hepatocyte incubations. Apply your CDTP criteria to screen the compounds below, then
+        answer the prompts underneath.
+      </div>
+      <label class="question-label"><span class="box-tag">3.2.a</span> &mdash; Record your decision for each compound in the table below.</label>
+      <div id="task2-table-container"></div>
+      <a class="download-link" id="task2-download" download="task2_invitro_safety_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label" for="d3t2-explain-models"><span class="box-tag">3.2.b</span> Explain why each of these in vitro safety models is used (hERG, AMES, micronucleus, HepG2, reactive metabolite) &mdash; what liability is each one looking for?</label>
+      <textarea class="answer-input" id="d3t2-explain-models" data-qid="d3t2-explain-models" style="min-height:150px"></textarea>
+
+      <label class="question-label"><span class="box-tag">3.2.c</span> What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t2-sar"></textarea>
+
+      <label class="question-label"><span class="box-tag">3.2.d</span> In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t2-cdtp-changes"></textarea>
+
+      <label class="question-label"><span class="box-tag">3.2.e</span> For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t2-borderline-actions"></textarea>
+    </div>
+  </section>
+
+  <!-- ===================== TASK 3 ===================== -->
+  <section class="task-section">
+    <div class="task-header">Task 3 — In Vivo Safety Screen</div>
+    <div class="task-body">
+      <div class="task-box">
+        <b>Task:</b> Finally, the compounds have been assessed in vivo for safety: rat cardiovascular telemetry (QTc
+        change at 30 mg/kg) and 7-day rat repeat-dose toxicology (NOAEL). Apply your CDTP criteria to screen the
+        compounds below, then answer the prompts underneath.
+      </div>
+      <label class="question-label"><span class="box-tag">3.3.a</span> &mdash; Record your decision for each compound in the table below.</label>
+      <div id="task3-table-container"></div>
+      <a class="download-link" id="task3-download" download="task3_invivo_safety_screen.csv">Download full dataset (.csv)</a>
+
+      <label class="question-label" for="d3t3-explain-models"><span class="box-tag">3.3.b</span> Explain why each of these in vivo safety endpoints is monitored (rat cardiovascular telemetry / QTc, 7-day repeat-dose NOAEL):</label>
+      <textarea class="answer-input" id="d3t3-explain-models" data-qid="d3t3-explain-models" style="min-height:150px"></textarea>
+
+      <label class="question-label"><span class="box-tag">3.3.c</span> What obvious structure&ndash;activity relationships emerge from the data?</label>
+      <textarea class="answer-input" data-qid="d3t3-sar"></textarea>
+
+      <label class="question-label"><span class="box-tag">3.3.d</span> In light of this data, do you want to make any changes to your CDTP? Explain</label>
+      <textarea class="answer-input" data-qid="d3t3-cdtp-changes"></textarea>
+
+      <label class="question-label"><span class="box-tag">3.3.e</span> For any borderline compounds, what actions or data would help you decide?</label>
+      <textarea class="answer-input" data-qid="d3t3-borderline-actions"></textarea>
+
+      <label class="question-label"><span class="box-tag">3.3.f</span> What further experiments would you want before the next decision point?</label>
+      <textarea class="answer-input" data-qid="d3t3-further-experiments"></textarea>
+    </div>
+  </section>
+
+</main>
+
+<script src="../assets/js/student-id.js"></script>
+<script src="../assets/js/answer-capture.js"></script>
+<script src="../assets/data/marks.js"></script>
+<script src="../assets/js/marks.js"></script>
+<script src="../assets/js/screening-table.js"></script>
+<!-- Data loaded as plain scripts (not fetch()) so this page works when opened
+     directly from disk — browsers block fetch() between local files, but a
+     <script src> to another local file is not subject to that restriction. -->
+<script src="data/released.js"></script>
+<script src="../assets/js/phase.js"></script>
+<script src="data/task1_efficacy_screen.js"></script>
+<script src="data/task2_invitro_safety_screen.js"></script>
+<script src="data/task3_invivo_safety_screen.js"></script>
+<script src="../assets/data/structures.js"></script>
+<script src="../assets/js/structure-popup.js"></script>
+<script>/* phase-guarded */
+try { StudentId.ensure(); } catch (e) { Phase.skip(e); }
+try { StudentId.renderBanner(); } catch (e) { Phase.skip(e); }
+try { AnswerCapture.init("day3-efficacy-safety"); } catch (e) { Phase.skip(e); }
+
+function toCSV(headers, rows) {
+  const esc = v => '"' + String(v === undefined || v === null ? "" : v).replace(/"/g,'""') + '"';
+  return [headers.map(esc).join(",")].concat(rows.map(r => r.map(esc).join(","))).join("\n");
+}
+function makeDownload(linkEl, headers, rows) {
+  const csv = toCSV(headers, rows);
+  const blob = new Blob([csv], {type:"text/csv"});
+  linkEl.href = URL.createObjectURL(blob);
+}
+
+// ---- Task 1: Efficacy ----
+var T1_COLUMNS; try { (T1_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"NOR @3 mg/kg (%)", label:"NOR @3mg/kg %"}, {key:"p (vs MK-801, 3 mg/kg)", label:"p (3mg/kg)"},
+  {key:"NOR @10 mg/kg (%)", label:"NOR @10mg/kg %"}, {key:"p (vs MK-801, 10 mg/kg)", label:"p (10mg/kg)"},
+  {key:"ASST Trials", label:"ASST trials"}, {key:"ASST p-value", label:"ASST p-value"},
+  {key:"MED (mg/kg p.o.)", label:"MED (mg/kg po)"}, {key:"Locomotor Δ (% vs veh)", label:"Locomotor delta %"},
+  {key:"Locomotor Assessment", label:"Locomotor assessment"},
+]); } catch (e) { Phase.skip(e); }
+(function () {
+  var rows; try { (rows = window.TASK1_DATA); } catch (e) { Phase.skip(e); }
+  try { ScreeningTable.render("task1-table-container", { qidPrefix:"d3t1", idKey:"ID", columns:T1_COLUMNS, rows }); } catch (e) { Phase.skip(e); }
+  try { AnswerCapture.rebind(); } catch (e) { Phase.skip(e); }
+  try { makeDownload(document.getElementById("task1-download"), T1_COLUMNS.map(c=>c.label), rows.map(row => T1_COLUMNS.map(c => row[c.key]))); } catch (e) { Phase.skip(e); }
+})();
+
+// ---- Task 2: In vitro safety ----
+var T2_COLUMNS; try { (T2_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"hERG patch clamp IC50 (μM)", label:"hERG IC50 (uM)"}, {key:"AMES Test", label:"AMES"},
+  {key:"Micronucleus Test", label:"Micronucleus"}, {key:"HepG2 IC50 (μM)", label:"HepG2 IC50 (uM)"},
+  {key:"Reactive Met. (hepatocytes)", label:"Reactive Met."},
+]); } catch (e) { Phase.skip(e); }
+(function () {
+  var rows; try { (rows = window.TASK2_DATA); } catch (e) { Phase.skip(e); }
+  try { ScreeningTable.render("task2-table-container", { qidPrefix:"d3t2", idKey:"ID", columns:T2_COLUMNS, rows }); } catch (e) { Phase.skip(e); }
+  try { AnswerCapture.rebind(); } catch (e) { Phase.skip(e); }
+  try { makeDownload(document.getElementById("task2-download"), T2_COLUMNS.map(c=>c.label), rows.map(row => T2_COLUMNS.map(c => row[c.key]))); } catch (e) { Phase.skip(e); }
+})();
+
+// ---- Task 3: In vivo safety ----
+var T3_COLUMNS; try { (T3_COLUMNS = [
+  {key:"ID", label:"ID"}, {key:"Series", label:"Series"},
+  {key:"Rat QTc Δ (ms) @30 mg/kg", label:"Rat QTc delta (ms)"}, {key:"Rat 7-day NOAEL (mg/kg/day)", label:"Rat NOAEL (mg/kg/day)"},
+]); } catch (e) { Phase.skip(e); }
+(function () {
+  var rows; try { (rows = window.TASK3_DATA); } catch (e) { Phase.skip(e); }
+  try { ScreeningTable.render("task3-table-container", { qidPrefix:"d3t3", idKey:"ID", columns:T3_COLUMNS, rows }); } catch (e) { Phase.skip(e); }
+  try { AnswerCapture.rebind(); } catch (e) { Phase.skip(e); }
+  try { makeDownload(document.getElementById("task3-download"), T3_COLUMNS.map(c=>c.label), rows.map(row => T3_COLUMNS.map(c => row[c.key]))); } catch (e) { Phase.skip(e); }
+})();
+
+try { StructurePopup.init(window.STRUCTURES); } catch (e) { Phase.skip(e); }
+try { StructurePopup.clickify(document); } catch (e) { Phase.skip(e); }
+</script>
+</body>
+</html>
